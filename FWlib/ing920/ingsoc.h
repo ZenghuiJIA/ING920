@@ -69,7 +69,7 @@ typedef enum
 #include <core_cm3.h>                       /* Processor and core peripherals                    */
 #include <stdint.h>
 
-#include "../__ingsoc.h"
+#include "__ingsoc.h"
 
 #define INGCHIPS_FAMILY                 INGCHIPS_FAMILY_920
 
@@ -518,6 +518,7 @@ typedef struct
 #define APB_TMR1_BASE      (APB_BASE + 0x03000)
 #define APB_PWM_BASE       (APB_BASE + 0x05000)
 #define APB_IOMUX_BASE     (APB_BASE + 0x06000)
+#define APB_TRNG_BASE      (APB_BASE + 0x07000)
 #define APB_QDEC_BASE      (APB_BASE + 0x09000)
 #define APB_KEYSCAN_BASE   (APB_BASE + 0x0A000)
 #define APB_DMACFG_BASE    (APB_BASE + 0x0C000)
@@ -529,9 +530,9 @@ typedef struct
 #define APB_I2C0_BASE      (APB_BASE + 0x13000)
 #define APB_GPIO0_BASE     (APB_BASE + 0x15000)
 #define APB_GPIO1_BASE     (APB_BASE + 0x16000)
-#define APB_PTE_BUS        (APB_BASE + 0x18000)
-#define APB_PTE_BASE       (APB_BASE + 0x19000)
-#define APB_ASDM_BASE      (APB_BASE + 0x1a000)
+#define APB_PTE_BUS_BASE   (APB_BASE + 0x18000)
+#define APB_PTEC_BASE      (APB_BASE + 0x19000)
+#define APB_AUD_ADC_BASE   (APB_BASE + 0x1a000)
 
 #define AON_APB_BASE       ((uint32_t)0x40100000UL)
 #define AON2_CTRL_BASE     (AON_APB_BASE + 0x0000)
@@ -542,26 +543,32 @@ typedef struct
 #define APB_PINC_BASE      APB_IOMUX_BASE
 
 #define APB_SYSCTRL        ((SYSCTRL_TypeDef *)APB_SYSCTRL_BASE)
-#define APB_PTE            ((PTE_TypeDef *)(APB_SYSCTRL_BASE + 0x1a0))
 #define APB_WDT            ((WDT_TypeDef *)APB_WDT_BASE)
 #define APB_TMR0           ((TMR_TypeDef *)APB_TMR0_BASE)
 #define APB_TMR1           ((TMR_TypeDef *)APB_TMR1_BASE)
 #define APB_PWM            ((PWM_TypeDef *)APB_PWM_BASE)
-#define APB_I2S            ((I2S_TypeDef *)APB_I2S_BASE)
-#define APB_SADC           ((SADC_TypeDef *)APB_SARADC_BASE)
-#define APB_QDEC           ((QDEC_TypeDef *)APB_QDEC_BASE)
 #define APB_PINCTRL        ((PINCTRL_TypeDef *)APB_PINC_BASE)
+//TRNG
+#define APB_QDEC           ((QDEC_TypeDef *)APB_QDEC_BASE)
+#define APB_KEYSCAN        ((KEYSCAN_TypeDef *)APB_KEYSCAN_BASE)
+#define APB_DMA            ((DMA_TypeDef *)APB_DMACFG_BASE)
+#define APB_SSP            ((SSP_TypeDef *)APB_SPI_BASE)
+#define APB_SADC           ((SADC_TypeDef *)APB_SARADC_BASE)
+#define APB_I2S            ((I2S_TypeDef *)APB_I2S_BASE)
 #define APB_UART0          ((UART_TypeDef *)APB_UART0_BASE)
 #define APB_UART1          ((UART_TypeDef *)APB_UART1_BASE)
+#define APB_I2C0           ((I2C_TypeDef *)APB_I2C0_BASE)
 #define APB_GPIO0          ((GIO_TypeDef *)APB_GPIO0_BASE)
 #define APB_GPIO1          ((GIO_TypeDef *)APB_GPIO1_BASE)
-#define APB_I2C0           ((I2C_TypeDef *)APB_I2C0_BASE)
+//ptebus
+//ptec
+//aud adc
+
 #define AHB_SSP0           ((SSP_TypeDef *)AHB_QSPI_BASE)
 #define APB_SSP1           ((SSP_TypeDef *)APB_SPI_BASE)
-#define APB_DMA            ((DMA_TypeDef *)APB_DMACFG_BASE)
 #define APB_RTC            ((RTC_TypeDef *)AON_RTC_BASE)
 #define AHB_USB            ((USB_TypeDef *)AHB_USB_BASE)
-#define APB_KEYSCAN        ((KEYSCAN_TypeDef *)APB_KEYSCAN_BASE)
+
 
 #define APB_SPI            APB_SSP1
 #define AHB_QSPI           AHB_SSP0

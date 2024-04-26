@@ -342,4 +342,74 @@ void GIO_ToggleBits(const uint64_t index_mask)
     APB_GPIO1->DataOut ^= index_mask >> 21;
 }
 
+#elif (INGCHIPS_FAMILY == INGCHIPS_FAMILY_920)
+#define START_OF_GPIO1          GIO_GPIO_21
+#define MASK_GPIO0_BITS         ((1 << 21) - 1)
+
+#define DEF_GIO_AND_PIN(io_index)       GIO_TypeDef *pDef = io_index >= START_OF_GPIO1 ? APB_GPIO1 : APB_GPIO0; int index = io_index >= START_OF_GPIO1 ? io_index - START_OF_GPIO1 : io_index;
+
+void GIO_SetDirection(const GIO_Index_t io_index, const GIO_Direction_t dir)
+{
+    DEF_GIO_AND_PIN(io_index);
+    if (dir != GIO_DIR_NONE)
+    {
+        GIO_MaskedWrite(&pDef->ChDir, index, dir == GIO_DIR_INPUT ? 0 : 1);
+        GIO_MaskedWrite(&pDef->IOIE, index, dir == GIO_DIR_INPUT ? 1 : 0);
+    }
+    else
+    {
+        GIO_MaskedWrite(&pDef->ChDir, index, 0);
+        GIO_MaskedWrite(&pDef->IOIE, index, 0);
+    }
+}
+
+GIO_Direction_t GIO_GetDirection(const GIO_Index_t io_index)
+{
+    DEF_GIO_AND_PIN(io_index);
+    GIO_Direction_t r = pDef->ChDir & (1 << index) ? GIO_DIR_OUTPUT : GIO_DIR_INPUT;
+    if ((GIO_DIR_INPUT == r) && ((pDef->IOIE & (1 << index)) == 0))
+        r = GIO_DIR_NONE;
+    return r;
+}
+
+void GIO_WriteValue(const GIO_Index_t io_index, const uint8_t bit)
+{
+    DEF_GIO_AND_PIN(io_index);
+    if (bit)
+        pDef->DoutSet |= 1 << index;
+    else
+        pDef->DoutClear |= 1 << index;
+}
+
+uint8_t GIO_ReadValue(const GIO_Index_t io_index)
+{
+    DEF_GIO_AND_PIN(io_index);
+    return (pDef->DataIn >> index) & 1;
+}
+
+uint8_t GIO_ReadOutputValue(const GIO_Index_t io_index)
+{
+    DEF_GIO_AND_PIN(io_index);
+    return (pDef->DataOut >> index) & 1;
+}
+
+
+void GIO_SetBits(const uint64_t index_mask)
+{
+    APB_GPIO0->DoutSet |= index_mask & 0x1fffff;
+    APB_GPIO1->DoutSet |= index_mask >> 21;
+}
+
+void GIO_ClearBits(const uint64_t index_mask)
+{
+    APB_GPIO0->DoutClear |= index_mask & 0x1fffff;
+    APB_GPIO1->DoutClear |= index_mask >> 21;
+}
+
+void GIO_ToggleBits(const uint64_t index_mask)
+{
+    APB_GPIO0->DataOut ^= index_mask & 0x1fffff;
+    APB_GPIO1->DataOut ^= index_mask >> 21;
+}
+
 #endif

@@ -1096,8 +1096,8 @@ typedef enum
     SYSCTRL_ITEM_APB_QDEC      ,
     SYSCTRL_ITEM_APB_KeyScan   ,
     SYSCTRL_ITEM_APB_DMA       ,
-    SYSCTRL_ITEM_AHB_SPI0      ,
-    SYSCTRL_ITEM_APB_SPI1      ,
+    SYSCTRL_ITEM_AHB_SPI0      ,//QSPI
+    SYSCTRL_ITEM_APB_SPI1      ,//SPI
     SYSCTRL_ITEM_APB_ADC       ,
     SYSCTRL_ITEM_APB_I2S       ,
     SYSCTRL_ITEM_APB_UART0     ,
@@ -1274,7 +1274,7 @@ typedef enum
  * \param mode          clock mode
  *
  */
-void SYSCTRL_SelectTimerClk(timer_port_t port, SYSCTRL_ClkMode mode);
+//void SYSCTRL_SelectTimerClk(timer_port_t port, SYSCTRL_ClkMode mode);
 
 /**
  * \brief Select clock mode of PWM
@@ -1317,14 +1317,14 @@ void SYSCTRL_SelectPDMClk(SYSCTRL_ClkMode mode);
  * Note: For SPI0: mode should be `SYSCTRL_CLK_SLOW`, or `SYSCTRL_CLK_PLL_DIV_N`, where N = 1..15;
  *       For SPI1: mode should be `SYSCTRL_CLK_SLOW`, or `SYSCTRL_CLK_HCLK`.
  */
-void SYSCTRL_SelectSpiClk(spi_port_t port, SYSCTRL_ClkMode mode);
+//void SYSCTRL_SelectSpiClk(spi_port_t port, SYSCTRL_ClkMode mode);
 
 /**
  * \brief Select UART clock mode
  * \param port          the port
  * \param mode          clock mode (SYSCTRL_CLK_SLOW, or SYSCTRL_CLK_HCLK)
  */
-void SYSCTRL_SelectUartClk(uart_port_t port, SYSCTRL_ClkMode mode);
+//void SYSCTRL_SelectUartClk(uart_port_t port, SYSCTRL_ClkMode mode);
 
 /**
  * \brief Select I2S clock mode
