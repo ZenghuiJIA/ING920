@@ -167,8 +167,9 @@ __APP_LOAD_ADD  DCD     0x2a000
 Reset_Handler   PROC
                 EXPORT  Reset_Handler             [WEAK]
                 IMPORT  __main
-                IMPORT  chip_init
+                ;IMPORT  chip_init
 
+	IF :DEF:LLE_ENABLE
 				; clear ahb_clk_lle_gate
 				LDR     R0, =0x40000008
 				LDR     R1, [R0]
@@ -177,6 +178,7 @@ Reset_Handler   PROC
 
                 LDR     R0, =chip_init
                 BLX     R0
+	ENDIF
 
 
     IF :DEF:POWER_SAVING

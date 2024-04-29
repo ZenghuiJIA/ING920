@@ -961,8 +961,25 @@ int PINCTRL_SelQDECIn(uint8_t phase_a,
 
 int PINCTRL_Pull(const uint8_t io_pin, const pinctrl_pull_mode_t mode)
 {
-    // TODO
-    return -1;
+    int index = io_pin;
+    int reg = index >= 32 ? 1 : 0;
+    int bit = 1ul << (index & 0x1f);
+    volatile uint32_t *pe = (volatile uint32_t *)&APB_PINCTRL->PE_CTRL[reg];
+    volatile uint32_t *ps = (volatile uint32_t *)&APB_PINCTRL->PS_CTRL[reg];
+    if (PINCTRL_PULL_DISABLE == mode)
+    {
+        *pe &= ~bit;
+    }
+    else
+    {
+        if (PINCTRL_PULL_UP == mode)
+            *ps |= bit;
+        else
+            *ps &= ~bit;
+
+        *pe |= bit;
+    }
+    return 0;
 }
 
 int PINCTRL_SetPadMux(const uint8_t io_pin_index, const io_source_t source)
