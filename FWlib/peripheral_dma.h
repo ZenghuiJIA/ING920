@@ -8,7 +8,7 @@ extern "C" {	/* allow C++ to use these headers */
 #include "ingsoc.h"
 #include "peripheral_sysctrl.h"
 
-#if INGCHIPS_FAMILY == INGCHIPS_FAMILY_916
+#if (INGCHIPS_FAMILY == INGCHIPS_FAMILY_916) || (INGCHIPS_FAMILY == INGCHIPS_FAMILY_920)
 
 #define DMA_CHANNEL_NUMBER          8
 

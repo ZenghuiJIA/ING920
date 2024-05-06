@@ -1,6 +1,6 @@
 #include "peripheral_dma.h"
 
-#if INGCHIPS_FAMILY == INGCHIPS_FAMILY_916
+#if (INGCHIPS_FAMILY == INGCHIPS_FAMILY_916) || (INGCHIPS_FAMILY == INGCHIPS_FAMILY_920)
 
 #define bsDMA_DST_REQ_SEL        4
 #define bsDMA_SRC_REQ_SEL        8

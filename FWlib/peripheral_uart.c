@@ -123,9 +123,6 @@ uint8_t apUART_Get_ITStatus(UART_TypeDef* pBase,uint8_t UART_IT)
 	return ( (pBase->IntRaw >> UART_IT) & BW2M(UART_IT) );
 }
 
-
-
-
 //
 void apUART_Enable_TRANSMIT_INT(UART_TypeDef* pBase)
 {

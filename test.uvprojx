@@ -33,7 +33,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>D:\ming\source\ING920_SDK\SVD\Output\ING920.SFR</SFDFile>
+          <SFDFile>D:\keil\Keil_v5\ARM\Packs\INGChips\ING918\0.9.0\SVD\ing920.SFR</SFDFile>
           <bCustSvd>1</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -327,7 +327,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
-            <uGnu>0</uGnu>
+            <uGnu>1</uGnu>
             <useXO>0</useXO>
             <v6Lang>3</v6Lang>
             <v6LangP>5</v6LangP>
@@ -414,6 +414,11 @@
               <FileType>1</FileType>
               <FilePath>.\src\misc.c</FilePath>
             </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\uart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -446,6 +451,11 @@
               <FileName>peripheral_pinctrl.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\FWlib\peripheral_pinctrl.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FWlib\peripheral_uart.c</FilePath>
             </File>
           </Files>
         </Group>
