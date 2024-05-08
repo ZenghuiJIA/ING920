@@ -472,11 +472,6 @@
               <FileType>1</FileType>
               <FilePath>.\FWlib\peripheral_timer.c</FilePath>
             </File>
-            <File>
-              <FileName>peripheral_adc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\FWlib\peripheral_adc.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
