@@ -6,7 +6,8 @@
 #include "uart.h"
 #include "test.h"
 #include "timer.h"
-
+#include "PWM.h"
+#include "spi_master.h"
 
 #define MAIN_DEBUG
 #ifdef MAIN_DEBUG
@@ -47,10 +48,13 @@ int main()
     DEBUG_LOG("RTT init\r\n");
     SysTick_Config(24000);
     NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL);
+    spi_test();
+//    pwm_test_simple();
+//    uart_test_dma_recive();
 //    uart_init_board();
 //    uart_send_test(test_send,sizeof (test_send));
 //    watchdog_test();
-    timer_pem_test();
+//    timer_pem_test();
     for(;;)
     {
         SYSCTRL_DelayCycles(1000,1000);

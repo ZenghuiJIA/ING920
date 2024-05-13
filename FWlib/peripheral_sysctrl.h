@@ -1096,8 +1096,8 @@ typedef enum
     SYSCTRL_ITEM_APB_QDEC      ,
     SYSCTRL_ITEM_APB_KeyScan   ,
     SYSCTRL_ITEM_APB_DMA       ,
-    SYSCTRL_ITEM_AHB_SPI0      ,//QSPI
-    SYSCTRL_ITEM_APB_SPI1      ,//SPI
+    SYSCTRL_ITEM_AHB_SPI0      ,
+    SYSCTRL_ITEM_APB_SPI1      ,
     SYSCTRL_ITEM_APB_ADC       ,
     SYSCTRL_ITEM_APB_I2S       ,
     SYSCTRL_ITEM_APB_UART0     ,
@@ -2129,4 +2129,3 @@ void SYSCTRL_DelayCycles(uint32_t freq, uint32_t cycles);
 #endif	/* __cplusplus */
 
 #endif
-

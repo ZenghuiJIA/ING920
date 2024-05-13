@@ -1177,7 +1177,7 @@ static void set_reg_bit(volatile uint32_t *reg, uint8_t v, uint8_t bit_offset)
     *reg = (*reg & ~mask) | (v << bit_offset);
 }
 
-static void SYSCTRL_ClkGateCtrl(__IO SYSCTRL_ClkGateItem item, uint8_t v)
+static void SYSCTRL_ClkGateCtrl(SYSCTRL_ClkGateItem item, uint8_t v)
 {
     // TODO
     switch (item)
@@ -1275,6 +1275,26 @@ void SYSCTRL_SetClkGateMulti(uint32_t items)
             SYSCTRL_SetClkGate(i);
 }
 
+int SYSCTRL_GetDmaId(SYSCTRL_DMA item)
+{
+    int offset = 0;
+    uint32_t value = APB_SYSCTRL->DmaCtrl[0];
+    int i;
+    if (item >= SYSCTRL_DMA_UART0_TX)
+    {
+        offset = 8;
+        item -= SYSCTRL_DMA_UART0_TX;
+        value = APB_SYSCTRL->DmaCtrl[1];
+    }
+    for (i = 0; i <= 28; i += 4)
+    {
+        if ((value & 0xf) == item)
+            return offset + i / 4;
+        value >>= 4;
+    }
+    return -1;
+}
+
 void SYSCTRL_ClearClkGateMulti(uint32_t items)
 {
     SYSCTRL_Item i;
@@ -1367,9 +1387,20 @@ void SYSCTRL_ReleaseBlock(SYSCTRL_ResetItem item)
     SYSCTRL_ResetBlockCtrl(item, 1);
 }
 
+void SYSCTRL_EnablePcapMode(const uint8_t channel_index, uint8_t enable)
+{
+    set_reg_bit((volatile uint32_t *)(APB_SYSCTRL_BASE + 0x70), enable & 0x1, channel_index);
+}
+
 uint32_t SYSCTRL_GetHClk()
 {
     // TODO fpga hclk 24mhz now
+    return 24000000;
+}
+
+uint32_t SYSCTRL_GetClk(SYSCTRL_Item item)
+{
+    //TODO
     return 24000000;
 }
 

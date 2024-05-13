@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\FWlib\ing920;.\FWlib</IncludePath>
+              <IncludePath>.\FWlib\ing920;.\FWlib;.\src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -429,6 +429,16 @@
               <FileType>1</FileType>
               <FilePath>.\src\timer.c</FilePath>
             </File>
+            <File>
+              <FileName>PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\PWM.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi_master.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\spi_master.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -471,6 +481,21 @@
               <FileName>peripheral_timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\FWlib\peripheral_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FWlib\peripheral_dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FWlib\peripheral_pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_ssp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FWlib\peripheral_ssp.c</FilePath>
             </File>
           </Files>
         </Group>
