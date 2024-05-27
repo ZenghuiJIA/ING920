@@ -6,7 +6,8 @@
 #include "peripheral_sysctrl.h"
 #include "peripheral_pinctrl.h"
 #include "peripheral_ssp.h"
-#include "misc.h"
+#include "stdio.h"
+//#include "misc.h"
 
 void spi_test(void);
 

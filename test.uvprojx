@@ -33,7 +33,7 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>D:\keil\Keil_v5\ARM\Packs\INGChips\ING918\0.9.0\SVD\ing920.SFR</SFDFile>
+          <SFDFile>C:\Keil_v5\Packs\INGChips\ING918\0.9.0\SVD\ing920.SFR</SFDFile>
           <bCustSvd>1</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
@@ -276,8 +276,8 @@
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x40000</Size>
+                <StartAddress>0x2000</StartAddress>
+                <Size>0x10000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -314,7 +314,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>2</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -371,7 +371,7 @@
             <TextAddressRange>0x00000000</TextAddressRange>
             <DataAddressRange>0x00000000</DataAddressRange>
             <pXoBase></pXoBase>
-            <ScatterFile>.\output\test.sct</ScatterFile>
+            <ScatterFile>.\output\ing920.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
@@ -439,6 +439,21 @@
               <FileType>1</FileType>
               <FilePath>.\src\spi_master.c</FilePath>
             </File>
+            <File>
+              <FileName>iic_master_920.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\iic_master_920.c</FilePath>
+            </File>
+            <File>
+              <FileName>debug_print.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\debug_print.c</FilePath>
+            </File>
+            <File>
+              <FileName>pingpong.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\pingpong.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -496,6 +511,11 @@
               <FileName>peripheral_ssp.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\FWlib\peripheral_ssp.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FWlib\peripheral_i2c.c</FilePath>
             </File>
           </Files>
         </Group>

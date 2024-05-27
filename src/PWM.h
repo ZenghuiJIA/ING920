@@ -7,4 +7,7 @@
 #include "peripheral_pwm.h"
 
 void pwm_test_simple(void);
+void pwm_test_step(void);
+void pcap_test_read(void);
+void IR_test_cycle(void);
 #endif

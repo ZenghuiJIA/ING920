@@ -340,6 +340,16 @@ typedef enum
   SPI_ADDRFMT_QUAD_MODE = 1
 }SPI_TransCtrl_AddrFmt_e;
 
+/* SPI_MOSI_UNI_DIR_MODE: This register sets the MOSI pin of the SPI as the normal mode
+   SPI_MOSI_BI_DIR_MODE: This register sets the MOSI pin of SPI as a bidirectional mode,
+    and SPI can use a three-wire transmission mode */
+typedef enum
+{
+    SPI_MOSI_UNI_DIR_MODE = 0,
+    SPI_MOSI_BI_DIR_MODE = 1
+}SPI_MOSI_Dir_Set_e;
+
+
 /* ----------------------------------------------------------
  * Description:
  * Bit shifts and widths for Control Register "Ctrl"
@@ -565,6 +575,8 @@ typedef struct apSSP_xDeviceControlBlock
   /* Data-only mode (slave mode only) 0x0: Disable the data-only mode 0x1: Enable the data-only mode */
   SPI_TransCtrl_SlvDataOnly_e  SlaveDataOnly;
   SPI_TransFmt_AddrLen_e       eAddrLen;
+  /* 0x0  MOSI is uni-directional signal in regular mode. 0x1: MOSI is bi-directional signal in regular mode. */
+  SPI_MOSI_Dir_Set_e            eMOSI_Dir;
 } apSSP_sDeviceControlBlock;
 
 /**
@@ -917,6 +929,11 @@ typedef enum
   SPI_ADDRFMT_QUAD_MODE = 1
 }SPI_TransCtrl_AddrFmt_e;
 
+typedef enum
+{
+    SPI_MOSI_UNI_DIR_MODE = 0,
+    SPI_MOSI_BI_DIR_MODE = 1
+}SPI_MOSI_Dir_Set_e;
 /* ----------------------------------------------------------
  * Description:
  * Bit shifts and widths for Control Register "Ctrl"
@@ -1142,10 +1159,13 @@ typedef struct apSSP_xDeviceControlBlock
   /* Data-only mode (slave mode only) 0x0: Disable the data-only mode 0x1: Enable the data-only mode */
   SPI_TransCtrl_SlvDataOnly_e  SlaveDataOnly;
   SPI_TransFmt_AddrLen_e       eAddrLen;
+  /* 0x0  MOSI is uni-directional signal in regular mode. 0x1: MOSI is bi-directional signal in regular mode. */
+  SPI_MOSI_Dir_Set_e            eMOSI_Dir;
 } apSSP_sDeviceControlBlock;
 
 /**
- * @brief Setup SPI module
+ * @brief Setup SPI module.
+ *
  *
  * @param[in] SPI_BASE              base address
  * @param[in] pParam                various config items, see definition of apSSP_sDeviceControlBlock

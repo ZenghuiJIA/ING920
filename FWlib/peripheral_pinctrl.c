@@ -931,8 +931,16 @@ int PINCTRL_SelI2cIn(i2c_port_t port,
                       uint8_t io_pin_scl,
                       uint8_t io_pin_sda)
 {
-    // TODO
-    return -1;
+    if (PINCTRL_SelInput(io_pin_scl, IO_SOURCE_I2C0_SCL_IN, 4, 5, 10)) return -1;
+    if (PINCTRL_SelInput(io_pin_sda, IO_SOURCE_I2C0_SDA_IN, 4, 5, 15)) return -1;
+    PINCTRL_SetPadMux(io_pin_scl, IO_SOURCE_I2C0_SCL_OUT);
+    PINCTRL_SetPadMux(io_pin_sda, IO_SOURCE_I2C0_SDA_OUT);
+
+    if (io_pin_scl < IO_PIN_NUMBER)
+        PINCTRL_Pull(io_pin_scl, PINCTRL_PULL_UP);
+    if (io_pin_sda < IO_PIN_NUMBER)
+        PINCTRL_Pull(io_pin_sda, PINCTRL_PULL_UP);
+    return 0;
 }
 
 void PINCTRL_SelI2cSclIn(const i2c_port_t port, const uint8_t io_pin_index)
@@ -948,8 +956,7 @@ int PINCTRL_SelKeyScanColIn(int index, uint8_t io_pin)
 
 int PINCTRL_SelPCAPIn(int index, uint8_t io_pin)
 {
-    // TODO
-    return -1;
+    return PINCTRL_SelInput(io_pin, IO_SOURCE_PCAP0_IN + index, 10, 5, index * 5);
 }
 
 int PINCTRL_SelQDECIn(uint8_t phase_a,
