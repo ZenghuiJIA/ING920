@@ -9,6 +9,8 @@
 #include "PWM.h"
 #include "spi_master.h"
 #include "iic_master_920.h"
+#include "keyscan.h"
+#include "qdec.h"
 
 #define MAIN_DEBUG
 #ifdef MAIN_DEBUG
@@ -57,7 +59,9 @@ int main()
     NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL);
     uart_init_board();
     debug_uart("debug uart_test\r\n");
-    IR_test_cycle();
+    qudec_test();
+//    key_scan_normal_test();
+//    IR_test_cycle();
 //    __enable_irq();
 //    all_send_test_data();
 //    iic_test();

@@ -22,28 +22,21 @@ Dialog DLL:      TCM.DLL V1.56.1.0
  
 <h2>Project:</h2>
 C:\ming\source\ING920_SDK\test.uvprojx
-Project File Date:  05/25/2024
+Project File Date:  06/07/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ing920'
-compiling PWM.c...
-src\PWM.c(174): warning:  #188-D: enumerated type mixed with another type
-      PWM_SetMode(0, 7);
-src\PWM.c(225): warning:  #177-D: variable "data"  was declared but never referenced
-      uint32_t data;
-src\PWM.c(245): warning:  #177-D: variable "n"  was declared but never referenced
-      int m, n, p;
-src\PWM.c(245): warning:  #177-D: variable "p"  was declared but never referenced
-      int m, n, p;
-src\PWM.c(103): warning:  #550-D: variable "buff_cnt"  was set but never used
-  static int buff_cnt = 0;
-src\PWM.c: 5 warnings, 0 errors
+compiling main.c...
+compiling qdec.c...
+src\qdec.c(57): warning:  #1-D: last line of file ends without a newline
+  }
+src\qdec.c: 1 warning, 0 errors
 linking...
-Program Size: Code=10548 RO-data=1100 RW-data=192 ZI-data=1904  
+Program Size: Code=10772 RO-data=1220 RW-data=112 ZI-data=1952  
 FromELF: creating hex file...
 After Build - User command #1: fromelf.exe --bin -o ing920.bin ./output/ing920.axf
-".\output\ing920.axf" - 0 Error(s), 5 Warning(s).
+".\output\ing920.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -65,7 +58,7 @@ Package Vendor: INGChips
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.6.0
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

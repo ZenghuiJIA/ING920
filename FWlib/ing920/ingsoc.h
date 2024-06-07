@@ -62,7 +62,7 @@ typedef enum
 /* --------  Configuration of the Cortex-M4 Processor and Core Peripherals  ------- */
 #define __CM3_REV                 0x0201    /*!< Core revision r2p1                              */
 #define __MPU_PRESENT             1         /*!< MPU present or not                              */
-#define __NVIC_PRIO_BITS          3         /*!< Number of Bits used for Priority Levels         */
+#define __NVIC_PRIO_BITS          5         /*!< Number of Bits used for Priority Levels         */
 #define __Vendor_SysTickConfig    0         /*!< Set to 1 if different SysTick Config is used    */
 
 #include <core_cm3.h>                       /* Processor and core peripherals                    */
@@ -508,6 +508,8 @@ typedef struct
     __IO uint32_t      key_data;          //0x001C
     __IO uint32_t      key_trig;          //0x0020
     __IO uint32_t      key_err_cfg;       //0x0024
+    __IO uint32_t      key_debouncd_cfg0; //0x0028
+    __IO uint32_t      key_debouncd_cfg1; //0x002C
 } KEYSCAN_TypeDef;
 
 /******************************************************************************/
@@ -580,7 +582,7 @@ typedef struct
 // Test if debugger is attached
 #define IS_DEBUGGER_ATTACHED() (CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk)
 
-#ifdef USE_STDPERIPH_DRIVER
+//#ifdef USE_STDPERIPH_DRIVER
     #include "peripheral_pinctrl.h"
     #include "peripheral_adc.h"
     #include "peripheral_dma.h"
@@ -597,7 +599,7 @@ typedef struct
     #include "peripheral_timer.h"
     #include "peripheral_uart.h"
     #include "peripheral_usb.h"
-#endif
+//#endif
 
 #define OSC_CLK_FREQ  24000000UL
 

@@ -454,6 +454,16 @@
               <FileType>1</FileType>
               <FilePath>.\src\pingpong.c</FilePath>
             </File>
+            <File>
+              <FileName>keyscan.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\keyscan.c</FilePath>
+            </File>
+            <File>
+              <FileName>qdec.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\qdec.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -516,6 +526,16 @@
               <FileName>peripheral_i2c.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\FWlib\peripheral_i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_keyscan.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FWlib\peripheral_keyscan.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_qdec.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FWlib\peripheral_qdec.c</FilePath>
             </File>
           </Files>
         </Group>

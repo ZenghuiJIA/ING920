@@ -1,6 +1,6 @@
 #include "peripheral_qdec.h"
 
-#if (INGCHIPS_FAMILY == INGCHIPS_FAMILY_916)
+#if (INGCHIPS_FAMILY == INGCHIPS_FAMILY_916 || INGCHIPS_FAMILY == INGCHIPS_FAMILY_920)
 #define QDEC_LEFT_SHIFT(v, s)        ((v) << (s))
 #define QDEC_RIGHT_SHIFT(v, s)       ((v) >> (s))
 #define QDEC_MK_MASK(b)              ((QDEC_LEFT_SHIFT(1, b)) - (1))
