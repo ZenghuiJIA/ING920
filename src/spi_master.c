@@ -1,10 +1,10 @@
 #include "spi_master.h"
 #include "misc.h"
-#define SPI_MIC_CLK         GIO_GPIO_9
+#define SPI_MIC_CLK         GIO_GPIO_16
 
-#define SPI_MIC_MOSI        GIO_GPIO_10
-#define SPI_MIC_MISO        GIO_GPIO_11
-#define SPI_MIC_CS          GIO_GPIO_12
+#define SPI_MIC_MOSI        GIO_GPIO_6
+#define SPI_MIC_MISO        GIO_GPIO_7
+#define SPI_MIC_CS          GIO_GPIO_17
 //如果使用 QSPI 则使用如下两个引脚SPI不使用
 #define SPI_MIC_WP          GIO_GPIO_15
 #define SPI_MIC_HOLD        GIO_GPIO_14
@@ -81,11 +81,8 @@ static void setup_peripherals_spi_pin(void)
     SYSCTRL_ClearClkGateMulti(    (1 << SPI_CLK)
                                   | (1 << SYSCTRL_ITEM_APB_PinCtrl));
 
-    PINCTRL_SelSpiIn(SPI_PORT_1, SPI_MIC_CLK, SPI_MIC_CS, IO_NOT_A_PIN,
-                     IO_NOT_A_PIN, IO_NOT_A_PIN, SPI_MIC_MOSI);
-    PINCTRL_SetPadMux(SPI_MIC_CLK, IO_SOURCE_SPI1_CLK_OUT);
-    PINCTRL_SetPadMux(SPI_MIC_CS, IO_SOURCE_SPI1_CSN_OUT);
-    PINCTRL_SetPadMux(SPI_MIC_MOSI, IO_SOURCE_SPI1_MOSI_OUT);
+    PINCTRL_SelSpiIn(SPI_PORT, SPI_MIC_CLK, SPI_MIC_CS, SPI_MIC_HOLD,
+                     SPI_MIC_WP, SPI_MIC_MISO, SPI_MIC_MOSI);
 
 }
 uint32_t write_data[DATA_LEN];

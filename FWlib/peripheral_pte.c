@@ -20,6 +20,8 @@ void PTE_EnableChannel(SYSCTRL_PTE_CHANNEL_ID ch)
 void PTE_DisableChannel(SYSCTRL_PTE_CHANNEL_ID ch)
 {
     APB_PTE->Channels[ch].En = 0;
+
+
 }
 
 void PTE_SetChannelIntMask(SYSCTRL_PTE_CHANNEL_ID ch, uint32_t options)
@@ -81,5 +83,8 @@ int PTE_ConnectPeripheral(SYSCTRL_PTE_CHANNEL_ID ch,
 
     return 0;
 }
+
+#elif (INGCHIPS_FAMILY == INGCHIPS_FAMILY_920)
+
 
 #endif

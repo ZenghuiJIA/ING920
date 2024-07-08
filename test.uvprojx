@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\FWlib\ing920;.\FWlib;.\src</IncludePath>
+              <IncludePath>.\FWlib\ing920;.\FWlib;.\src;.\src\keyscan_demo;.\src\spi\spi_normal;.\src\spi\spi_flash;.\src\PTE\timer_pte;.\src\audioadc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -425,19 +425,9 @@
               <FilePath>.\src\test.c</FilePath>
             </File>
             <File>
-              <FileName>timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\timer.c</FilePath>
-            </File>
-            <File>
               <FileName>PWM.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\PWM.c</FilePath>
-            </File>
-            <File>
-              <FileName>spi_master.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\spi_master.c</FilePath>
             </File>
             <File>
               <FileName>iic_master_920.c</FileName>
@@ -455,14 +445,34 @@
               <FilePath>.\src\pingpong.c</FilePath>
             </File>
             <File>
-              <FileName>keyscan.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\keyscan.c</FilePath>
-            </File>
-            <File>
               <FileName>qdec.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\qdec.c</FilePath>
+            </File>
+            <File>
+              <FileName>keyscan_normal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\keyscan_demo\keyscan_normal.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\spi\spi_flash\spi_flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer_pte.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\PTE\timer_pte\timer_pte.c</FilePath>
+            </File>
+            <File>
+              <FileName>PDM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\audioadc\PDM.c</FilePath>
+            </File>
+            <File>
+              <FileName>ano_protocol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\ano_protocol.c</FilePath>
             </File>
           </Files>
         </Group>

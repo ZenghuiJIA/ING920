@@ -13,18 +13,18 @@
 #endif
 
 KEYSCAN_OutRowList key_out_row[] = {
-        {KEY_OUT_ROW_0, GIO_GPIO_8}, // 第1行
-        {KEY_OUT_ROW_1, GIO_GPIO_9}, // 第2行
-        {KEY_OUT_ROW_2, GIO_GPIO_10}, // 第3行
-        {KEY_OUT_ROW_3, GIO_GPIO_11}, // 第4行
+        {KEY_OUT_ROW_0, GIO_GPIO_24}, // 第1行
+        {KEY_OUT_ROW_1, GIO_GPIO_25}, // 第2行
+        {KEY_OUT_ROW_2, GIO_GPIO_26}, // 第3行
+        {KEY_OUT_ROW_3, GIO_GPIO_27}, // 第4行
 };
 #define key_out_row_num (sizeof(key_out_row) / sizeof(key_out_row[0]))
 
 KEYSCAN_InColList key_in_col[] = {
         {KEY_IN_COL_0, GIO_GPIO_12}, // 第1列
         {KEY_IN_COL_1, GIO_GPIO_13}, // 第2列
-        {KEY_IN_COL_2, GIO_GPIO_14}, // 第3列
-        {KEY_IN_COL_4, GIO_GPIO_16}, // 第4列
+        {KEY_IN_COL_6, GIO_GPIO_18}, // 第3列
+        {KEY_IN_COL_7, GIO_GPIO_19}, // 第4列
 };
 #define key_in_col_num (sizeof(key_in_col) / sizeof(key_in_col[0]))
 
@@ -36,15 +36,16 @@ static KEYSCAN_SetStateStruct keyscan_set = {
         .row               = key_out_row,
         .row_num           = key_out_row_num,
         .loop_num_trig_int = 1,
-        .int_loop_en       = 0,
-        .table_mode_en     = 1,
+        .int_loop_en       = 1,
+        .table_mode_en     = 0,
         .fifo_num_trig_int = 1,
-        .release_time      = 1,
-        .scan_interval     = 0xFFFF,
-        .debounce_counter  = 1,
+        .release_time      = 150,
+        .scan_interval     = 170,
+        .debounce_counter  = 50,
         .dma_num_trig_int  = 0x10,
         .dma_en            = 0,
         .int_trig_en       = 1,
+		.lpkey_mode_en	   = 0,
 };
 
 static void NVIC_Configuration(void)
@@ -65,12 +66,12 @@ void key_scan_normal_test()
     SYSCTRL_ClearClkGateMulti(1 << SYSCTRL_ITEM_APB_PinCtrl);
     NVIC_Configuration();
     KEYSCAN_Initialize(&keyscan_set);
-    KEYSCAN_SetInColMask(0x00);
+    //KEYSCAN_SetInColMask(0x00);
     //KEYSCAN_InitKeyScanToIdx(&keyscan_set, &key_ctx);
     while(1)
     {
-        SYSCTRL_DelayCycles(1000,1000);
-        //KEYSCAN_SetScannerEn(1);
+        SYSCTRL_DelayCycles(1000,500);
+        KEYSCAN_SetScannerEn(1);
     }
 }
 static uint16_t key_vale[10];

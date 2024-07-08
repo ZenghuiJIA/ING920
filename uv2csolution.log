@@ -1,0 +1,13 @@
+0 out of 1 target(s) converted
+Error: 1 error(s), 1 warning(s):
+Errors:
+	<Target> "ing920" μVision project is configured to use Arm Compiler 5.
+	CMSIS csolution projects support Arm Compiler 6 only.
+	For details on how to manually migrate to AC6, see
+	https://developer.arm.com/documentation/100068/0621/Migrating-from-Arm-Compiler-5-to-Arm-Compiler-for-Embedded-6
+Warnings:
+	<Target> "ing920" The following user commands should be run manually:
+            After Build/Rebuild
+                fromelf.exe --bin -o ing920.bin ./output/ing920.axf
+
+Process failed with exit code 2

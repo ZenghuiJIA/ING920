@@ -625,6 +625,8 @@ static DMA_TransferWidth DMA_GetPeripheralWidth(SYSCTRL_DMA src)
         case SYSCTRL_DMA_QDEC1:
         case SYSCTRL_DMA_QDEC2:
             return DMA_WIDTH_32_BITS;
+        case SYSCTRL_DMA_SDADC_RX:
+            return DMA_WIDTH_32_BITS;
         default:
             return DMA_WIDTH_32_BITS;
     }
@@ -680,6 +682,8 @@ static volatile void *DMA_GetPeripheralDataAddr(SYSCTRL_DMA src)
                 return &APB_PWM->PCAPChannels[2].Ctrl1;
             else
                 return &APB_PWM->Channels[2].DmaData;
+        case SYSCTRL_DMA_SDADC_RX:
+            return &APB_ASDM->asdm_dout;
 
         default:
             return 0;

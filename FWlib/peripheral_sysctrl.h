@@ -1106,6 +1106,7 @@ typedef enum
     SYSCTRL_ITEM_APB_SysCtrl   ,
     SYSCTRL_ITEM_APB_PinCtrl   ,
     SYSCTRL_ITEM_APB_USB       ,
+	SYSCTRL_ITEM_APB_ASDM       ,
     SYSCTRL_ITEM_NUMBER,
 } SYSCTRL_Item;
 
@@ -1116,7 +1117,6 @@ typedef enum
 #define  SYSCTRL_ClkGate_APB_TMR1               SYSCTRL_ITEM_APB_TMR1
 #define  SYSCTRL_ClkGate_APB_WDT                SYSCTRL_ITEM_APB_WDT
 #define  SYSCTRL_ClkGate_APB_PWM                SYSCTRL_ITEM_APB_PWM
-#define  SYSCTRL_ClkGate_APB_PDM                SYSCTRL_ITEM_APB_PDM
 #define  SYSCTRL_ClkGate_APB_QDEC               SYSCTRL_ITEM_APB_QDEC
 #define  SYSCTRL_ClkGate_APB_KeyScan            SYSCTRL_ITEM_APB_KeyScan
 #define  SYSCTRL_ClkGate_APB_DMA                SYSCTRL_ITEM_APB_DMA
@@ -1128,6 +1128,7 @@ typedef enum
 #define  SYSCTRL_ClkGate_APB_UART1              SYSCTRL_ITEM_APB_UART1
 #define  SYSCTRL_ClkGate_APB_I2C0               SYSCTRL_ITEM_APB_I2C0
 #define  SYSCTRL_ClkGate_APB_PinCtrl            SYSCTRL_ITEM_APB_PinCtrl
+#define  SYSCTRL_ClkGate_APB_SDM                SYSCTRL_ITEM_APB_ASDM
 
 typedef SYSCTRL_Item SYSCTRL_ClkGateItem;
 
@@ -1674,8 +1675,8 @@ typedef enum
     SYSCTRL_DMA_PWM0,
     SYSCTRL_DMA_PWM2,
     SYSCTRL_DMA_QDEC2,
-	SYSCTRL_DMA_SDADC,
-    SYSCTRL_DMA_LAST = SYSCTRL_DMA_SDADC,
+	SYSCTRL_DMA_SDADC_RX,
+    SYSCTRL_DMA_LAST,
 } SYSCTRL_DMA;
 /**
  * \brief Select used DMA items
@@ -2123,6 +2124,8 @@ int SYSCTRL_Init(void);
  * @param[in]   cycles          number of cycles
  */
 void SYSCTRL_DelayCycles(uint32_t freq, uint32_t cycles);
+
+void SYSCTRL_Update_sdm_clk(uint32_t div);
 
 #ifdef __cplusplus
 } /* allow C++ to use these headers */

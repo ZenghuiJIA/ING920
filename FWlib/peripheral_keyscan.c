@@ -483,6 +483,8 @@ int KEYSCAN_InitializeScanParameter(const KEYSCAN_SetStateStruct* keyscan_set)
             int io_source = IO_SOURCE_KEYSCN_ROW_0 + keyscan_set->row[i].out_row;
             row = row | (0x1 << keyscan_set->row[i].out_row);
             r = PINCTRL_SetPadMux(keyscan_set->row[i].gpio, (io_source_t) io_source);
+
+
             if (r) return r;
             r = PINCTRL_SelKeyScanColIn((int) (keyscan_set->row[i].out_row + 22), keyscan_set->row[i].gpio);
             if (r) return r;

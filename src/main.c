@@ -7,10 +7,13 @@
 #include "test.h"
 #include "timer.h"
 #include "PWM.h"
-#include "spi_master.h"
 #include "iic_master_920.h"
-#include "keyscan.h"
+#include "keyscan_normal.h"
 #include "qdec.h"
+#include "spi_normal.h"
+#include "timer_pte.h"
+#include "PDM.h"
+
 
 #define MAIN_DEBUG
 #ifdef MAIN_DEBUG
@@ -22,6 +25,8 @@
 #define DEBUG_LOG(...)
 #define DEBUG_UART_log(...)
 #endif
+
+
 
 uint32_t cb_putc(char *c, void *dummy)
 {
@@ -45,8 +50,6 @@ void HardFault_Handler(void)
     }
 }
 
-
-uint8_t test_send[10] = {1,2,3,4,5,6,7,8,9};
 int main()
 {
     __disable_irq();
@@ -54,12 +57,21 @@ int main()
     __enable_irq();
     SEGGER_RTT_Init();
     NVIC_SetPriorityGrouping(0x500);
-    DEBUG_LOG("RTT init\r\n");
+    
     SysTick_Config(24000);
     NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL);
+    
+    
+    
+    
     uart_init_board();
     debug_uart("debug uart_test\r\n");
-    qudec_test();
+    
+    SEGGER_RTT_Init();
+//    SEGGER_RTT_Write(1, &g_SineWave128[(i_num++)%128], 2);
+    DEBUG_LOG("debug rtt\r\n");
+//    pte_test();
+//    qudec_test();
 //    key_scan_normal_test();
 //    IR_test_cycle();
 //    __enable_irq();
@@ -70,6 +82,8 @@ int main()
 //    pwm_test_step();
 //    uart_test_dma_recive();
 //    pcap_test_read();
+    pdm_test();
+//    uart_test_fifo_recive();
 
 //    uart_send_test(test_send,sizeof (test_send));
 //    watchdog_test();
@@ -77,5 +91,6 @@ int main()
     for(;;)
     {
         SYSCTRL_DelayCycles(1000,1000);
+        SYSCTRL_DelayCycles(24000,10000);
     }
 }

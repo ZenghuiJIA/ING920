@@ -114,6 +114,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 EXPORT I2S_IRQHandler       [WEAK] ; n32_IQRn
 				EXPORT TBCU_IRQHandler      [WEAK] ; n33_IRQn					
                 EXPORT AudioEnc_IRQHandler  [WEAK] ; n34_IRQn
+                EXPORT ASDM_IRQHandler      [WEAK] ; n35_IRQn
 
                 DCD CacheI_IRQHandler
                 DCD KeyScan_IRQHandler

@@ -1,0 +1,31 @@
+<peripheral>
+      <name>sys_ctrl</name>
+      <description>sys ctrl</description>
+      <groupName>sys_ctrl</groupName>
+      <baseAddress>0x40000000</baseAddress>
+      <addressBlock>
+        <offset>0x0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+        <registers>
+			<register>
+			<name>cgu_cfg0</name>
+			<displayName>cgu_cfg0</displayName>
+			<description>
+			</description>
+			<addressOffset>0x00</addressOffset>
+			<size>0x20</size>
+			<access>read-write</access>
+			<resetValue>0x00</resetValue>
+			<fields>
+				<field>
+				<name>div_pclk_denom</name>
+				<description>div_pclk_denom</description>
+				<bitOffset>4</bitOffset>
+				<bitWidth>4</bitWidth>
+				</field>
+			</fields>
+			</register>
+        </registers>
+</peripheral>

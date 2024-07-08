@@ -1,0 +1,1941 @@
+Component: ARM Compiler 5.06 update 7 (build 960) Tool: armlink [4d3601]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(i.fputc) refers to main.o(i.cb_putc) for cb_putc
+    main.o(i.main) refers to segger_rtt.o(i.SEGGER_RTT_Init) for SEGGER_RTT_Init
+    main.o(i.main) refers to main.o(i.__NVIC_SetPriority) for __NVIC_SetPriority
+    main.o(i.main) refers to uart.o(i.uart_init_board) for uart_init_board
+    main.o(i.main) refers to debug_print.o(i.debug_uart) for debug_uart
+    main.o(i.main) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    main.o(i.main) refers to pdm.o(i.pdm_test) for pdm_test
+    main.o(i.main) refers to peripheral_sysctrl.o(i.SYSCTRL_DelayCycles) for SYSCTRL_DelayCycles
+    timer_delay.o(i.SysTick_Handler) refers to timer_delay.o(.data) for jiffes
+    segger_rtt.o(i.SEGGER_RTT_AllocDownBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_AllocDownBuffer) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_AllocUpBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_AllocUpBuffer) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_ConfigDownBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_ConfigDownBuffer) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_ConfigUpBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_ConfigUpBuffer) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_GetAvailWriteSpace) refers to segger_rtt.o(i._GetAvailWriteSpace) for _GetAvailWriteSpace
+    segger_rtt.o(i.SEGGER_RTT_GetAvailWriteSpace) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_GetBytesInBuffer) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_GetKey) refers to segger_rtt.o(i.SEGGER_RTT_Read) for SEGGER_RTT_Read
+    segger_rtt.o(i.SEGGER_RTT_HasData) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_HasDataUp) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_HasKey) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_HasKey) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_Init) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_PutChar) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_PutChar) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_PutCharSkip) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_PutCharSkip) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_PutCharSkipNoLock) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_Read) refers to segger_rtt.o(i.SEGGER_RTT_ReadNoLock) for SEGGER_RTT_ReadNoLock
+    segger_rtt.o(i.SEGGER_RTT_ReadNoLock) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_ReadNoLock) refers to memcpya.o(.text) for __aeabi_memcpy
+    segger_rtt.o(i.SEGGER_RTT_ReadNoLock) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_ReadUpBuffer) refers to segger_rtt.o(i.SEGGER_RTT_ReadUpBufferNoLock) for SEGGER_RTT_ReadUpBufferNoLock
+    segger_rtt.o(i.SEGGER_RTT_ReadUpBufferNoLock) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_ReadUpBufferNoLock) refers to memcpya.o(.text) for __aeabi_memcpy
+    segger_rtt.o(i.SEGGER_RTT_ReadUpBufferNoLock) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_SetFlagsDownBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_SetFlagsDownBuffer) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_SetFlagsUpBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_SetFlagsUpBuffer) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_SetNameDownBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_SetNameDownBuffer) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_SetNameUpBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_SetNameUpBuffer) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_SetTerminal) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_SetTerminal) refers to segger_rtt.o(i._WriteBlocking) for _WriteBlocking
+    segger_rtt.o(i.SEGGER_RTT_SetTerminal) refers to segger_rtt.o(i._GetAvailWriteSpace) for _GetAvailWriteSpace
+    segger_rtt.o(i.SEGGER_RTT_SetTerminal) refers to segger_rtt.o(i._WriteNoCheck) for _WriteNoCheck
+    segger_rtt.o(i.SEGGER_RTT_SetTerminal) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_SetTerminal) refers to segger_rtt.o(.data) for _aTerminalId
+    segger_rtt.o(i.SEGGER_RTT_TerminalOut) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_TerminalOut) refers to strlen.o(.text) for strlen
+    segger_rtt.o(i.SEGGER_RTT_TerminalOut) refers to segger_rtt.o(i._GetAvailWriteSpace) for _GetAvailWriteSpace
+    segger_rtt.o(i.SEGGER_RTT_TerminalOut) refers to segger_rtt.o(i._PostTerminalSwitch) for _PostTerminalSwitch
+    segger_rtt.o(i.SEGGER_RTT_TerminalOut) refers to segger_rtt.o(i._WriteBlocking) for _WriteBlocking
+    segger_rtt.o(i.SEGGER_RTT_TerminalOut) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_TerminalOut) refers to segger_rtt.o(.data) for _ActiveTerminal
+    segger_rtt.o(i.SEGGER_RTT_WaitKey) refers to segger_rtt.o(i.SEGGER_RTT_GetKey) for SEGGER_RTT_GetKey
+    segger_rtt.o(i.SEGGER_RTT_Write) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_Write) refers to segger_rtt.o(i.SEGGER_RTT_WriteNoLock) for SEGGER_RTT_WriteNoLock
+    segger_rtt.o(i.SEGGER_RTT_Write) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_WriteDownBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_WriteDownBuffer) refers to segger_rtt.o(i.SEGGER_RTT_WriteDownBufferNoLock) for SEGGER_RTT_WriteDownBufferNoLock
+    segger_rtt.o(i.SEGGER_RTT_WriteDownBuffer) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_WriteDownBufferNoLock) refers to segger_rtt.o(i._GetAvailWriteSpace) for _GetAvailWriteSpace
+    segger_rtt.o(i.SEGGER_RTT_WriteDownBufferNoLock) refers to segger_rtt.o(i._WriteNoCheck) for _WriteNoCheck
+    segger_rtt.o(i.SEGGER_RTT_WriteDownBufferNoLock) refers to segger_rtt.o(i._WriteBlocking) for _WriteBlocking
+    segger_rtt.o(i.SEGGER_RTT_WriteDownBufferNoLock) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_WriteNoLock) refers to segger_rtt.o(i._GetAvailWriteSpace) for _GetAvailWriteSpace
+    segger_rtt.o(i.SEGGER_RTT_WriteNoLock) refers to segger_rtt.o(i._WriteNoCheck) for _WriteNoCheck
+    segger_rtt.o(i.SEGGER_RTT_WriteNoLock) refers to segger_rtt.o(i._WriteBlocking) for _WriteBlocking
+    segger_rtt.o(i.SEGGER_RTT_WriteNoLock) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_WriteSkipNoLock) refers to memcpya.o(.text) for __aeabi_memcpy
+    segger_rtt.o(i.SEGGER_RTT_WriteSkipNoLock) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i.SEGGER_RTT_WriteString) refers to strlen.o(.text) for strlen
+    segger_rtt.o(i.SEGGER_RTT_WriteString) refers to segger_rtt.o(i.SEGGER_RTT_Write) for SEGGER_RTT_Write
+    segger_rtt.o(i.SEGGER_RTT_WriteWithOverwriteNoLock) refers to memcpya.o(.text) for __aeabi_memcpy
+    segger_rtt.o(i.SEGGER_RTT_WriteWithOverwriteNoLock) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i._DoInit) refers to strcpy.o(.text) for strcpy
+    segger_rtt.o(i._DoInit) refers to segger_rtt.o(.bss) for _SEGGER_RTT
+    segger_rtt.o(i._PostTerminalSwitch) refers to segger_rtt.o(i._WriteBlocking) for _WriteBlocking
+    segger_rtt.o(i._PostTerminalSwitch) refers to segger_rtt.o(.data) for _aTerminalId
+    segger_rtt.o(i._WriteBlocking) refers to memcpya.o(.text) for __aeabi_memcpy
+    segger_rtt.o(i._WriteNoCheck) refers to memcpya.o(.text) for __aeabi_memcpy
+    gpio.o(i.GPIO0_IRQHandler) refers to peripheral_gpio.o(i.GIO_GetIntStatus) for GIO_GetIntStatus
+    gpio.o(i.GPIO0_IRQHandler) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    gpio.o(i.GPIO0_IRQHandler) refers to peripheral_gpio.o(i.GIO_ClearIntStatus) for GIO_ClearIntStatus
+    gpio.o(i.NVIC_Configuration) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    gpio.o(i.gpio_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) for SYSCTRL_ClearClkGate
+    gpio.o(i.gpio_init) refers to gpio.o(i.NVIC_Configuration) for NVIC_Configuration
+    gpio.o(i.gpio_init) refers to peripheral_pinctrl.o(i.PINCTRL_SetPadMux) for PINCTRL_SetPadMux
+    gpio.o(i.gpio_init) refers to peripheral_gpio.o(i.GIO_SetDirection) for GIO_SetDirection
+    segger_rtt_printf.o(i.SEGGER_RTT_printf) refers to segger_rtt_printf.o(i.SEGGER_RTT_vprintf) for SEGGER_RTT_vprintf
+    segger_rtt_printf.o(i.SEGGER_RTT_vprintf) refers to segger_rtt_printf.o(i._StoreChar) for _StoreChar
+    segger_rtt_printf.o(i.SEGGER_RTT_vprintf) refers to segger_rtt_printf.o(i._PrintInt) for _PrintInt
+    segger_rtt_printf.o(i.SEGGER_RTT_vprintf) refers to segger_rtt_printf.o(i._PrintUnsigned) for _PrintUnsigned
+    segger_rtt_printf.o(i.SEGGER_RTT_vprintf) refers to segger_rtt.o(i.SEGGER_RTT_Write) for SEGGER_RTT_Write
+    segger_rtt_printf.o(i._PrintInt) refers to segger_rtt_printf.o(i._StoreChar) for _StoreChar
+    segger_rtt_printf.o(i._PrintInt) refers to segger_rtt_printf.o(i._PrintUnsigned) for _PrintUnsigned
+    segger_rtt_printf.o(i._PrintUnsigned) refers to segger_rtt_printf.o(i._StoreChar) for _StoreChar
+    segger_rtt_printf.o(i._PrintUnsigned) refers to segger_rtt_printf.o(.constdata) for _aV2C
+    segger_rtt_printf.o(i._StoreChar) refers to segger_rtt.o(i.SEGGER_RTT_Write) for SEGGER_RTT_Write
+    uart.o(i.NVIC_Configuration) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    uart.o(i.UART0_IRQHandler) refers to uart.o(i.uart_int_fifo_callback) for uart_int_fifo_callback
+    uart.o(i.UART_trigger_DmaSend) refers to strlen.o(.text) for strlen
+    uart.o(i.UART_trigger_DmaSend) refers to peripheral_dma.o(i.DMA_PrepareMem2Peripheral) for DMA_PrepareMem2Peripheral
+    uart.o(i.UART_trigger_DmaSend) refers to peripheral_dma.o(i.DMA_EnableChannel) for DMA_EnableChannel
+    uart.o(i.UART_trigger_DmaSend) refers to uart.o(.data) for src
+    uart.o(i.UART_trigger_DmaSend) refers to uart.o(.bss) for test
+    uart.o(i.all_send_test_data) refers to uart.o(i.uart_send_test) for uart_send_test
+    uart.o(i.all_send_test_data) refers to peripheral_sysctrl.o(i.SYSCTRL_DelayCycles) for SYSCTRL_DelayCycles
+    uart.o(i.config_uart) refers to peripheral_uart.o(i.apUART_Initialize) for apUART_Initialize
+    uart.o(i.dma_uart_init) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    uart.o(i.dma_uart_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) for SYSCTRL_ClearClkGate
+    uart.o(i.dma_uart_init) refers to peripheral_dma.o(i.DMA_EnableChannel) for DMA_EnableChannel
+    uart.o(i.dma_uart_init) refers to uart.o(.bss) for dst
+    uart.o(i.uart_fifo_dma_int) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) for SYSCTRL_ClearClkGate
+    uart.o(i.uart_fifo_dma_int) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGateMulti) for SYSCTRL_ClearClkGateMulti
+    uart.o(i.uart_fifo_dma_int) refers to peripheral_pinctrl.o(i.PINCTRL_SetPadMux) for PINCTRL_SetPadMux
+    uart.o(i.uart_fifo_dma_int) refers to peripheral_pinctrl.o(i.PINCTRL_SelUartRxdIn) for PINCTRL_SelUartRxdIn
+    uart.o(i.uart_fifo_dma_int) refers to uart.o(i.config_uart) for config_uart
+    uart.o(i.uart_fifo_recive_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) for SYSCTRL_ClearClkGate
+    uart.o(i.uart_fifo_recive_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGateMulti) for SYSCTRL_ClearClkGateMulti
+    uart.o(i.uart_fifo_recive_init) refers to peripheral_pinctrl.o(i.PINCTRL_SetPadMux) for PINCTRL_SetPadMux
+    uart.o(i.uart_fifo_recive_init) refers to peripheral_pinctrl.o(i.PINCTRL_SelUartRxdIn) for PINCTRL_SelUartRxdIn
+    uart.o(i.uart_fifo_recive_init) refers to uart.o(i.config_uart) for config_uart
+    uart.o(i.uart_init_board) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) for SYSCTRL_ClearClkGate
+    uart.o(i.uart_init_board) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGateMulti) for SYSCTRL_ClearClkGateMulti
+    uart.o(i.uart_init_board) refers to peripheral_pinctrl.o(i.PINCTRL_SetPadMux) for PINCTRL_SetPadMux
+    uart.o(i.uart_init_board) refers to peripheral_pinctrl.o(i.PINCTRL_SelUartRxdIn) for PINCTRL_SelUartRxdIn
+    uart.o(i.uart_init_board) refers to uart.o(i.config_uart) for config_uart
+    uart.o(i.uart_int_dma_callback) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    uart.o(i.uart_int_dma_callback) refers to peripheral_uart.o(i.apUART_Get_all_raw_int_stat) for apUART_Get_all_raw_int_stat
+    uart.o(i.uart_int_dma_callback) refers to uart.o(i.UART_trigger_DmaSend) for UART_trigger_DmaSend
+    uart.o(i.uart_int_dma_callback) refers to peripheral_uart.o(i.apUART_Check_RXFIFO_EMPTY) for apUART_Check_RXFIFO_EMPTY
+    uart.o(i.uart_int_dma_callback) refers to uart.o(.bss) for dst
+    uart.o(i.uart_int_fifo_callback) refers to peripheral_uart.o(i.apUART_Get_all_raw_int_stat) for apUART_Get_all_raw_int_stat
+    uart.o(i.uart_int_fifo_callback) refers to peripheral_uart.o(i.apUART_Check_RXFIFO_EMPTY) for apUART_Check_RXFIFO_EMPTY
+    uart.o(i.uart_int_fifo_callback) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    uart.o(i.uart_int_fifo_callback) refers to uart.o(.bss) for dst
+    uart.o(i.uart_int_fifo_callback) refers to uart.o(.data) for index
+    uart.o(i.uart_int_status_callback) refers to peripheral_uart.o(i.apUART_Get_ITStatus) for apUART_Get_ITStatus
+    uart.o(i.uart_int_status_callback) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    uart.o(i.uart_int_status_callback) refers to peripheral_uart.o(i.UART_SendData) for UART_SendData
+    uart.o(i.uart_int_status_callback) refers to peripheral_uart.o(i.apUART_Clr_TX_INT) for apUART_Clr_TX_INT
+    uart.o(i.uart_int_status_callback) refers to peripheral_uart.o(i.apUART_Disable_TRANSMIT_INT) for apUART_Disable_TRANSMIT_INT
+    uart.o(i.uart_int_status_callback) refers to peripheral_uart.o(i.UART_ReceData) for UART_ReceData
+    uart.o(i.uart_int_status_callback) refers to peripheral_uart.o(i.apUART_Clr_RECEIVE_INT) for apUART_Clr_RECEIVE_INT
+    uart.o(i.uart_int_status_callback) refers to uart.o(.data) for rc_data
+    uart.o(i.uart_read_test) refers to peripheral_uart.o(i.apUART_Check_RXFIFO_EMPTY) for apUART_Check_RXFIFO_EMPTY
+    uart.o(i.uart_read_test) refers to peripheral_uart.o(i.UART_ReceData) for UART_ReceData
+    uart.o(i.uart_send_test) refers to peripheral_uart.o(i.apUART_Check_TXFIFO_EMPTY) for apUART_Check_TXFIFO_EMPTY
+    uart.o(i.uart_send_test) refers to peripheral_uart.o(i.UART_SendData) for UART_SendData
+    uart.o(i.uart_test_dma_recive) refers to uart.o(i.NVIC_Configuration) for NVIC_Configuration
+    uart.o(i.uart_test_dma_recive) refers to uart.o(i.uart_fifo_dma_int) for uart_fifo_dma_int
+    uart.o(i.uart_test_dma_recive) refers to uart.o(i.dma_uart_init) for dma_uart_init
+    uart.o(i.uart_test_dma_recive) refers to uart.o(i.UART_trigger_DmaSend) for UART_trigger_DmaSend
+    uart.o(i.uart_test_dma_recive) refers to peripheral_sysctrl.o(i.SYSCTRL_DelayCycles) for SYSCTRL_DelayCycles
+    uart.o(i.uart_test_fifo_recive) refers to uart.o(i.uart_test_init) for uart_test_init
+    uart.o(i.uart_test_init) refers to uart.o(i.NVIC_Configuration) for NVIC_Configuration
+    uart.o(i.uart_test_init) refers to uart.o(i.uart_fifo_recive_init) for uart_fifo_recive_init
+    test.o(i.gpio_output_test) refers to gpio.o(i.gpio_init) for gpio_init
+    test.o(i.gpio_output_test) refers to peripheral_gpio.o(i.GIO_ReadValue) for GIO_ReadValue
+    test.o(i.gpio_output_test) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    test.o(i.gpio_output_test) refers to peripheral_sysctrl.o(i.SYSCTRL_DelayCycles) for SYSCTRL_DelayCycles
+    test.o(i.gpio_output_test) refers to test.o(.data) for GPIO_value
+    test.o(i.uart_test) refers to uart.o(i.uart_init_board) for uart_init_board
+    test.o(i.uart_test) refers to uart.o(i.uart_read_test) for uart_read_test
+    test.o(i.uart_test) refers to uart.o(i.uart_send_test) for uart_send_test
+    test.o(i.uart_test) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    test.o(i.uart_test) refers to peripheral_uart.o(i.apUART_Enable_TRANSMIT_INT) for apUART_Enable_TRANSMIT_INT
+    test.o(i.uart_test) refers to peripheral_uart.o(i.UART_SendData) for UART_SendData
+    test.o(i.uart_test) refers to peripheral_sysctrl.o(i.SYSCTRL_DelayCycles) for SYSCTRL_DelayCycles
+    test.o(i.uart_test) refers to test.o(.data) for recive_data
+    pwm.o(i.IR_Cycle_DMA_Init) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) for SYSCTRL_ClearClkGate
+    pwm.o(i.IR_Cycle_DMA_Init) refers to peripheral_sysctrl.o(i.SYSCTRL_SelectUsedDmaItems) for SYSCTRL_SelectUsedDmaItems
+    pwm.o(i.IR_Cycle_DMA_Init) refers to peripheral_dma.o(i.DMA_PrepareMem2Peripheral) for DMA_PrepareMem2Peripheral
+    pwm.o(i.IR_Cycle_DMA_Init) refers to peripheral_dma.o(i.DMA_EnableChannel) for DMA_EnableChannel
+    pwm.o(i.IR_Cycle_DMA_Init) refers to pwm.o(.data) for IR_send_buff
+    pwm.o(i.IR_NECSend_Command) refers to peripheral_pwm.o(i.IR_WriteCarrierData) for IR_WriteCarrierData
+    pwm.o(i.IR_NECSend_Command) refers to peripheral_pwm.o(i.IR_BusyState) for IR_BusyState
+    pwm.o(i.IR_NECSend_Command) refers to pwm.o(i.IR_Write_data) for IR_Write_data
+    pwm.o(i.IR_NECSend_Command) refers to pwm.o(.data) for buff_cnt
+    pwm.o(i.IR_Write_data) refers to peripheral_pwm.o(i.IR_WriteCarrierData) for IR_WriteCarrierData
+    pwm.o(i.IR_Write_data) refers to peripheral_pwm.o(i.IR_BusyState) for IR_BusyState
+    pwm.o(i.IR_out_init) refers to peripheral_sysctrl.o(i.SYSCTRL_EnablePcapMode) for SYSCTRL_EnablePcapMode
+    pwm.o(i.IR_out_init) refers to peripheral_pwm.o(i.PWM_SetMask) for PWM_SetMask
+    pwm.o(i.IR_out_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ReleaseBlock) for SYSCTRL_ReleaseBlock
+    pwm.o(i.IR_out_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) for SYSCTRL_ClearClkGate
+    pwm.o(i.IR_out_init) refers to peripheral_pwm.o(i.PWM_SetMode) for PWM_SetMode
+    pwm.o(i.IR_out_init) refers to peripheral_pwm.o(i.PWM_StepEnabled) for PWM_StepEnabled
+    pwm.o(i.IR_out_init) refers to peripheral_pwm.o(i.IR_CycleCarrierSetup) for IR_CycleCarrierSetup
+    pwm.o(i.IR_out_init) refers to peripheral_pwm.o(i.PWM_Enable) for PWM_Enable
+    pwm.o(i.IR_test_cycle) refers to pwm.o(i.pwn_simple_init) for pwn_simple_init
+    pwm.o(i.IR_test_cycle) refers to pwm.o(i.IR_out_init) for IR_out_init
+    pwm.o(i.IR_test_cycle) refers to pwm.o(i.IR_NECSend_Command) for IR_NECSend_Command
+    pwm.o(i.IR_test_cycle) refers to peripheral_sysctrl.o(i.SYSCTRL_DelayCycles) for SYSCTRL_DelayCycles
+    pwm.o(i.NVIC_Configuration) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    pwm.o(i.PCP_gpio_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGateMulti) for SYSCTRL_ClearClkGateMulti
+    pwm.o(i.PCP_gpio_init) refers to peripheral_sysctrl.o(i.SYSCTRL_EnablePcapMode) for SYSCTRL_EnablePcapMode
+    pwm.o(i.PCP_gpio_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ReleaseBlock) for SYSCTRL_ReleaseBlock
+    pwm.o(i.PCP_gpio_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) for SYSCTRL_ClearClkGate
+    pwm.o(i.PCP_gpio_init) refers to peripheral_pwm.o(i.PCAP_Enable) for PCAP_Enable
+    pwm.o(i.PCP_gpio_init) refers to peripheral_pwm.o(i.PCAP_EnableEvents) for PCAP_EnableEvents
+    pwm.o(i.PCP_gpio_init) refers to peripheral_pinctrl.o(i.PINCTRL_SelPCAPIn) for PINCTRL_SelPCAPIn
+    pwm.o(i.PCP_gpio_init) refers to pwm.o(i.NVIC_Configuration) for NVIC_Configuration
+    pwm.o(i.PCP_gpio_init) refers to peripheral_pwm.o(i.PWM_FifoIntEnable) for PWM_FifoIntEnable
+    pwm.o(i.PCP_gpio_init) refers to peripheral_pwm.o(i.PCAP_CounterEnable) for PCAP_CounterEnable
+    pwm.o(i.PCP_gpio_init) refers to peripheral_pwm.o(i.PWM_Enable) for PWM_Enable
+    pwm.o(i.PWM0_IRQHandler) refers to peripheral_pwm.o(i.PWM_GetFifoStatus) for PWM_GetFifoStatus
+    pwm.o(i.PWM0_IRQHandler) refers to debug_print.o(i.debug_uart) for debug_uart
+    pwm.o(i.PWM0_IRQHandler) refers to peripheral_pwm.o(i.PCAP_ReadData) for PCAP_ReadData
+    pwm.o(i.PWM_BreathingLightInit) refers to peripheral_sysctrl.o(i.SYSCTRL_GetClk) for SYSCTRL_GetClk
+    pwm.o(i.PWM_BreathingLightInit) refers to peripheral_pwm.o(i.PWM_HaltCtrlEnable) for PWM_HaltCtrlEnable
+    pwm.o(i.PWM_BreathingLightInit) refers to peripheral_pwm.o(i.PWM_Enable) for PWM_Enable
+    pwm.o(i.PWM_BreathingLightInit) refers to peripheral_pwm.o(i.PWM_SetPeraThreshold) for PWM_SetPeraThreshold
+    pwm.o(i.PWM_BreathingLightInit) refers to peripheral_pwm.o(i.PWM_SetHighThreshold) for PWM_SetHighThreshold
+    pwm.o(i.PWM_BreathingLightInit) refers to peripheral_pwm.o(i.PWM_SetStepCnt) for PWM_SetStepCnt
+    pwm.o(i.PWM_BreathingLightInit) refers to peripheral_pwm.o(i.PWM_StepLoopEnabled) for PWM_StepLoopEnabled
+    pwm.o(i.PWM_BreathingLightInit) refers to peripheral_pwm.o(i.PWM_StepEnabled) for PWM_StepEnabled
+    pwm.o(i.PWM_BreathingLightInit) refers to peripheral_pwm.o(i.PWM_SetMode) for PWM_SetMode
+    pwm.o(i.PWM_BreathingLightInit) refers to peripheral_pwm.o(i.PWM_SetMask) for PWM_SetMask
+    pwm.o(i.PWM_SetupSimpleInit) refers to peripheral_sysctrl.o(i.SYSCTRL_GetClk) for SYSCTRL_GetClk
+    pwm.o(i.PWM_SetupSimpleInit) refers to peripheral_pwm.o(i.PWM_HaltCtrlEnable) for PWM_HaltCtrlEnable
+    pwm.o(i.PWM_SetupSimpleInit) refers to peripheral_pwm.o(i.PWM_Enable) for PWM_Enable
+    pwm.o(i.PWM_SetupSimpleInit) refers to peripheral_pwm.o(i.PWM_SetPeraThreshold) for PWM_SetPeraThreshold
+    pwm.o(i.PWM_SetupSimpleInit) refers to peripheral_pwm.o(i.PWM_SetHighThreshold) for PWM_SetHighThreshold
+    pwm.o(i.PWM_SetupSimpleInit) refers to peripheral_pwm.o(i.PWM_SetDiedZoneThreshold) for PWM_SetDiedZoneThreshold
+    pwm.o(i.PWM_SetupSimpleInit) refers to peripheral_pwm.o(i.PWM_SetMode) for PWM_SetMode
+    pwm.o(i.PWM_SetupSimpleInit) refers to peripheral_pwm.o(i.PWM_SetMask) for PWM_SetMask
+    pwm.o(i.pcap_test_read) refers to pwm.o(i.PCP_gpio_init) for PCP_gpio_init
+    pwm.o(i.pcap_test_read) refers to peripheral_sysctrl.o(i.SYSCTRL_DelayCycles) for SYSCTRL_DelayCycles
+    pwm.o(i.pwm_test_simple) refers to pwm.o(i.pwn_simple_init) for pwn_simple_init
+    pwm.o(i.pwm_test_simple) refers to pwm.o(i.PWM_BreathingLightInit) for PWM_BreathingLightInit
+    pwm.o(i.pwm_test_simple) refers to peripheral_sysctrl.o(i.SYSCTRL_DelayCycles) for SYSCTRL_DelayCycles
+    pwm.o(i.pwm_test_step) refers to pwm.o(i.pwn_simple_init) for pwn_simple_init
+    pwm.o(i.pwm_test_step) refers to pwm.o(i.PWM_SetupSimpleInit) for PWM_SetupSimpleInit
+    pwm.o(i.pwm_test_step) refers to peripheral_sysctrl.o(i.SYSCTRL_DelayCycles) for SYSCTRL_DelayCycles
+    pwm.o(i.pwn_simple_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGateMulti) for SYSCTRL_ClearClkGateMulti
+    pwm.o(i.pwn_simple_init) refers to peripheral_pinctrl.o(i.PINCTRL_SetPadMux) for PINCTRL_SetPadMux
+    iic_master_920.o(i.I2C0_IRQHandler) refers to iic_master_920.o(i.peripherals_i2c_isr) for peripherals_i2c_isr
+    iic_master_920.o(i.NVIC_Configuration) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    iic_master_920.o(i.iic_gpio_config) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGateMulti) for SYSCTRL_ClearClkGateMulti
+    iic_master_920.o(i.iic_gpio_config) refers to peripheral_pinctrl.o(i.PINCTRL_SelI2cIn) for PINCTRL_SelI2cIn
+    iic_master_920.o(i.iic_init) refers to iic_master_920.o(i.iic_gpio_config) for iic_gpio_config
+    iic_master_920.o(i.iic_init) refers to iic_master_920.o(i.NVIC_Configuration) for NVIC_Configuration
+    iic_master_920.o(i.iic_init) refers to iic_master_920.o(i.setup_peripherals_i2c_module) for setup_peripherals_i2c_module
+    iic_master_920.o(i.iic_test) refers to iic_master_920.o(i.iic_init) for iic_init
+    iic_master_920.o(i.iic_test) refers to iic_master_920.o(i.peripheral_i2c_send_data) for peripheral_i2c_send_data
+    iic_master_920.o(i.iic_test) refers to peripheral_sysctrl.o(i.SYSCTRL_DelayCycles) for SYSCTRL_DelayCycles
+    iic_master_920.o(i.iic_test) refers to iic_master_920.o(.bss) for iic_buf
+    iic_master_920.o(i.peripheral_i2c_read_data) refers to peripheral_i2c.o(i.I2C_IntDisable) for I2C_IntDisable
+    iic_master_920.o(i.peripheral_i2c_read_data) refers to peripheral_i2c.o(i.I2C_IntEnable) for I2C_IntEnable
+    iic_master_920.o(i.peripheral_i2c_read_data) refers to peripheral_i2c.o(i.I2C_CtrlUpdateDirection) for I2C_CtrlUpdateDirection
+    iic_master_920.o(i.peripheral_i2c_read_data) refers to peripheral_i2c.o(i.I2C_CtrlUpdateDataCnt) for I2C_CtrlUpdateDataCnt
+    iic_master_920.o(i.peripheral_i2c_read_data) refers to peripheral_i2c.o(i.I2C_CommandWrite) for I2C_CommandWrite
+    iic_master_920.o(i.peripheral_i2c_read_data) refers to iic_master_920.o(.bss) for read_data_buf
+    iic_master_920.o(i.peripheral_i2c_read_data) refers to iic_master_920.o(.data) for read_buf_ptr
+    iic_master_920.o(i.peripheral_i2c_send_data) refers to peripheral_i2c.o(i.I2C_IntDisable) for I2C_IntDisable
+    iic_master_920.o(i.peripheral_i2c_send_data) refers to peripheral_i2c.o(i.I2C_IntEnable) for I2C_IntEnable
+    iic_master_920.o(i.peripheral_i2c_send_data) refers to peripheral_i2c.o(i.I2C_CtrlUpdateDirection) for I2C_CtrlUpdateDirection
+    iic_master_920.o(i.peripheral_i2c_send_data) refers to peripheral_i2c.o(i.I2C_CtrlUpdateDataCnt) for I2C_CtrlUpdateDataCnt
+    iic_master_920.o(i.peripheral_i2c_send_data) refers to peripheral_i2c.o(i.I2C_CommandWrite) for I2C_CommandWrite
+    iic_master_920.o(i.peripheral_i2c_send_data) refers to iic_master_920.o(.data) for wr_flag
+    iic_master_920.o(i.peripherals_i2c_isr) refers to peripheral_i2c.o(i.I2C_GetIntState) for I2C_GetIntState
+    iic_master_920.o(i.peripherals_i2c_isr) refers to peripheral_i2c.o(i.I2C_FifoEmpty) for I2C_FifoEmpty
+    iic_master_920.o(i.peripherals_i2c_isr) refers to peripheral_i2c.o(i.I2C_DataRead) for I2C_DataRead
+    iic_master_920.o(i.peripherals_i2c_isr) refers to peripheral_i2c.o(i.I2C_FifoFull) for I2C_FifoFull
+    iic_master_920.o(i.peripherals_i2c_isr) refers to peripheral_i2c.o(i.I2C_DataWrite) for I2C_DataWrite
+    iic_master_920.o(i.peripherals_i2c_isr) refers to peripheral_i2c.o(i.I2C_IntDisable) for I2C_IntDisable
+    iic_master_920.o(i.peripherals_i2c_isr) refers to peripheral_i2c.o(i.I2C_CommandWrite) for I2C_CommandWrite
+    iic_master_920.o(i.peripherals_i2c_isr) refers to peripheral_i2c.o(i.I2C_ClearIntState) for I2C_ClearIntState
+    iic_master_920.o(i.peripherals_i2c_isr) refers to iic_master_920.o(.data) for wr_flag
+    iic_master_920.o(i.setup_peripherals_i2c_module) refers to peripheral_i2c.o(i.I2C_Config) for I2C_Config
+    iic_master_920.o(i.setup_peripherals_i2c_module) refers to peripheral_i2c.o(i.I2C_ConfigClkFrequency) for I2C_ConfigClkFrequency
+    iic_master_920.o(i.setup_peripherals_i2c_module) refers to peripheral_i2c.o(i.I2C_Enable) for I2C_Enable
+    iic_master_920.o(i.setup_peripherals_i2c_module) refers to peripheral_i2c.o(i.I2C_IntEnable) for I2C_IntEnable
+    iic_master_920.o(i.setup_peripherals_i2c_module) refers to peripheral_i2c.o(i.I2C_IntDisable) for I2C_IntDisable
+    debug_print.o(i.ano_output) refers to ano_protocol.o(i.packed_ano) for packed_ano
+    debug_print.o(i.ano_output) refers to debug_print.o(i.debug_hex) for debug_hex
+    debug_print.o(i.ano_output) refers to debug_print.o(.bss) for ano_buf
+    debug_print.o(i.ano_output) refers to debug_print.o(.data) for debug_len
+    debug_print.o(i.debug_hex) refers to debug_print.o(i.write_uart_buffer) for write_uart_buffer
+    debug_print.o(i.debug_uart) refers to memseta.o(.text) for __aeabi_memclr4
+    debug_print.o(i.debug_uart) refers to printfa.o(i.__0vsnprintf) for vsnprintf
+    debug_print.o(i.debug_uart) refers to debug_print.o(i.write_uart_buffer) for write_uart_buffer
+    debug_print.o(i.test_ano) refers to ano_protocol.o(i.packed_ano) for packed_ano
+    debug_print.o(i.test_ano) refers to debug_print.o(i.debug_hex) for debug_hex
+    debug_print.o(i.test_ano) refers to debug_print.o(.data) for i_num
+    debug_print.o(i.test_ano) refers to debug_print.o(.constdata) for g_SineWave128
+    debug_print.o(i.test_ano) refers to debug_print.o(.bss) for ano_buf
+    debug_print.o(i.write_uart_buffer) refers to uart.o(i.uart_send_test) for uart_send_test
+    pingpong.o(i.DMA_PingPongDisable) refers to peripheral_dma.o(i.DMA_AbortChannel) for DMA_AbortChannel
+    pingpong.o(i.DMA_PingPongDisable) refers to peripheral_dma.o(i.DMA_Reset) for DMA_Reset
+    pingpong.o(i.DMA_PingPongDisable) refers to malloc.o(i.free) for free
+    pingpong.o(i.DMA_PingPongEnable) refers to peripheral_dma.o(i.DMA_Reset) for DMA_Reset
+    pingpong.o(i.DMA_PingPongEnable) refers to malloc.o(i.malloc) for malloc
+    pingpong.o(i.DMA_PingPongEnable) refers to peripheral_dma.o(i.DMA_EnableChannel) for DMA_EnableChannel
+    pingpong.o(i.DMA_PingPongIntProc) refers to peripheral_dma.o(i.DMA_EnableChannel) for DMA_EnableChannel
+    pingpong.o(i.DMA_PingPongSetup) refers to pingpong.o(i.FindBurstNum) for FindBurstNum
+    pingpong.o(i.DMA_PingPongSetup) refers to peripheral_dma.o(i.DMA_PreparePeripheral2Mem) for DMA_PreparePeripheral2Mem
+    qdec.o(i.qudec_test) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGateMulti) for SYSCTRL_ClearClkGateMulti
+    qdec.o(i.qudec_test) refers to peripheral_sysctrl.o(i.SYSCTRL_ReleaseBlock) for SYSCTRL_ReleaseBlock
+    qdec.o(i.qudec_test) refers to peripheral_pinctrl.o(i.PINCTRL_SelQDECIn) for PINCTRL_SelQDECIn
+    qdec.o(i.qudec_test) refers to peripheral_sysctrl.o(i.SYSCTRL_SelectQDECClk) for SYSCTRL_SelectQDECClk
+    qdec.o(i.qudec_test) refers to peripheral_qdec.o(i.QDEC_EnableQdecDiv) for QDEC_EnableQdecDiv
+    qdec.o(i.qudec_test) refers to peripheral_qdec.o(i.QDEC_QdecCfg) for QDEC_QdecCfg
+    qdec.o(i.qudec_test) refers to peripheral_qdec.o(i.QDEC_ChannelEnable) for QDEC_ChannelEnable
+    qdec.o(i.qudec_test) refers to peripheral_qdec.o(i.QDEC_GetData) for QDEC_GetData
+    qdec.o(i.qudec_test) refers to peripheral_qdec.o(i.QDEC_GetDirection) for QDEC_GetDirection
+    qdec.o(i.qudec_test) refers to debug_print.o(i.debug_uart) for debug_uart
+    keyscan_normal.o(i.KeyScan_IRQHandler) refers to peripheral_keyscan.o(i.KEYSCAN_LoopIntClr) for KEYSCAN_LoopIntClr
+    keyscan_normal.o(i.KeyScan_IRQHandler) refers to peripheral_keyscan.o(i.KEYSCAN_GetKeyData) for KEYSCAN_GetKeyData
+    keyscan_normal.o(i.KeyScan_IRQHandler) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    keyscan_normal.o(i.KeyScan_IRQHandler) refers to debug_print.o(i.debug_uart) for debug_uart
+    keyscan_normal.o(i.KeyScan_IRQHandler) refers to keyscan_normal.o(i.key_scan_check) for key_scan_check
+    keyscan_normal.o(i.KeyScan_IRQHandler) refers to peripheral_keyscan.o(i.KEYSCAN_GetIntStateFifoEmptyRaw) for KEYSCAN_GetIntStateFifoEmptyRaw
+    keyscan_normal.o(i.NVIC_Configuration) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    keyscan_normal.o(i.key_scan_check) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    keyscan_normal.o(i.key_scan_check) refers to keyscan_normal.o(.bss) for key_vale
+    keyscan_normal.o(i.key_scan_check) refers to keyscan_normal.o(.data) for num
+    keyscan_normal.o(i.key_scan_normal_test) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGateMulti) for SYSCTRL_ClearClkGateMulti
+    keyscan_normal.o(i.key_scan_normal_test) refers to keyscan_normal.o(i.NVIC_Configuration) for NVIC_Configuration
+    keyscan_normal.o(i.key_scan_normal_test) refers to peripheral_keyscan.o(i.KEYSCAN_Initialize) for KEYSCAN_Initialize
+    keyscan_normal.o(i.key_scan_normal_test) refers to peripheral_sysctrl.o(i.SYSCTRL_DelayCycles) for SYSCTRL_DelayCycles
+    keyscan_normal.o(i.key_scan_normal_test) refers to keyscan_normal.o(.data) for keyscan_set
+    spi_flash.o(i.NVIC_Configuration) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    spi_flash.o(i.QSPI_IRQHandler) refers to spi_flash.o(i.peripherals_spi_isr) for peripherals_spi_isr
+    spi_flash.o(i.peripherals_spi_isr) refers to peripheral_ssp.o(i.apSSP_GetIntRawStatus) for apSSP_GetIntRawStatus
+    spi_flash.o(i.peripherals_spi_isr) refers to peripheral_ssp.o(i.apSSP_ClearIntStatus) for apSSP_ClearIntStatus
+    spi_flash.o(i.peripherals_spi_send_data) refers to peripheral_ssp.o(i.apSSP_WriteCmd) for apSSP_WriteCmd
+    spi_flash.o(i.peripherals_spi_send_data) refers to peripheral_ssp.o(i.apSSP_WriteFIFO) for apSSP_WriteFIFO
+    spi_flash.o(i.peripherals_spi_send_data) refers to spi_flash.o(.data) for data
+    spi_flash.o(i.setup_peripherals_spi_module) refers to peripheral_ssp.o(i.apSSP_DeviceParametersSet) for apSSP_DeviceParametersSet
+    spi_flash.o(i.setup_peripherals_spi_pin) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGateMulti) for SYSCTRL_ClearClkGateMulti
+    spi_flash.o(i.setup_peripherals_spi_pin) refers to peripheral_pinctrl.o(i.PINCTRL_SelSpiPins) for PINCTRL_SelSpiPins
+    spi_flash.o(i.setup_peripherals_spi_pin) refers to peripheral_pinctrl.o(i.PINCTRL_Pull) for PINCTRL_Pull
+    spi_flash.o(i.spi_flash_addr_read) refers to peripheral_ssp.o(i.apSSP_SetAddrEn) for apSSP_SetAddrEn
+    spi_flash.o(i.spi_flash_addr_read) refers to peripheral_ssp.o(i.apSSP_SetCmdEn) for apSSP_SetCmdEn
+    spi_flash.o(i.spi_flash_addr_read) refers to peripheral_ssp.o(i.apSSP_SetTransMode) for apSSP_SetTransMode
+    spi_flash.o(i.spi_flash_addr_read) refers to peripheral_ssp.o(i.apSSP_SetTransferControlRdTranCnt) for apSSP_SetTransferControlRdTranCnt
+    spi_flash.o(i.spi_flash_addr_read) refers to peripheral_ssp.o(i.apSSP_WriteCmd) for apSSP_WriteCmd
+    spi_flash.o(i.spi_flash_addr_read) refers to peripheral_ssp.o(i.apSSP_RxFifoEmpty) for apSSP_RxFifoEmpty
+    spi_flash.o(i.spi_flash_addr_read) refers to peripheral_ssp.o(i.apSSP_ReadFIFO) for apSSP_ReadFIFO
+    spi_flash.o(i.spi_flash_addr_read) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    spi_flash.o(i.spi_flash_addr_write) refers to peripheral_ssp.o(i.apSSP_SetAddrEn) for apSSP_SetAddrEn
+    spi_flash.o(i.spi_flash_addr_write) refers to peripheral_ssp.o(i.apSSP_SetCmdEn) for apSSP_SetCmdEn
+    spi_flash.o(i.spi_flash_addr_write) refers to peripheral_ssp.o(i.apSSP_SetTransMode) for apSSP_SetTransMode
+    spi_flash.o(i.spi_flash_addr_write) refers to peripheral_ssp.o(i.apSSP_SetTransferControlWrTranCnt) for apSSP_SetTransferControlWrTranCnt
+    spi_flash.o(i.spi_flash_addr_write) refers to peripheral_ssp.o(i.apSSP_WriteCmd) for apSSP_WriteCmd
+    spi_flash.o(i.spi_flash_addr_write) refers to peripheral_ssp.o(i.apSSP_TxFifoFull) for apSSP_TxFifoFull
+    spi_flash.o(i.spi_flash_addr_write) refers to peripheral_ssp.o(i.apSSP_WriteFIFO) for apSSP_WriteFIFO
+    spi_flash.o(i.spi_flash_read) refers to peripheral_ssp.o(i.apSSP_SetAddrEn) for apSSP_SetAddrEn
+    spi_flash.o(i.spi_flash_read) refers to peripheral_ssp.o(i.apSSP_SetCmdEn) for apSSP_SetCmdEn
+    spi_flash.o(i.spi_flash_read) refers to peripheral_ssp.o(i.apSSP_SetTransMode) for apSSP_SetTransMode
+    spi_flash.o(i.spi_flash_read) refers to peripheral_ssp.o(i.apSSP_SetTransferControlRdTranCnt) for apSSP_SetTransferControlRdTranCnt
+    spi_flash.o(i.spi_flash_read) refers to peripheral_ssp.o(i.apSSP_WriteCmd) for apSSP_WriteCmd
+    spi_flash.o(i.spi_flash_read) refers to peripheral_ssp.o(i.apSSP_RxFifoEmpty) for apSSP_RxFifoEmpty
+    spi_flash.o(i.spi_flash_read) refers to peripheral_ssp.o(i.apSSP_ReadFIFO) for apSSP_ReadFIFO
+    spi_flash.o(i.spi_flash_read) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    spi_flash.o(i.spi_flash_send_command) refers to peripheral_ssp.o(i.apSSP_SetAddrEn) for apSSP_SetAddrEn
+    spi_flash.o(i.spi_flash_send_command) refers to peripheral_ssp.o(i.apSSP_SetCmdEn) for apSSP_SetCmdEn
+    spi_flash.o(i.spi_flash_send_command) refers to peripheral_ssp.o(i.apSSP_SetTransMode) for apSSP_SetTransMode
+    spi_flash.o(i.spi_flash_send_command) refers to peripheral_ssp.o(i.apSSP_SetTransferControlWrTranCnt) for apSSP_SetTransferControlWrTranCnt
+    spi_flash.o(i.spi_flash_send_command) refers to peripheral_ssp.o(i.apSSP_WriteCmd) for apSSP_WriteCmd
+    spi_flash.o(i.spi_flash_send_command) refers to peripheral_ssp.o(i.apSSP_WriteFIFO) for apSSP_WriteFIFO
+    spi_flash.o(i.spi_flash_write) refers to peripheral_ssp.o(i.apSSP_SetAddrEn) for apSSP_SetAddrEn
+    spi_flash.o(i.spi_flash_write) refers to peripheral_ssp.o(i.apSSP_SetCmdEn) for apSSP_SetCmdEn
+    spi_flash.o(i.spi_flash_write) refers to peripheral_ssp.o(i.apSSP_SetTransMode) for apSSP_SetTransMode
+    spi_flash.o(i.spi_flash_write) refers to peripheral_ssp.o(i.apSSP_SetTransferControlWrTranCnt) for apSSP_SetTransferControlWrTranCnt
+    spi_flash.o(i.spi_flash_write) refers to peripheral_ssp.o(i.apSSP_WriteCmd) for apSSP_WriteCmd
+    spi_flash.o(i.spi_flash_write) refers to peripheral_ssp.o(i.apSSP_TxFifoFull) for apSSP_TxFifoFull
+    spi_flash.o(i.spi_flash_write) refers to peripheral_ssp.o(i.apSSP_WriteFIFO) for apSSP_WriteFIFO
+    spi_flash.o(i.spi_test) refers to spi_flash.o(i.setup_peripherals_spi_pin) for setup_peripherals_spi_pin
+    spi_flash.o(i.spi_test) refers to memseta.o(.text) for __aeabi_memset
+    spi_flash.o(i.spi_test) refers to spi_flash.o(i.spi_flash_send_command) for spi_flash_send_command
+    spi_flash.o(i.spi_test) refers to spi_flash.o(i.spi_flash_read) for spi_flash_read
+    spi_flash.o(i.spi_test) refers to peripheral_sysctrl.o(i.SYSCTRL_DelayCycles) for SYSCTRL_DelayCycles
+    spi_flash.o(i.spi_test) refers to spi_flash.o(i.spi_flash_addr_write) for spi_flash_addr_write
+    spi_flash.o(i.spi_test) refers to spi_flash.o(i.spi_flash_addr_read) for spi_flash_addr_read
+    spi_flash.o(i.spi_test) refers to spi_flash.o(.bss) for send_spi_data
+    spi_flash.o(i.spi_test) refers to spi_flash.o(.data) for read_status
+    timer_pte.o(i.NVIC_Configuration) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    timer_pte.o(i.TIMER0_IRQHandler) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    timer_pte.o(i.TIMER0_IRQHandler) refers to peripheral_timer.o(i.TMR_IntClr) for TMR_IntClr
+    timer_pte.o(i.TIMER0_IRQHandler) refers to timer_pte.o(.data) for data
+    timer_pte.o(i.TIMER1_IRQHandler) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    timer_pte.o(i.TIMER1_IRQHandler) refers to peripheral_timer.o(i.TMR_IntClr) for TMR_IntClr
+    timer_pte.o(i.TIMER1_IRQHandler) refers to timer_pte.o(.data) for data
+    timer_pte.o(i.pte_test) refers to timer_pte.o(i.timer1_init) for timer1_init
+    timer_pte.o(i.pte_test) refers to timer_pte.o(i.timer0_init) for timer0_init
+    timer_pte.o(i.pte_test) refers to timer_pte.o(i.NVIC_Configuration) for NVIC_Configuration
+    timer_pte.o(i.pte_test) refers to timer_pte.o(.data) for reg_ptr
+    timer_pte.o(i.timer0_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) for SYSCTRL_ClearClkGate
+    timer_pte.o(i.timer0_init) refers to peripheral_timer.o(i.TMR_SetOpMode) for TMR_SetOpMode
+    timer_pte.o(i.timer0_init) refers to peripheral_timer.o(i.TMR_GetClk) for TMR_GetClk
+    timer_pte.o(i.timer0_init) refers to peripheral_timer.o(i.TMR_SetReload) for TMR_SetReload
+    timer_pte.o(i.timer0_init) refers to peripheral_timer.o(i.TMR_IntEnable) for TMR_IntEnable
+    timer_pte.o(i.timer1_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) for SYSCTRL_ClearClkGate
+    timer_pte.o(i.timer1_init) refers to peripheral_timer.o(i.TMR_SetOpMode) for TMR_SetOpMode
+    timer_pte.o(i.timer1_init) refers to peripheral_timer.o(i.TMR_GetClk) for TMR_GetClk
+    timer_pte.o(i.timer1_init) refers to peripheral_timer.o(i.TMR_SetReload) for TMR_SetReload
+    timer_pte.o(i.timer1_init) refers to peripheral_timer.o(i.TMR_Enable) for TMR_Enable
+    timer_pte.o(i.timer1_init) refers to peripheral_timer.o(i.TMR_IntEnable) for TMR_IntEnable
+    pdm.o(i.DMA_IRQHandler) refers to peripheral_dma.o(i.DMA_GetChannelIntState) for DMA_GetChannelIntState
+    pdm.o(i.DMA_IRQHandler) refers to peripheral_dma.o(i.DMA_ClearChannelIntState) for DMA_ClearChannelIntState
+    pdm.o(i.DMA_IRQHandler) refers to peripheral_dma.o(i.DMA_EnableChannel) for DMA_EnableChannel
+    pdm.o(i.DMA_IRQHandler) refers to pdm.o(.data) for dma_data
+    pdm.o(i.DMA_IRQHandler) refers to pdm.o(.bss) for pdm_dma
+    pdm.o(i.NVIC_Configuration) refers to misc.o(i.NVIC_Init) for NVIC_Init
+    pdm.o(i.pdm_dma_init) refers to pdm.o(i.NVIC_Configuration) for NVIC_Configuration
+    pdm.o(i.pdm_dma_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) for SYSCTRL_ClearClkGate
+    pdm.o(i.pdm_dma_init) refers to peripheral_sysctrl.o(i.SYSCTRL_SelectUsedDmaItems) for SYSCTRL_SelectUsedDmaItems
+    pdm.o(i.pdm_dma_init) refers to peripheral_dma.o(i.DMA_PreparePeripheral2Mem) for DMA_PreparePeripheral2Mem
+    pdm.o(i.pdm_dma_init) refers to peripheral_dma.o(i.DMA_EnableChannel) for DMA_EnableChannel
+    pdm.o(i.pdm_dma_init) refers to pdm.o(.bss) for pdm_dma
+    pdm.o(i.pdm_init) refers to pdm.o(i.set_reg_bit) for set_reg_bit
+    pdm.o(i.pdm_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) for SYSCTRL_ClearClkGate
+    pdm.o(i.pdm_init) refers to peripheral_sysctrl.o(i.SYSCTRL_Update_sdm_clk) for SYSCTRL_Update_sdm_clk
+    pdm.o(i.pdm_init) refers to pdm.o(i.set_reg_bits) for set_reg_bits
+    pdm.o(i.pdm_io_init) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) for SYSCTRL_ClearClkGate
+    pdm.o(i.pdm_io_init) refers to peripheral_pinctrl.o(i.PINCTRL_SelAsdm) for PINCTRL_SelAsdm
+    pdm.o(i.pdm_test) refers to pdm.o(i.pdm_io_init) for pdm_io_init
+    pdm.o(i.pdm_test) refers to pdm.o(i.pdm_init) for pdm_init
+    pdm.o(i.pdm_test) refers to pdm.o(i.pdm_dma_init) for pdm_dma_init
+    pdm.o(i.pdm_test) refers to debug_print.o(i.debug_hex) for debug_hex
+    pdm.o(i.pdm_test) refers to pdm.o(.data) for dma_data
+    pdm.o(i.pdm_test) refers to pdm.o(.bss) for mda_rc_pdm_data
+    ano_protocol.o(i.packed_ano) refers to memcpya.o(.text) for __aeabi_memcpy
+    ano_protocol.o(i.packed_ano) refers to ano_protocol.o(i.check_sum_add) for check_sum_add
+    startup_ing920.o(RESET) refers to startup_ing920.o(STACK) for __initial_sp
+    startup_ing920.o(RESET) refers to startup_ing920.o(.text) for Reset_Handler
+    startup_ing920.o(RESET) refers to main.o(i.HardFault_Handler) for HardFault_Handler
+    startup_ing920.o(RESET) refers to timer_delay.o(i.SysTick_Handler) for SysTick_Handler
+    startup_ing920.o(RESET) refers to keyscan_normal.o(i.KeyScan_IRQHandler) for KeyScan_IRQHandler
+    startup_ing920.o(RESET) refers to gpio.o(i.GPIO0_IRQHandler) for GPIO0_IRQHandler
+    startup_ing920.o(RESET) refers to timer_pte.o(i.TIMER0_IRQHandler) for TIMER0_IRQHandler
+    startup_ing920.o(RESET) refers to spi_flash.o(i.QSPI_IRQHandler) for QSPI_IRQHandler
+    startup_ing920.o(RESET) refers to uart.o(i.UART0_IRQHandler) for UART0_IRQHandler
+    startup_ing920.o(RESET) refers to iic_master_920.o(i.I2C0_IRQHandler) for I2C0_IRQHandler
+    startup_ing920.o(RESET) refers to pdm.o(i.DMA_IRQHandler) for DMA_IRQHandler
+    startup_ing920.o(RESET) refers to pwm.o(i.PWM0_IRQHandler) for PWM0_IRQHandler
+    startup_ing920.o(RESET) refers to timer_pte.o(i.TIMER1_IRQHandler) for TIMER1_IRQHandler
+    startup_ing920.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    peripheral_gpio.o(i.GIO_ConfigIntSource) refers to peripheral_gpio.o(i.map_int_mode) for map_int_mode
+    peripheral_gpio.o(i.GIO_ConfigIntSource) refers to peripheral_gpio.o(i.GIO_MaskedWrite) for GIO_MaskedWrite
+    peripheral_gpio.o(i.GIO_DebounceEn) refers to peripheral_gpio.o(i.GIO_MaskedWrite) for GIO_MaskedWrite
+    peripheral_gpio.o(i.GIO_SetDirection) refers to peripheral_gpio.o(i.GIO_MaskedWrite) for GIO_MaskedWrite
+    peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) refers to peripheral_sysctrl.o(i.SYSCTRL_ClkGateCtrl) for SYSCTRL_ClkGateCtrl
+    peripheral_sysctrl.o(i.SYSCTRL_ClearClkGateMulti) refers to peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate) for SYSCTRL_ClearClkGate
+    peripheral_sysctrl.o(i.SYSCTRL_ClkGateCtrl) refers to peripheral_sysctrl.o(i.set_reg_bit) for set_reg_bit
+    peripheral_sysctrl.o(i.SYSCTRL_DelayCycles) refers to peripheral_sysctrl.o(i.SYSCTRL_GetHClk) for SYSCTRL_GetHClk
+    peripheral_sysctrl.o(i.SYSCTRL_DelayCycles) refers to uldiv.o(.text) for __aeabi_uldivmod
+    peripheral_sysctrl.o(i.SYSCTRL_EnablePcapMode) refers to peripheral_sysctrl.o(i.set_reg_bit) for set_reg_bit
+    peripheral_sysctrl.o(i.SYSCTRL_ReleaseBlock) refers to peripheral_sysctrl.o(i.SYSCTRL_ResetBlockCtrl) for SYSCTRL_ResetBlockCtrl
+    peripheral_sysctrl.o(i.SYSCTRL_ResetBlock) refers to peripheral_sysctrl.o(i.SYSCTRL_ResetBlockCtrl) for SYSCTRL_ResetBlockCtrl
+    peripheral_sysctrl.o(i.SYSCTRL_ResetBlockCtrl) refers to peripheral_sysctrl.o(i.set_reg_bit) for set_reg_bit
+    peripheral_sysctrl.o(i.SYSCTRL_SelectMemoryBlocks) refers to peripheral_sysctrl.o(i.set_reg_bits) for set_reg_bits
+    peripheral_sysctrl.o(i.SYSCTRL_SelectQDECClk) refers to peripheral_sysctrl.o(i.set_reg_bit) for set_reg_bit
+    peripheral_sysctrl.o(i.SYSCTRL_SelectQDECClk) refers to peripheral_sysctrl.o(i.set_reg_bits) for set_reg_bits
+    peripheral_sysctrl.o(i.SYSCTRL_SetClkGate) refers to peripheral_sysctrl.o(i.SYSCTRL_ClkGateCtrl) for SYSCTRL_ClkGateCtrl
+    peripheral_sysctrl.o(i.SYSCTRL_SetClkGateMulti) refers to peripheral_sysctrl.o(i.SYSCTRL_SetClkGate) for SYSCTRL_SetClkGate
+    peripheral_sysctrl.o(i.SYSCTRL_Update_sdm_clk) refers to peripheral_sysctrl.o(i.set_reg_bits) for set_reg_bits
+    peripheral_sysctrl.o(i.SYSCTRL_Update_sdm_clk) refers to peripheral_sysctrl.o(i.set_reg_bit) for set_reg_bit
+    peripheral_pinctrl.o(i.PINCTRL_EnableAnalog) refers to peripheral_pinctrl.o(i.PINCTRL_SetPadMux) for PINCTRL_SetPadMux
+    peripheral_pinctrl.o(i.PINCTRL_EnableAnalog) refers to peripheral_pinctrl.o(i.PINCTRL_Pull) for PINCTRL_Pull
+    peripheral_pinctrl.o(i.PINCTRL_EnableAntSelPins) refers to peripheral_pinctrl.o(i.PINCTRL_SetPadMux) for PINCTRL_SetPadMux
+    peripheral_pinctrl.o(i.PINCTRL_SelAsdm) refers to peripheral_pinctrl.o(i.PINCTRL_SelInput) for PINCTRL_SelInput
+    peripheral_pinctrl.o(i.PINCTRL_SelAsdm) refers to peripheral_pinctrl.o(i.PINCTRL_SetPadMux) for PINCTRL_SetPadMux
+    peripheral_pinctrl.o(i.PINCTRL_SelClockOutput) refers to peripheral_pinctrl.o(i.PINCTRL_SetPadMux) for PINCTRL_SetPadMux
+    peripheral_pinctrl.o(i.PINCTRL_SelClockOutput) refers to peripheral_pinctrl.o(.constdata) for settings
+    peripheral_pinctrl.o(i.PINCTRL_SelI2cIn) refers to peripheral_pinctrl.o(i.PINCTRL_SelInput) for PINCTRL_SelInput
+    peripheral_pinctrl.o(i.PINCTRL_SelI2cIn) refers to peripheral_pinctrl.o(i.PINCTRL_SetPadMux) for PINCTRL_SetPadMux
+    peripheral_pinctrl.o(i.PINCTRL_SelI2cIn) refers to peripheral_pinctrl.o(i.PINCTRL_Pull) for PINCTRL_Pull
+    peripheral_pinctrl.o(i.PINCTRL_SelI2cSclIn) refers to peripheral_pinctrl.o(i.PINCTRL_SelInput) for PINCTRL_SelInput
+    peripheral_pinctrl.o(i.PINCTRL_SelI2cSclIn) refers to peripheral_pinctrl.o(i.PINCTRL_SetPadMux) for PINCTRL_SetPadMux
+    peripheral_pinctrl.o(i.PINCTRL_SelI2cSclIn) refers to peripheral_pinctrl.o(i.PINCTRL_Pull) for PINCTRL_Pull
+    peripheral_pinctrl.o(i.PINCTRL_SelI2sIn) refers to peripheral_pinctrl.o(i.PINCTRL_SelInput) for PINCTRL_SelInput
+    peripheral_pinctrl.o(i.PINCTRL_SelInput) refers to peripheral_pinctrl.o(i.set_reg_bits) for set_reg_bits
+    peripheral_pinctrl.o(i.PINCTRL_SelInput) refers to peripheral_pinctrl.o(i.pin_id_for_input_source) for pin_id_for_input_source
+    peripheral_pinctrl.o(i.PINCTRL_SelKeyScanColIn) refers to peripheral_pinctrl.o(i.PINCTRL_SelInput) for PINCTRL_SelInput
+    peripheral_pinctrl.o(i.PINCTRL_SelPCAPIn) refers to peripheral_pinctrl.o(i.PINCTRL_SelInput) for PINCTRL_SelInput
+    peripheral_pinctrl.o(i.PINCTRL_SelQDECIn) refers to peripheral_pinctrl.o(i.PINCTRL_SelInput) for PINCTRL_SelInput
+    peripheral_pinctrl.o(i.PINCTRL_SelSpiIn0) refers to peripheral_pinctrl.o(i.PINCTRL_SelInput) for PINCTRL_SelInput
+    peripheral_pinctrl.o(i.PINCTRL_SelSpiIn0) refers to peripheral_pinctrl.o(.constdata) for bit_offset_tab
+    peripheral_pinctrl.o(i.PINCTRL_SelSpiPins) refers to peripheral_pinctrl.o(i.PINCTRL_SelSpiIn0) for PINCTRL_SelSpiIn0
+    peripheral_pinctrl.o(i.PINCTRL_SelSpiPins) refers to peripheral_pinctrl.o(i.PINCTRL_SetPadMux) for PINCTRL_SetPadMux
+    peripheral_pinctrl.o(i.PINCTRL_SelSpiPins) refers to peripheral_pinctrl.o(.constdata) for source_tab
+    peripheral_pinctrl.o(i.PINCTRL_SelSwIn) refers to peripheral_pinctrl.o(i.PINCTRL_SelInput) for PINCTRL_SelInput
+    peripheral_pinctrl.o(i.PINCTRL_SelSwIn) refers to peripheral_pinctrl.o(i.PINCTRL_SetPadMux) for PINCTRL_SetPadMux
+    peripheral_pinctrl.o(i.PINCTRL_SelUSB) refers to peripheral_pinctrl.o(i.PINCTRL_EnableAnalog) for PINCTRL_EnableAnalog
+    peripheral_pinctrl.o(i.PINCTRL_SelUartCtsIn) refers to peripheral_pinctrl.o(i.PINCTRL_SelInput) for PINCTRL_SelInput
+    peripheral_pinctrl.o(i.PINCTRL_SelUartIn) refers to peripheral_pinctrl.o(i.PINCTRL_SelInput) for PINCTRL_SelInput
+    peripheral_pinctrl.o(i.PINCTRL_SelUartRxdIn) refers to peripheral_pinctrl.o(i.PINCTRL_SelInput) for PINCTRL_SelInput
+    peripheral_pinctrl.o(i.PINCTRL_SetPadMux) refers to peripheral_pinctrl.o(i.source_id_on_pin) for source_id_on_pin
+    peripheral_pinctrl.o(i.PINCTRL_SetPadMux) refers to peripheral_pinctrl.o(i.set_reg_bits) for set_reg_bits
+    peripheral_pinctrl.o(i.pin_id_for_input_source) refers to peripheral_pinctrl.o(.constdata) for io_output_source_map
+    peripheral_pinctrl.o(i.source_id_on_pin) refers to peripheral_pinctrl.o(.constdata) for io_output_source_map
+    peripheral_uart.o(i.apUART_BaudRateGet) refers to dfltui.o(.text) for __aeabi_ui2d
+    peripheral_uart.o(i.apUART_BaudRateGet) refers to dadd.o(.text) for __aeabi_dsub
+    peripheral_uart.o(i.apUART_BaudRateGet) refers to ddiv.o(.text) for __aeabi_ddiv
+    peripheral_uart.o(i.apUART_BaudRateGet) refers to d2f.o(.text) for __aeabi_d2f
+    peripheral_uart.o(i.apUART_BaudRateGet) refers to ffltui.o(.text) for __aeabi_ui2f
+    peripheral_uart.o(i.apUART_BaudRateGet) refers to fdiv.o(.text) for __aeabi_fdiv
+    peripheral_uart.o(i.apUART_BaudRateGet) refers to ffixui.o(.text) for __aeabi_f2uiz
+    peripheral_uart.o(i.apUART_Initialize) refers to peripheral_uart.o(i.apUART_BaudRateSet) for apUART_BaudRateSet
+    peripheral_uart.o(i.uart_reset) refers to peripheral_uart.o(i.apUART_Disable_RECEIVE_INT) for apUART_Disable_RECEIVE_INT
+    peripheral_uart.o(i.uart_reset) refers to peripheral_uart.o(i.uart_disable) for uart_disable
+    peripheral_uart.o(i.uart_reset) refers to peripheral_uart.o(i.apUART_Check_RXFIFO_EMPTY) for apUART_Check_RXFIFO_EMPTY
+    peripheral_uart.o(i.uart_reset) refers to peripheral_uart.o(i.uart_empty_fifo) for uart_empty_fifo
+    peripheral_uart.o(i.uart_reset) refers to peripheral_uart.o(i.uart_enable_fifo) for uart_enable_fifo
+    peripheral_uart.o(i.uart_reset) refers to peripheral_uart.o(i.uart_enable) for uart_enable
+    peripheral_uart.o(i.uart_reset) refers to peripheral_uart.o(i.apUART_Enable_RECEIVE_INT) for apUART_Enable_RECEIVE_INT
+    peripheral_dma.o(i.DMA_EnableChannel) refers to memcpya.o(.text) for __aeabi_memcpy4
+    peripheral_dma.o(i.DMA_GetPeripheralDataAddr) refers to peripheral_pwm.o(i.PWM_GetMode) for PWM_GetMode
+    peripheral_dma.o(i.DMA_GetPeripheralWidth) refers to peripheral_dma.o(i.DMG_GetSPIDMAWidth) for DMG_GetSPIDMAWidth
+    peripheral_dma.o(i.DMA_MemCopy) refers to peripheral_dma.o(i.DMA_PrepareMem2Mem) for DMA_PrepareMem2Mem
+    peripheral_dma.o(i.DMA_MemCopy) refers to peripheral_dma.o(i.DMA_EnableChannel) for DMA_EnableChannel
+    peripheral_dma.o(i.DMA_MemCopy) refers to peripheral_dma.o(i.DMA_GetChannelIntState) for DMA_GetChannelIntState
+    peripheral_dma.o(i.DMA_MemCopy) refers to peripheral_dma.o(i.DMA_ClearChannelIntState) for DMA_ClearChannelIntState
+    peripheral_dma.o(i.DMA_PrepareMem2Peripheral) refers to peripheral_sysctrl.o(i.SYSCTRL_GetDmaId) for SYSCTRL_GetDmaId
+    peripheral_dma.o(i.DMA_PrepareMem2Peripheral) refers to peripheral_dma.o(i.DMA_GetPeripheralWidth) for DMA_GetPeripheralWidth
+    peripheral_dma.o(i.DMA_PrepareMem2Peripheral) refers to peripheral_dma.o(i.DMA_GetPeripheralDataAddr) for DMA_GetPeripheralDataAddr
+    peripheral_dma.o(i.DMA_PrepareMem2Peripheral) refers to peripheral_dma.o(i.DMA_GetCtrlConfigDst) for DMA_GetCtrlConfigDst
+    peripheral_dma.o(i.DMA_PreparePeripheral2Mem) refers to peripheral_sysctrl.o(i.SYSCTRL_GetDmaId) for SYSCTRL_GetDmaId
+    peripheral_dma.o(i.DMA_PreparePeripheral2Mem) refers to peripheral_dma.o(i.DMA_GetPeripheralWidth) for DMA_GetPeripheralWidth
+    peripheral_dma.o(i.DMA_PreparePeripheral2Mem) refers to peripheral_dma.o(i.DMA_GetPeripheralDataAddr) for DMA_GetPeripheralDataAddr
+    peripheral_dma.o(i.DMA_PreparePeripheral2Mem) refers to peripheral_dma.o(i.DMA_GetCtrlConfigSrc) for DMA_GetCtrlConfigSrc
+    peripheral_dma.o(i.DMA_PreparePeripheral2Peripheral) refers to peripheral_sysctrl.o(i.SYSCTRL_GetDmaId) for SYSCTRL_GetDmaId
+    peripheral_dma.o(i.DMA_PreparePeripheral2Peripheral) refers to peripheral_dma.o(i.DMA_GetPeripheralWidth) for DMA_GetPeripheralWidth
+    peripheral_dma.o(i.DMA_PreparePeripheral2Peripheral) refers to peripheral_dma.o(i.DMA_GetPeripheralDataAddr) for DMA_GetPeripheralDataAddr
+    peripheral_dma.o(i.DMA_PreparePeripheral2Peripheral) refers to peripheral_dma.o(i.DMA_GetCtrlConfigSrcDst) for DMA_GetCtrlConfigSrcDst
+    peripheral_pwm.o(i.IR_CycleCarrierSetup) refers to peripheral_sysctrl.o(i.SYSCTRL_GetClk) for SYSCTRL_GetClk
+    peripheral_pwm.o(i.PCAP_ClearFifo) refers to peripheral_pwm.o(i.PWM_SetRegBit) for PWM_SetRegBit
+    peripheral_pwm.o(i.PCAP_Enable) refers to peripheral_pwm.o(i.PWM_SetMode) for PWM_SetMode
+    peripheral_pwm.o(i.PCAP_Enable) refers to peripheral_pwm.o(i.PWM_Enable) for PWM_Enable
+    peripheral_pwm.o(i.PWM_Enable) refers to peripheral_pwm.o(i.PWM_SetRegBit) for PWM_SetRegBit
+    peripheral_pwm.o(i.PWM_HaltCtrlCfg) refers to peripheral_pwm.o(i.PWM_SetRegBit) for PWM_SetRegBit
+    peripheral_pwm.o(i.PWM_HaltCtrlEnable) refers to peripheral_pwm.o(i.PWM_HaltCtrlEnable2) for PWM_HaltCtrlEnable2
+    peripheral_pwm.o(i.PWM_HaltCtrlEnable2) refers to peripheral_pwm.o(i.PWM_SetRegBit) for PWM_SetRegBit
+    peripheral_pwm.o(i.PWM_SetInitVale) refers to peripheral_pwm.o(i.PWM_SetRegBit) for PWM_SetRegBit
+    peripheral_pwm.o(i.PWM_SetIntTrigLevel) refers to peripheral_pwm.o(i.PWM_SetRegBit) for PWM_SetRegBit
+    peripheral_pwm.o(i.PWM_SetInvertOutput) refers to peripheral_pwm.o(i.PWM_SetRegBit) for PWM_SetRegBit
+    peripheral_pwm.o(i.PWM_SetMask) refers to peripheral_pwm.o(i.PWM_SetRegBit) for PWM_SetRegBit
+    peripheral_pwm.o(i.PWM_SetMode) refers to peripheral_sysctrl.o(i.SYSCTRL_EnablePcapMode) for SYSCTRL_EnablePcapMode
+    peripheral_pwm.o(i.PWM_SetMode) refers to peripheral_pwm.o(i.PWM_SetRegBit) for PWM_SetRegBit
+    peripheral_pwm.o(i.PWM_SetupSimple) refers to peripheral_sysctrl.o(i.SYSCTRL_GetClk) for SYSCTRL_GetClk
+    peripheral_pwm.o(i.PWM_SetupSimple) refers to peripheral_pwm.o(i.PWM_HaltCtrlEnable) for PWM_HaltCtrlEnable
+    peripheral_pwm.o(i.PWM_SetupSimple) refers to peripheral_pwm.o(i.PWM_Enable) for PWM_Enable
+    peripheral_pwm.o(i.PWM_SetupSimple) refers to peripheral_pwm.o(i.PWM_SetPeraThreshold) for PWM_SetPeraThreshold
+    peripheral_pwm.o(i.PWM_SetupSimple) refers to peripheral_pwm.o(i.PWM_SetHighThreshold) for PWM_SetHighThreshold
+    peripheral_pwm.o(i.PWM_SetupSimple) refers to peripheral_pwm.o(i.PWM_SetMode) for PWM_SetMode
+    peripheral_pwm.o(i.PWM_SetupSimple) refers to peripheral_pwm.o(i.PWM_SetMask) for PWM_SetMask
+    peripheral_pwm.o(i.PWM_SetupSingle) refers to peripheral_sysctrl.o(i.SYSCTRL_GetClk) for SYSCTRL_GetClk
+    peripheral_pwm.o(i.PWM_SetupSingle) refers to peripheral_pwm.o(i.PWM_Enable) for PWM_Enable
+    peripheral_pwm.o(i.PWM_SetupSingle) refers to peripheral_pwm.o(i.PWM_SetPeraThreshold) for PWM_SetPeraThreshold
+    peripheral_pwm.o(i.PWM_SetupSingle) refers to peripheral_pwm.o(i.PWM_SetHighThreshold) for PWM_SetHighThreshold
+    peripheral_pwm.o(i.PWM_SetupSingle) refers to peripheral_pwm.o(i.PWM_SetMode) for PWM_SetMode
+    peripheral_pwm.o(i.PWM_SetupSingle) refers to peripheral_pwm.o(i.PWM_SetMask) for PWM_SetMask
+    peripheral_ssp.o(i.apSSP_DeviceParametersSet) refers to peripheral_ssp.o(i.apSSP_Initialize) for apSSP_Initialize
+    peripheral_ssp.o(i.apSSP_DeviceParametersSet) refers to peripheral_ssp.o(i.apSSP_SetTxThres) for apSSP_SetTxThres
+    peripheral_ssp.o(i.apSSP_DeviceParametersSet) refers to peripheral_ssp.o(i.apSSP_SetRxThres) for apSSP_SetRxThres
+    peripheral_ssp.o(i.apSSP_DeviceParametersSet) refers to peripheral_ssp.o(i.apSSP_SetTimingSclkDiv) for apSSP_SetTimingSclkDiv
+    peripheral_ssp.o(i.apSSP_DeviceParametersSet) refers to peripheral_ssp.o(i.apSSP_IntEnable) for apSSP_IntEnable
+    peripheral_ssp.o(i.apSSP_Initialize) refers to peripheral_ssp.o(i.apSSP_ResetTxFifo) for apSSP_ResetTxFifo
+    peripheral_ssp.o(i.apSSP_Initialize) refers to peripheral_ssp.o(i.apSSP_ResetRxFifo) for apSSP_ResetRxFifo
+    peripheral_i2c.o(i.I2C_ConfigClkFrequency) refers to peripheral_i2c.o(i.I2C_ConfigSCLTiming) for I2C_ConfigSCLTiming
+    peripheral_i2c.o(i.I2C_ConfigSlave) refers to peripheral_i2c.o(i.I2C_Config) for I2C_Config
+    peripheral_keyscan.o(i.KEYSCAN_DbClkSel) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_GetIntStateFifoEmptyRaw) refers to peripheral_keyscan.o(i.KEYSCAN_reg_read_bits) for KEYSCAN_reg_read_bits
+    peripheral_keyscan.o(i.KEYSCAN_GetIntStateFifoFullRaw) refers to peripheral_keyscan.o(i.KEYSCAN_reg_read_bits) for KEYSCAN_reg_read_bits
+    peripheral_keyscan.o(i.KEYSCAN_GetIntStateLoopTrig) refers to peripheral_keyscan.o(i.KEYSCAN_reg_read_bits) for KEYSCAN_reg_read_bits
+    peripheral_keyscan.o(i.KEYSCAN_GetKeyData) refers to peripheral_keyscan.o(i.KEYSCAN_reg_read_bits) for KEYSCAN_reg_read_bits
+    peripheral_keyscan.o(i.KEYSCAN_GetKeyScannerBusy) refers to peripheral_keyscan.o(i.KEYSCAN_reg_read_bits) for KEYSCAN_reg_read_bits
+    peripheral_keyscan.o(i.KEYSCAN_GetScannerEn) refers to peripheral_keyscan.o(i.KEYSCAN_reg_read_bits) for KEYSCAN_reg_read_bits
+    peripheral_keyscan.o(i.KEYSCAN_Initialize) refers to peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) for KEYSCAN_InitializeScanParameter
+    peripheral_keyscan.o(i.KEYSCAN_Initialize) refers to peripheral_keyscan.o(i.KEYSCAN_DbClkSel) for KEYSCAN_DbClkSel
+    peripheral_keyscan.o(i.KEYSCAN_Initialize) refers to peripheral_keyscan.o(i.KEYSCAN_SetDebounceEn) for KEYSCAN_SetDebounceEn
+    peripheral_keyscan.o(i.KEYSCAN_Initialize) refers to peripheral_keyscan.o(i.KEYSCAN_SetScannerEn) for KEYSCAN_SetScannerEn
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_keyscan.o(i.KEYSCAN_CheckStatePara) for KEYSCAN_CheckStatePara
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_pinctrl.o(i.PINCTRL_SetPadMux) for PINCTRL_SetPadMux
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_pinctrl.o(i.PINCTRL_SelKeyScanColIn) for PINCTRL_SelKeyScanColIn
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_pinctrl.o(i.PINCTRL_Pull) for PINCTRL_Pull
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_keyscan.o(i.KEYSCAN_SetOutRowMask) for KEYSCAN_SetOutRowMask
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_keyscan.o(i.KEYSCAN_SetInColMask) for KEYSCAN_SetInColMask
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_keyscan.o(i.KEYSCAN_SetFifoNumTrigInt) for KEYSCAN_SetFifoNumTrigInt
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_keyscan.o(i.KEYSCAN_SetDmaNumTrigInt) for KEYSCAN_SetDmaNumTrigInt
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_keyscan.o(i.KEYSCAN_SetLoopNumTrigInt) for KEYSCAN_SetLoopNumTrigInt
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_keyscan.o(i.KEYSCAN_SetDmaEn) for KEYSCAN_SetDmaEn
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_keyscan.o(i.KEYSCAN_SetIntTrigEn) for KEYSCAN_SetIntTrigEn
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_keyscan.o(i.KEYSCAN_LoopIntEn) for KEYSCAN_LoopIntEn
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_keyscan.o(i.KEYSCAN_SetReleaseTime) for KEYSCAN_SetReleaseTime
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_keyscan.o(i.KEYSCAN_SetScanInterval) for KEYSCAN_SetScanInterval
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_keyscan.o(i.KEYSCAN_SetDebounceCounter) for KEYSCAN_SetDebounceCounter
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_keyscan.o(i.KEYSCAN_SetTableModeEn) for KEYSCAN_SetTableModeEn
+    peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter) refers to peripheral_keyscan.o(i.KEYSCAN_SetLpkeyModeEn) for KEYSCAN_SetLpkeyModeEn
+    peripheral_keyscan.o(i.KEYSCAN_LoopIntClr) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_LoopIntEn) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetDebounceCounter) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetDebounceEn) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetDmaEn) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetDmaNumTrigInt) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetFifoClrReg) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetFifoNumTrigInt) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetInColMask) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetIntTrigEn) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetLoopNumTrigInt) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetLpkeyModeEn) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetOutRowMask) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetPeReg) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetPsReg) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetReleaseTime) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetScanInterval) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetScannerEn) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_keyscan.o(i.KEYSCAN_SetTableModeEn) refers to peripheral_keyscan.o(i.KEYSCAN_reg_write_bits) for KEYSCAN_reg_write_bits
+    peripheral_qdec.o(i.QDEC_ChannelEnable) refers to peripheral_qdec.o(i.QDEC_RegWrBits) for QDEC_RegWrBits
+    peripheral_qdec.o(i.QDEC_ChannelEnable) refers to peripheral_qdec.o(i.QDEC_RegClr) for QDEC_RegClr
+    peripheral_qdec.o(i.QDEC_GetData) refers to peripheral_qdec.o(i.QDEC_RegRd) for QDEC_RegRd
+    peripheral_qdec.o(i.QDEC_GetDirection) refers to peripheral_qdec.o(i.QDEC_RegRd) for QDEC_RegRd
+    peripheral_qdec.o(i.QDEC_IntClear) refers to peripheral_qdec.o(i.QDEC_RegRd) for QDEC_RegRd
+    peripheral_qdec.o(i.QDEC_QdecCfg) refers to peripheral_qdec.o(i.QDEC_Reset) for QDEC_Reset
+    peripheral_qdec.o(i.QDEC_QdecCfg) refers to peripheral_qdec.o(i.QDEC_RegWrBit) for QDEC_RegWrBit
+    peripheral_qdec.o(i.QDEC_QdecCfg) refers to peripheral_qdec.o(i.QDEC_RegWrBits) for QDEC_RegWrBits
+    peripheral_qdec.o(i.QDEC_Reset) refers to peripheral_qdec.o(i.QDEC_RegWrBit) for QDEC_RegWrBit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000F) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$00000011) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry12b.o(.ARM.Collect$$$$0000000E) for __rt_lib_shutdown_fini
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    uldiv.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    uldiv.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    printfa.o(i.__0fprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0fprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0fprintf) refers to main.o(i.fputc) for fputc
+    printfa.o(i.__0printf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0printf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0printf) refers to main.o(i.fputc) for fputc
+    printfa.o(i.__0printf) refers to stdout.o(.data) for __stdout
+    printfa.o(i.__0snprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0snprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0snprintf) refers to printfa.o(i._snputc) for _snputc
+    printfa.o(i.__0sprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0sprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0sprintf) refers to printfa.o(i._sputc) for _sputc
+    printfa.o(i.__0vfprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vfprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vfprintf) refers to main.o(i.fputc) for fputc
+    printfa.o(i.__0vprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vprintf) refers to main.o(i.fputc) for fputc
+    printfa.o(i.__0vprintf) refers to stdout.o(.data) for __stdout
+    printfa.o(i.__0vsnprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vsnprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vsnprintf) refers to printfa.o(i._snputc) for _snputc
+    printfa.o(i.__0vsprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vsprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vsprintf) refers to printfa.o(i._sputc) for _sputc
+    printfa.o(i._fp_digits) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._fp_digits) refers to dmul.o(.text) for __aeabi_dmul
+    printfa.o(i._fp_digits) refers to ddiv.o(.text) for __aeabi_ddiv
+    printfa.o(i._fp_digits) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    printfa.o(i._fp_digits) refers to dadd.o(.text) for __aeabi_dadd
+    printfa.o(i._fp_digits) refers to dfixul.o(.text) for __aeabi_d2ulz
+    printfa.o(i._fp_digits) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i._printf_core) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._printf_core) refers to printfa.o(i._printf_pre_padding) for _printf_pre_padding
+    printfa.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i._printf_core) refers to printfa.o(i._printf_post_padding) for _printf_post_padding
+    printfa.o(i._printf_core) refers to printfa.o(i._fp_digits) for _fp_digits
+    printfa.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printfa.o(i._printf_post_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._printf_pre_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._snputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._sputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    malloc.o(i.free) refers to mvars.o(.data) for __microlib_freelist
+    malloc.o(i.malloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    malloc.o(i.malloc) refers to mvars.o(.data) for __microlib_freelist
+    malloc.o(i.malloc) refers to startup_ing920.o(HEAP) for __heap_base
+    mallocr.o(i.__free$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.__malloc$realloc) refers to mallocr.o(i.internal_alloc) for internal_alloc
+    mallocr.o(i.__malloc$realloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    mallocr.o(i.__malloc$realloc) refers to startup_ing920.o(HEAP) for __heap_base
+    mallocr.o(i.__malloc$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.internal_alloc) refers to memcpya.o(.text) for __aeabi_memcpy
+    mallocr.o(i.internal_alloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.realloc) refers to mallocr.o(i.__free$realloc) for __free$realloc
+    mallocr.o(i.realloc) refers to mallocr.o(i.internal_alloc) for internal_alloc
+    mallocr.o(i.realloc) refers to mallocr.o(i.__malloc$realloc) for __malloc$realloc
+    mallocr.o(i.realloc) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__aligned_malloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    malloca.o(i.__aligned_malloc) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__aligned_malloc) refers to startup_ing920.o(HEAP) for __heap_base
+    malloca.o(i.__free$memalign) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__malloc$memalign) refers to malloca.o(i.__aligned_malloc) for __aligned_malloc
+    mallocra.o(i.__aligned_malloc$realloc) refers to mallocra.o(i.internal_alloc) for internal_alloc
+    mallocra.o(i.__aligned_malloc$realloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    mallocra.o(i.__aligned_malloc$realloc) refers to startup_ing920.o(HEAP) for __heap_base
+    mallocra.o(i.__aligned_malloc$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.__free$realloc$memalign) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.__malloc$realloc$memalign) refers to mallocra.o(i.__aligned_malloc$realloc) for __aligned_malloc$realloc
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.__free$realloc$memalign) for __free$realloc$memalign
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.internal_alloc) for internal_alloc
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.__malloc$realloc$memalign) for __malloc$realloc$memalign
+    mallocra.o(i.__realloc$memalign) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.internal_alloc) refers to memcpya.o(.text) for __aeabi_memcpy
+    mallocra.o(i.internal_alloc) refers to mvars.o(.data) for __microlib_freelist
+    fdiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers to fepilogue.o(.text) for _float_round
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    ffltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    dfltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ffixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers to fepilogue.o(.text) for _float_round
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_ing920.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_ing920.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfixul.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dfixul.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing main.o(.rrx_text), (6 bytes).
+    Removing main.o(i.cb_putc), (6 bytes).
+    Removing main.o(i.fputc), (16 bytes).
+    Removing timer_delay.o(.rev16_text), (4 bytes).
+    Removing timer_delay.o(.revsh_text), (4 bytes).
+    Removing timer_delay.o(.rrx_text), (6 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_AllocDownBuffer), (192 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_AllocUpBuffer), (192 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_ConfigDownBuffer), (168 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_ConfigUpBuffer), (168 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_GetAvailWriteSpace), (24 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_GetBytesInBuffer), (60 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_GetKey), (32 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_HasData), (28 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_HasDataUp), (28 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_HasKey), (40 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_PutChar), (120 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_PutCharSkip), (104 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_PutCharSkipNoLock), (56 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_Read), (56 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_ReadNoLock), (152 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_ReadUpBuffer), (56 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_ReadUpBufferNoLock), (152 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_SetFlagsDownBuffer), (84 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_SetFlagsUpBuffer), (84 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_SetNameDownBuffer), (84 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_SetNameUpBuffer), (84 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_SetTerminal), (156 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_TerminalOut), (256 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_WaitKey), (14 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_WriteDownBuffer), (72 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_WriteDownBufferNoLock), (132 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_WriteSkipNoLock), (140 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_WriteString), (26 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_WriteWithOverwriteNoLock), (172 bytes).
+    Removing segger_rtt.o(i._PostTerminalSwitch), (36 bytes).
+    Removing segger_rtt.o(.data), (17 bytes).
+    Removing gpio.o(.rev16_text), (4 bytes).
+    Removing gpio.o(.revsh_text), (4 bytes).
+    Removing gpio.o(.rrx_text), (6 bytes).
+    Removing gpio.o(i.NVIC_Configuration), (30 bytes).
+    Removing gpio.o(i.gpio_init), (76 bytes).
+    Removing misc.o(.rev16_text), (4 bytes).
+    Removing misc.o(.revsh_text), (4 bytes).
+    Removing misc.o(.rrx_text), (6 bytes).
+    Removing misc.o(i.NVIC_PriorityGroupConfig), (20 bytes).
+    Removing misc.o(i.NVIC_SetVectorTable), (20 bytes).
+    Removing misc.o(i.NVIC_SystemLPConfig), (32 bytes).
+    Removing misc.o(i.SysTick_CLKSourceConfig), (40 bytes).
+    Removing uart.o(.rev16_text), (4 bytes).
+    Removing uart.o(.revsh_text), (4 bytes).
+    Removing uart.o(.rrx_text), (6 bytes).
+    Removing uart.o(i.NVIC_Configuration), (34 bytes).
+    Removing uart.o(i.UART_trigger_DmaSend), (48 bytes).
+    Removing uart.o(i.all_send_test_data), (32 bytes).
+    Removing uart.o(i.apUART_SET_INT_FIFO), (16 bytes).
+    Removing uart.o(i.dma_uart_init), (88 bytes).
+    Removing uart.o(i.uart_fifo_dma_int), (72 bytes).
+    Removing uart.o(i.uart_fifo_recive_init), (72 bytes).
+    Removing uart.o(i.uart_int_dma_callback), (184 bytes).
+    Removing uart.o(i.uart_int_status_callback), (196 bytes).
+    Removing uart.o(i.uart_read_test), (28 bytes).
+    Removing uart.o(i.uart_test_dma_recive), (30 bytes).
+    Removing uart.o(i.uart_test_fifo_recive), (8 bytes).
+    Removing uart.o(i.uart_test_init), (12 bytes).
+    Removing test.o(.rev16_text), (4 bytes).
+    Removing test.o(.revsh_text), (4 bytes).
+    Removing test.o(.rrx_text), (6 bytes).
+    Removing test.o(i.gpio_output_test), (124 bytes).
+    Removing test.o(i.uart_test), (100 bytes).
+    Removing test.o(.data), (23 bytes).
+    Removing pwm.o(.rev16_text), (4 bytes).
+    Removing pwm.o(.revsh_text), (4 bytes).
+    Removing pwm.o(.rrx_text), (6 bytes).
+    Removing pwm.o(i.IR_Cycle_DMA_Init), (60 bytes).
+    Removing pwm.o(i.IR_NECSend_Command), (116 bytes).
+    Removing pwm.o(i.IR_Write_data), (82 bytes).
+    Removing pwm.o(i.IR_out_init), (86 bytes).
+    Removing pwm.o(i.IR_test_cycle), (32 bytes).
+    Removing pwm.o(i.NVIC_Configuration), (30 bytes).
+    Removing pwm.o(i.PCP_gpio_init), (96 bytes).
+    Removing pwm.o(i.PWM_BreathingLightInit), (150 bytes).
+    Removing pwm.o(i.PWM_SetupSimpleInit), (164 bytes).
+    Removing pwm.o(i.pcap_test_read), (18 bytes).
+    Removing pwm.o(i.pwm_test_simple), (30 bytes).
+    Removing pwm.o(i.pwm_test_step), (32 bytes).
+    Removing pwm.o(i.pwn_simple_init), (32 bytes).
+    Removing pwm.o(.data), (132 bytes).
+    Removing iic_master_920.o(.rev16_text), (4 bytes).
+    Removing iic_master_920.o(.revsh_text), (4 bytes).
+    Removing iic_master_920.o(.rrx_text), (6 bytes).
+    Removing iic_master_920.o(i.NVIC_Configuration), (34 bytes).
+    Removing iic_master_920.o(i.iic_gpio_config), (24 bytes).
+    Removing iic_master_920.o(i.iic_init), (16 bytes).
+    Removing iic_master_920.o(i.iic_test), (32 bytes).
+    Removing iic_master_920.o(i.peripheral_i2c_read_data), (104 bytes).
+    Removing iic_master_920.o(i.peripheral_i2c_send_data), (88 bytes).
+    Removing iic_master_920.o(i.setup_peripherals_i2c_module), (56 bytes).
+    Removing iic_master_920.o(.bss), (40 bytes).
+    Removing debug_print.o(.rev16_text), (4 bytes).
+    Removing debug_print.o(.revsh_text), (4 bytes).
+    Removing debug_print.o(.rrx_text), (6 bytes).
+    Removing debug_print.o(i.ano_output), (40 bytes).
+    Removing debug_print.o(i.test_ano), (64 bytes).
+    Removing debug_print.o(.bss), (256 bytes).
+    Removing debug_print.o(.constdata), (256 bytes).
+    Removing debug_print.o(.data), (10 bytes).
+    Removing pingpong.o(.rev16_text), (4 bytes).
+    Removing pingpong.o(.revsh_text), (4 bytes).
+    Removing pingpong.o(.rrx_text), (6 bytes).
+    Removing pingpong.o(i.DMA_PingPongDisable), (38 bytes).
+    Removing pingpong.o(i.DMA_PingPongEnable), (74 bytes).
+    Removing pingpong.o(i.DMA_PingPongGetTransSize), (6 bytes).
+    Removing pingpong.o(i.DMA_PingPongIntProc), (50 bytes).
+    Removing pingpong.o(i.DMA_PingPongSetup), (136 bytes).
+    Removing pingpong.o(i.FindBurstNum), (30 bytes).
+    Removing qdec.o(.rev16_text), (4 bytes).
+    Removing qdec.o(.revsh_text), (4 bytes).
+    Removing qdec.o(.rrx_text), (6 bytes).
+    Removing qdec.o(i.qudec_test), (136 bytes).
+    Removing keyscan_normal.o(.rev16_text), (4 bytes).
+    Removing keyscan_normal.o(.revsh_text), (4 bytes).
+    Removing keyscan_normal.o(.rrx_text), (6 bytes).
+    Removing keyscan_normal.o(i.NVIC_Configuration), (28 bytes).
+    Removing keyscan_normal.o(i.key_scan_normal_test), (44 bytes).
+    Removing spi_flash.o(.rev16_text), (4 bytes).
+    Removing spi_flash.o(.revsh_text), (4 bytes).
+    Removing spi_flash.o(.rrx_text), (6 bytes).
+    Removing spi_flash.o(i.NVIC_Configuration), (34 bytes).
+    Removing spi_flash.o(i.peripherals_spi_send_data), (44 bytes).
+    Removing spi_flash.o(i.setup_peripherals_spi_module), (116 bytes).
+    Removing spi_flash.o(i.setup_peripherals_spi_pin), (48 bytes).
+    Removing spi_flash.o(i.spi_flash_addr_read), (140 bytes).
+    Removing spi_flash.o(i.spi_flash_addr_write), (112 bytes).
+    Removing spi_flash.o(i.spi_flash_read), (148 bytes).
+    Removing spi_flash.o(i.spi_flash_send_command), (60 bytes).
+    Removing spi_flash.o(i.spi_flash_write), (108 bytes).
+    Removing spi_flash.o(i.spi_test), (128 bytes).
+    Removing spi_flash.o(.bss), (60 bytes).
+    Removing spi_flash.o(.data), (16 bytes).
+    Removing timer_pte.o(.rev16_text), (4 bytes).
+    Removing timer_pte.o(.revsh_text), (4 bytes).
+    Removing timer_pte.o(.rrx_text), (6 bytes).
+    Removing timer_pte.o(i.NVIC_Configuration), (64 bytes).
+    Removing timer_pte.o(i.pte_test), (92 bytes).
+    Removing timer_pte.o(i.timer0_init), (60 bytes).
+    Removing timer_pte.o(i.timer1_init), (72 bytes).
+    Removing pdm.o(.rev16_text), (4 bytes).
+    Removing pdm.o(.revsh_text), (4 bytes).
+    Removing pdm.o(.rrx_text), (6 bytes).
+    Removing ano_protocol.o(i.check_sum), (26 bytes).
+    Removing ano_protocol.o(i.check_sum_add), (36 bytes).
+    Removing ano_protocol.o(i.packed_ano), (68 bytes).
+    Removing startup_ing920.o(HEAP), (256 bytes).
+    Removing peripheral_gpio.o(.rev16_text), (4 bytes).
+    Removing peripheral_gpio.o(.revsh_text), (4 bytes).
+    Removing peripheral_gpio.o(.rrx_text), (6 bytes).
+    Removing peripheral_gpio.o(i.GIO_ClearAllIntStatus), (24 bytes).
+    Removing peripheral_gpio.o(i.GIO_ClearBits), (48 bytes).
+    Removing peripheral_gpio.o(i.GIO_ConfigIntSource), (152 bytes).
+    Removing peripheral_gpio.o(i.GIO_DebounceCtrl), (36 bytes).
+    Removing peripheral_gpio.o(i.GIO_DebounceEn), (60 bytes).
+    Removing peripheral_gpio.o(i.GIO_GetAllIntStatus), (32 bytes).
+    Removing peripheral_gpio.o(i.GIO_GetDirection), (72 bytes).
+    Removing peripheral_gpio.o(i.GIO_MaskedWrite), (22 bytes).
+    Removing peripheral_gpio.o(i.GIO_ReadAll), (32 bytes).
+    Removing peripheral_gpio.o(i.GIO_ReadOutputValue), (48 bytes).
+    Removing peripheral_gpio.o(i.GIO_ReadValue), (48 bytes).
+    Removing peripheral_gpio.o(i.GIO_SetBits), (48 bytes).
+    Removing peripheral_gpio.o(i.GIO_SetDirection), (116 bytes).
+    Removing peripheral_gpio.o(i.GIO_ToggleBits), (48 bytes).
+    Removing peripheral_gpio.o(i.GIO_WriteAll), (36 bytes).
+    Removing peripheral_gpio.o(i.GIO_WriteValue), (64 bytes).
+    Removing peripheral_gpio.o(i.map_int_mode), (64 bytes).
+    Removing peripheral_sysctrl.o(.rev16_text), (4 bytes).
+    Removing peripheral_sysctrl.o(.revsh_text), (4 bytes).
+    Removing peripheral_sysctrl.o(.rrx_text), (6 bytes).
+    Removing peripheral_sysctrl.o(i.SYSCTRL_EnablePcapMode), (24 bytes).
+    Removing peripheral_sysctrl.o(i.SYSCTRL_GetClk), (12 bytes).
+    Removing peripheral_sysctrl.o(i.SYSCTRL_ReleaseBlock), (14 bytes).
+    Removing peripheral_sysctrl.o(i.SYSCTRL_ResetBlock), (14 bytes).
+    Removing peripheral_sysctrl.o(i.SYSCTRL_ResetBlockCtrl), (420 bytes).
+    Removing peripheral_sysctrl.o(i.SYSCTRL_SelectMemoryBlocks), (28 bytes).
+    Removing peripheral_sysctrl.o(i.SYSCTRL_SelectQDECClk), (44 bytes).
+    Removing peripheral_sysctrl.o(i.SYSCTRL_SetClkGate), (14 bytes).
+    Removing peripheral_sysctrl.o(i.SYSCTRL_SetClkGateMulti), (32 bytes).
+    Removing peripheral_pinctrl.o(.rev16_text), (4 bytes).
+    Removing peripheral_pinctrl.o(.revsh_text), (4 bytes).
+    Removing peripheral_pinctrl.o(.rrx_text), (6 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_DisableAllInputs), (28 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_EnableAnalog), (80 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_EnableAntSelPins), (50 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_Pull), (88 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_SelClockOutput), (108 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_SelI2cIn), (100 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_SelI2cSclIn), (44 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_SelI2sIn), (84 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_SelKeyScanColIn), (134 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_SelPCAPIn), (28 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_SelQDECIn), (58 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_SelSpiIn0), (356 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_SelSpiPins), (212 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_SelSwIn), (66 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_SelUSB), (36 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_SelUartCtsIn), (56 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_SelUartIn), (124 bytes).
+    Removing peripheral_pinctrl.o(i.PINCTRL_SetDriveStrength), (72 bytes).
+    Removing peripheral_uart.o(.rev16_text), (4 bytes).
+    Removing peripheral_uart.o(.revsh_text), (4 bytes).
+    Removing peripheral_uart.o(.rrx_text), (6 bytes).
+    Removing peripheral_uart.o(i.UART_ReceData), (8 bytes).
+    Removing peripheral_uart.o(i.apUART_BaudRateGet), (120 bytes).
+    Removing peripheral_uart.o(i.apUART_Check_BUSY), (10 bytes).
+    Removing peripheral_uart.o(i.apUART_Check_RXFIFO_FULL), (10 bytes).
+    Removing peripheral_uart.o(i.apUART_Check_Rece_ERROR), (56 bytes).
+    Removing peripheral_uart.o(i.apUART_Check_TXFIFO_FULL), (10 bytes).
+    Removing peripheral_uart.o(i.apUART_Clr_NonRx_INT), (10 bytes).
+    Removing peripheral_uart.o(i.apUART_Clr_RECEIVE_INT), (10 bytes).
+    Removing peripheral_uart.o(i.apUART_Clr_TX_INT), (10 bytes).
+    Removing peripheral_uart.o(i.apUART_Disable_RECEIVE_INT), (10 bytes).
+    Removing peripheral_uart.o(i.apUART_Disable_TRANSMIT_INT), (10 bytes).
+    Removing peripheral_uart.o(i.apUART_Enable_RECEIVE_INT), (10 bytes).
+    Removing peripheral_uart.o(i.apUART_Enable_TRANSMIT_INT), (10 bytes).
+    Removing peripheral_uart.o(i.apUART_Get_ITStatus), (18 bytes).
+    Removing peripheral_uart.o(i.uart_disable), (10 bytes).
+    Removing peripheral_uart.o(i.uart_empty_fifo), (10 bytes).
+    Removing peripheral_uart.o(i.uart_enable), (10 bytes).
+    Removing peripheral_uart.o(i.uart_enable_fifo), (10 bytes).
+    Removing peripheral_uart.o(i.uart_reset), (62 bytes).
+    Removing peripheral_timer.o(.rev16_text), (4 bytes).
+    Removing peripheral_timer.o(.revsh_text), (4 bytes).
+    Removing peripheral_timer.o(.rrx_text), (6 bytes).
+    Removing peripheral_timer.o(i.TMR_Enable), (30 bytes).
+    Removing peripheral_timer.o(i.TMR_GetCMP), (14 bytes).
+    Removing peripheral_timer.o(i.TMR_GetCNT), (14 bytes).
+    Removing peripheral_timer.o(i.TMR_GetClk), (12 bytes).
+    Removing peripheral_timer.o(i.TMR_IntEnable), (30 bytes).
+    Removing peripheral_timer.o(i.TMR_IntHappened), (14 bytes).
+    Removing peripheral_timer.o(i.TMR_PauseEnable), (64 bytes).
+    Removing peripheral_timer.o(i.TMR_SetOpMode), (26 bytes).
+    Removing peripheral_timer.o(i.TMR_SetReload), (12 bytes).
+    Removing peripheral_timer.o(i.TMR_WatchDogClearInt), (12 bytes).
+    Removing peripheral_timer.o(i.TMR_WatchDogDisable), (36 bytes).
+    Removing peripheral_timer.o(i.TMR_WatchDogEnable3), (52 bytes).
+    Removing peripheral_timer.o(i.TMR_WatchDogRestart), (20 bytes).
+    Removing peripheral_dma.o(.rev16_text), (4 bytes).
+    Removing peripheral_dma.o(.revsh_text), (4 bytes).
+    Removing peripheral_dma.o(.rrx_text), (6 bytes).
+    Removing peripheral_dma.o(i.DMA_AbortChannel), (20 bytes).
+    Removing peripheral_dma.o(i.DMA_GetCtrlConfigDst), (176 bytes).
+    Removing peripheral_dma.o(i.DMA_GetCtrlConfigSrcDst), (104 bytes).
+    Removing peripheral_dma.o(i.DMA_MemCopy), (82 bytes).
+    Removing peripheral_dma.o(i.DMA_PrepareMem2Mem), (94 bytes).
+    Removing peripheral_dma.o(i.DMA_PrepareMem2Peripheral), (162 bytes).
+    Removing peripheral_dma.o(i.DMA_PreparePeripheral2Peripheral), (218 bytes).
+    Removing peripheral_dma.o(i.DMA_Reset), (36 bytes).
+    Removing peripheral_pwm.o(.rev16_text), (4 bytes).
+    Removing peripheral_pwm.o(.revsh_text), (4 bytes).
+    Removing peripheral_pwm.o(.rrx_text), (6 bytes).
+    Removing peripheral_pwm.o(i.IR_BusyState), (20 bytes).
+    Removing peripheral_pwm.o(i.IR_CycleCarrierSetup), (108 bytes).
+    Removing peripheral_pwm.o(i.IR_WriteCarrierData), (16 bytes).
+    Removing peripheral_pwm.o(i.PCAP_ClearFifo), (22 bytes).
+    Removing peripheral_pwm.o(i.PCAP_CounterEnable), (12 bytes).
+    Removing peripheral_pwm.o(i.PCAP_Enable), (22 bytes).
+    Removing peripheral_pwm.o(i.PCAP_EnableEvents), (20 bytes).
+    Removing peripheral_pwm.o(i.PCAP_ReadCounter), (12 bytes).
+    Removing peripheral_pwm.o(i.PWM_DmaEnable), (52 bytes).
+    Removing peripheral_pwm.o(i.PWM_Enable), (26 bytes).
+    Removing peripheral_pwm.o(i.PWM_FifoIntEnable), (48 bytes).
+    Removing peripheral_pwm.o(i.PWM_HaltCtrlCfg), (30 bytes).
+    Removing peripheral_pwm.o(i.PWM_HaltCtrlEnable), (18 bytes).
+    Removing peripheral_pwm.o(i.PWM_HaltCtrlEnable2), (30 bytes).
+    Removing peripheral_pwm.o(i.PWM_SetDiedZoneThreshold), (16 bytes).
+    Removing peripheral_pwm.o(i.PWM_SetHighThreshold), (16 bytes).
+    Removing peripheral_pwm.o(i.PWM_SetInitVale), (30 bytes).
+    Removing peripheral_pwm.o(i.PWM_SetIntTrigLevel), (26 bytes).
+    Removing peripheral_pwm.o(i.PWM_SetInvertOutput), (30 bytes).
+    Removing peripheral_pwm.o(i.PWM_SetMask), (30 bytes).
+    Removing peripheral_pwm.o(i.PWM_SetMode), (42 bytes).
+    Removing peripheral_pwm.o(i.PWM_SetPeraThreshold), (16 bytes).
+    Removing peripheral_pwm.o(i.PWM_SetRegBit), (44 bytes).
+    Removing peripheral_pwm.o(i.PWM_SetStepCnt), (44 bytes).
+    Removing peripheral_pwm.o(i.PWM_SetStepTarget), (32 bytes).
+    Removing peripheral_pwm.o(i.PWM_SetupSimple), (126 bytes).
+    Removing peripheral_pwm.o(i.PWM_SetupSingle), (80 bytes).
+    Removing peripheral_pwm.o(i.PWM_StepEnabled), (52 bytes).
+    Removing peripheral_pwm.o(i.PWM_StepLoopEnabled), (52 bytes).
+    Removing peripheral_ssp.o(.rev16_text), (4 bytes).
+    Removing peripheral_ssp.o(.revsh_text), (4 bytes).
+    Removing peripheral_ssp.o(.rrx_text), (6 bytes).
+    Removing peripheral_ssp.o(i.apSSP_DeviceParametersSet), (142 bytes).
+    Removing peripheral_ssp.o(i.apSSP_GetDataNumInRxFifo), (20 bytes).
+    Removing peripheral_ssp.o(i.apSSP_GetDataNumInTxFifo), (20 bytes).
+    Removing peripheral_ssp.o(i.apSSP_GetRxFifoDepthWords), (6 bytes).
+    Removing peripheral_ssp.o(i.apSSP_GetSPIActiveStatus), (10 bytes).
+    Removing peripheral_ssp.o(i.apSSP_GetSlaveRxDataCnt), (10 bytes).
+    Removing peripheral_ssp.o(i.apSSP_GetSlaveTxDataCnt), (10 bytes).
+    Removing peripheral_ssp.o(i.apSSP_GetSpiStatus), (6 bytes).
+    Removing peripheral_ssp.o(i.apSSP_GetStatus), (6 bytes).
+    Removing peripheral_ssp.o(i.apSSP_GetTxFifoDepthWords), (6 bytes).
+    Removing peripheral_ssp.o(i.apSSP_Initialize), (38 bytes).
+    Removing peripheral_ssp.o(i.apSSP_IntDisable), (8 bytes).
+    Removing peripheral_ssp.o(i.apSSP_IntEnable), (8 bytes).
+    Removing peripheral_ssp.o(i.apSSP_ReadCommand), (6 bytes).
+    Removing peripheral_ssp.o(i.apSSP_ReadFIFO), (6 bytes).
+    Removing peripheral_ssp.o(i.apSSP_ResetRxFifo), (22 bytes).
+    Removing peripheral_ssp.o(i.apSSP_ResetTxFifo), (22 bytes).
+    Removing peripheral_ssp.o(i.apSSP_RxFifoEmpty), (10 bytes).
+    Removing peripheral_ssp.o(i.apSSP_RxFifoFull), (10 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetAddrEn), (22 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetCmdEn), (22 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetMemAccessCmd), (16 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetRxDmaEn), (18 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetRxThres), (18 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetTimingCs2Sclk), (18 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetTimingSclkDiv), (16 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetTransMode), (18 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetTransferControl), (28 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetTransferControlAddrFmt), (18 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetTransferControlDummyCnt), (24 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetTransferControlRdTranCnt), (22 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetTransferControlWrTranCnt), (28 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetTransferFormat), (28 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetTxDmaEn), (18 bytes).
+    Removing peripheral_ssp.o(i.apSSP_SetTxThres), (18 bytes).
+    Removing peripheral_ssp.o(i.apSSP_TxFifoEmpty), (10 bytes).
+    Removing peripheral_ssp.o(i.apSSP_TxFifoFull), (10 bytes).
+    Removing peripheral_ssp.o(i.apSSP_WriteCmd), (6 bytes).
+    Removing peripheral_ssp.o(i.apSSP_WriteFIFO), (4 bytes).
+    Removing peripheral_ssp.o(i.apSSP_WrtEnlargeCnt), (22 bytes).
+    Removing peripheral_ssp.o(i.apSSP_WrtEnlargeEn), (22 bytes).
+    Removing peripheral_i2c.o(.rev16_text), (4 bytes).
+    Removing peripheral_i2c.o(.revsh_text), (4 bytes).
+    Removing peripheral_i2c.o(.rrx_text), (6 bytes).
+    Removing peripheral_i2c.o(i.I2C_Config), (42 bytes).
+    Removing peripheral_i2c.o(i.I2C_ConfigClkFrequency), (104 bytes).
+    Removing peripheral_i2c.o(i.I2C_ConfigSCLTiming), (58 bytes).
+    Removing peripheral_i2c.o(i.I2C_ConfigSlave), (28 bytes).
+    Removing peripheral_i2c.o(i.I2C_CtrlGetDataCnt), (8 bytes).
+    Removing peripheral_i2c.o(i.I2C_CtrlUpdateDataCnt), (16 bytes).
+    Removing peripheral_i2c.o(i.I2C_CtrlUpdateDirection), (18 bytes).
+    Removing peripheral_i2c.o(i.I2C_DmaEnable), (20 bytes).
+    Removing peripheral_i2c.o(i.I2C_Enable), (22 bytes).
+    Removing peripheral_i2c.o(i.I2C_GetTransactionDir), (10 bytes).
+    Removing peripheral_i2c.o(i.I2C_IntEnable), (12 bytes).
+    Removing peripheral_i2c.o(i.I2C_TransactionComplete), (10 bytes).
+    Removing peripheral_keyscan.o(.rev16_text), (4 bytes).
+    Removing peripheral_keyscan.o(.revsh_text), (4 bytes).
+    Removing peripheral_keyscan.o(.rrx_text), (6 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_CheckStatePara), (24 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_DbClkSel), (40 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_GetIntStateFifoFullRaw), (28 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_GetIntStateLoopTrig), (28 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_GetKeyScannerBusy), (28 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_GetScanMode), (118 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_GetScannerEn), (28 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_InitKeyScanToIdx), (50 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_Initialize), (36 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_InitializeScanParameter), (320 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_LoopIntEn), (40 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_NormalHighLowDataToIdex), (42 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_ScanDataToIdex), (54 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetDebounceCounter), (28 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetDebounceEn), (28 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetDmaEn), (40 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetDmaNumTrigInt), (28 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetFifoClrReg), (28 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetFifoNumTrigInt), (28 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetInColMask), (28 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetIntTrigEn), (40 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetLoopNumTrigInt), (28 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetLpkeyModeEn), (44 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetOutRowMask), (28 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetPeReg), (44 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetPsReg), (44 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetReleaseTime), (28 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetScanInterval), (28 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetScannerEn), (40 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_SetTableModeEn), (44 bytes).
+    Removing peripheral_keyscan.o(i.KEYSCAN_TableHighLowDataToIdex), (68 bytes).
+    Removing peripheral_qdec.o(.rev16_text), (4 bytes).
+    Removing peripheral_qdec.o(.revsh_text), (4 bytes).
+    Removing peripheral_qdec.o(.rrx_text), (6 bytes).
+    Removing peripheral_qdec.o(i.QDEC_ChannelEnable), (32 bytes).
+    Removing peripheral_qdec.o(i.QDEC_EnableQdecDiv), (48 bytes).
+    Removing peripheral_qdec.o(i.QDEC_GetData), (16 bytes).
+    Removing peripheral_qdec.o(i.QDEC_GetDirection), (16 bytes).
+    Removing peripheral_qdec.o(i.QDEC_IntClear), (14 bytes).
+    Removing peripheral_qdec.o(i.QDEC_QdecCfg), (170 bytes).
+    Removing peripheral_qdec.o(i.QDEC_RegClr), (28 bytes).
+    Removing peripheral_qdec.o(i.QDEC_RegRd), (24 bytes).
+    Removing peripheral_qdec.o(i.QDEC_RegWrBit), (24 bytes).
+    Removing peripheral_qdec.o(i.QDEC_RegWrBits), (40 bytes).
+    Removing peripheral_qdec.o(i.QDEC_Reset), (14 bytes).
+    Removing fdiv.o(.text), (124 bytes).
+    Removing ffltui.o(.text), (10 bytes).
+    Removing dfltui.o(.text), (26 bytes).
+    Removing ffixui.o(.text), (40 bytes).
+    Removing d2f.o(.text), (56 bytes).
+    Removing fepilogue.o(.text), (110 bytes).
+
+403 unused section(s) (total 18338 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
+    ../clib/microlib/malloc/mvars.c          0x00000000   Number         0  mvars.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
+    ../clib/microlib/string/strcpy.c         0x00000000   Number         0  strcpy.o ABSOLUTE
+    ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    FWlib\\peripheral_dma.c                  0x00000000   Number         0  peripheral_dma.o ABSOLUTE
+    FWlib\\peripheral_gpio.c                 0x00000000   Number         0  peripheral_gpio.o ABSOLUTE
+    FWlib\\peripheral_i2c.c                  0x00000000   Number         0  peripheral_i2c.o ABSOLUTE
+    FWlib\\peripheral_keyscan.c              0x00000000   Number         0  peripheral_keyscan.o ABSOLUTE
+    FWlib\\peripheral_pinctrl.c              0x00000000   Number         0  peripheral_pinctrl.o ABSOLUTE
+    FWlib\\peripheral_pwm.c                  0x00000000   Number         0  peripheral_pwm.o ABSOLUTE
+    FWlib\\peripheral_qdec.c                 0x00000000   Number         0  peripheral_qdec.o ABSOLUTE
+    FWlib\\peripheral_ssp.c                  0x00000000   Number         0  peripheral_ssp.o ABSOLUTE
+    FWlib\\peripheral_sysctrl.c              0x00000000   Number         0  peripheral_sysctrl.o ABSOLUTE
+    FWlib\\peripheral_timer.c                0x00000000   Number         0  peripheral_timer.o ABSOLUTE
+    FWlib\\peripheral_uart.c                 0x00000000   Number         0  peripheral_uart.o ABSOLUTE
+    FWlib\peripheral_dma.c                   0x00000000   Number         0  peripheral_dma.o ABSOLUTE
+    FWlib\peripheral_gpio.c                  0x00000000   Number         0  peripheral_gpio.o ABSOLUTE
+    FWlib\peripheral_i2c.c                   0x00000000   Number         0  peripheral_i2c.o ABSOLUTE
+    FWlib\peripheral_keyscan.c               0x00000000   Number         0  peripheral_keyscan.o ABSOLUTE
+    FWlib\peripheral_pinctrl.c               0x00000000   Number         0  peripheral_pinctrl.o ABSOLUTE
+    FWlib\peripheral_pwm.c                   0x00000000   Number         0  peripheral_pwm.o ABSOLUTE
+    FWlib\peripheral_qdec.c                  0x00000000   Number         0  peripheral_qdec.o ABSOLUTE
+    FWlib\peripheral_ssp.c                   0x00000000   Number         0  peripheral_ssp.o ABSOLUTE
+    FWlib\peripheral_sysctrl.c               0x00000000   Number         0  peripheral_sysctrl.o ABSOLUTE
+    FWlib\peripheral_timer.c                 0x00000000   Number         0  peripheral_timer.o ABSOLUTE
+    FWlib\peripheral_uart.c                  0x00000000   Number         0  peripheral_uart.o ABSOLUTE
+    cdrcmple.s                               0x00000000   Number         0  cdrcmple.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    src\PTE\timer_pte\timer_pte.c            0x00000000   Number         0  timer_pte.o ABSOLUTE
+    src\PWM.c                                0x00000000   Number         0  pwm.o ABSOLUTE
+    src\SEGGER_RTT.c                         0x00000000   Number         0  segger_rtt.o ABSOLUTE
+    src\SEGGER_RTT_printf.c                  0x00000000   Number         0  segger_rtt_printf.o ABSOLUTE
+    src\\PTE\\timer_pte\\timer_pte.c         0x00000000   Number         0  timer_pte.o ABSOLUTE
+    src\\PWM.c                               0x00000000   Number         0  pwm.o ABSOLUTE
+    src\\audioadc\\PDM.c                     0x00000000   Number         0  pdm.o ABSOLUTE
+    src\\debug_print.c                       0x00000000   Number         0  debug_print.o ABSOLUTE
+    src\\gpio.c                              0x00000000   Number         0  gpio.o ABSOLUTE
+    src\\iic_master_920.c                    0x00000000   Number         0  iic_master_920.o ABSOLUTE
+    src\\keyscan_demo\\keyscan_normal.c      0x00000000   Number         0  keyscan_normal.o ABSOLUTE
+    src\\main.c                              0x00000000   Number         0  main.o ABSOLUTE
+    src\\misc.c                              0x00000000   Number         0  misc.o ABSOLUTE
+    src\\pingpong.c                          0x00000000   Number         0  pingpong.o ABSOLUTE
+    src\\qdec.c                              0x00000000   Number         0  qdec.o ABSOLUTE
+    src\\spi\\spi_flash\\spi_flash.c         0x00000000   Number         0  spi_flash.o ABSOLUTE
+    src\\test.c                              0x00000000   Number         0  test.o ABSOLUTE
+    src\\timer_delay.c                       0x00000000   Number         0  timer_delay.o ABSOLUTE
+    src\\uart.c                              0x00000000   Number         0  uart.o ABSOLUTE
+    src\ano_protocol.c                       0x00000000   Number         0  ano_protocol.o ABSOLUTE
+    src\audioadc\PDM.c                       0x00000000   Number         0  pdm.o ABSOLUTE
+    src\debug_print.c                        0x00000000   Number         0  debug_print.o ABSOLUTE
+    src\gpio.c                               0x00000000   Number         0  gpio.o ABSOLUTE
+    src\iic_master_920.c                     0x00000000   Number         0  iic_master_920.o ABSOLUTE
+    src\keyscan_demo\keyscan_normal.c        0x00000000   Number         0  keyscan_normal.o ABSOLUTE
+    src\main.c                               0x00000000   Number         0  main.o ABSOLUTE
+    src\misc.c                               0x00000000   Number         0  misc.o ABSOLUTE
+    src\pingpong.c                           0x00000000   Number         0  pingpong.o ABSOLUTE
+    src\qdec.c                               0x00000000   Number         0  qdec.o ABSOLUTE
+    src\spi\spi_flash\spi_flash.c            0x00000000   Number         0  spi_flash.o ABSOLUTE
+    src\startup_ing920.s                     0x00000000   Number         0  startup_ing920.o ABSOLUTE
+    src\test.c                               0x00000000   Number         0  test.o ABSOLUTE
+    src\timer_delay.c                        0x00000000   Number         0  timer_delay.o ABSOLUTE
+    src\uart.c                               0x00000000   Number         0  uart.o ABSOLUTE
+    RESET                                    0x00002000   Section      212  startup_ing920.o(RESET)
+    .ARM.Collect$$$$00000000                 0x000020d4   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000020d4   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000020d8   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000020dc   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000020dc   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000020dc   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000E                 0x000020e4   Section        4  entry12b.o(.ARM.Collect$$$$0000000E)
+    .ARM.Collect$$$$0000000F                 0x000020e8   Section        0  entry10a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00000011                 0x000020e8   Section        0  entry11a.o(.ARM.Collect$$$$00000011)
+    .ARM.Collect$$$$00002712                 0x000020e8   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000020e8   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000020ec   Section       28  startup_ing920.o(.text)
+    .text                                    0x00002108   Section        0  uldiv.o(.text)
+    .text                                    0x0000216a   Section        0  memcpya.o(.text)
+    .text                                    0x0000218e   Section        0  memseta.o(.text)
+    .text                                    0x000021b2   Section        0  strcpy.o(.text)
+    .text                                    0x000021c4   Section        0  dadd.o(.text)
+    .text                                    0x00002312   Section        0  ddiv.o(.text)
+    .text                                    0x000023f0   Section        0  uidiv.o(.text)
+    .text                                    0x0000241c   Section        0  llshl.o(.text)
+    .text                                    0x0000243a   Section        0  llushr.o(.text)
+    .text                                    0x0000245a   Section        0  llsshr.o(.text)
+    .text                                    0x0000247e   Section        0  iusefp.o(.text)
+    .text                                    0x0000247e   Section        0  depilogue.o(.text)
+    .text                                    0x00002538   Section        0  dmul.o(.text)
+    .text                                    0x0000261c   Section        0  dfixul.o(.text)
+    .text                                    0x0000264c   Section       48  cdrcmple.o(.text)
+    .text                                    0x0000267c   Section       36  init.o(.text)
+    i.DMA_ClearChannelIntState               0x000026a0   Section        0  peripheral_dma.o(i.DMA_ClearChannelIntState)
+    i.DMA_EnableChannel                      0x000026e8   Section        0  peripheral_dma.o(i.DMA_EnableChannel)
+    i.DMA_GetChannelIntState                 0x00002724   Section        0  peripheral_dma.o(i.DMA_GetChannelIntState)
+    i.DMA_GetCtrlConfigSrc                   0x00002754   Section        0  peripheral_dma.o(i.DMA_GetCtrlConfigSrc)
+    DMA_GetCtrlConfigSrc                     0x00002755   Thumb Code   112  peripheral_dma.o(i.DMA_GetCtrlConfigSrc)
+    i.DMA_GetPeripheralDataAddr              0x000027c4   Section        0  peripheral_dma.o(i.DMA_GetPeripheralDataAddr)
+    DMA_GetPeripheralDataAddr                0x000027c5   Thumb Code   174  peripheral_dma.o(i.DMA_GetPeripheralDataAddr)
+    i.DMA_GetPeripheralWidth                 0x0000289c   Section        0  peripheral_dma.o(i.DMA_GetPeripheralWidth)
+    DMA_GetPeripheralWidth                   0x0000289d   Thumb Code    98  peripheral_dma.o(i.DMA_GetPeripheralWidth)
+    i.DMA_IRQHandler                         0x00002908   Section        0  pdm.o(i.DMA_IRQHandler)
+    i.DMA_PreparePeripheral2Mem              0x00002934   Section        0  peripheral_dma.o(i.DMA_PreparePeripheral2Mem)
+    i.DMG_GetSPIDMAWidth                     0x000029d2   Section        0  peripheral_dma.o(i.DMG_GetSPIDMAWidth)
+    DMG_GetSPIDMAWidth                       0x000029d3   Thumb Code    30  peripheral_dma.o(i.DMG_GetSPIDMAWidth)
+    i.GIO_ClearIntStatus                     0x000029f0   Section        0  peripheral_gpio.o(i.GIO_ClearIntStatus)
+    i.GIO_GetIntStatus                       0x00002a20   Section        0  peripheral_gpio.o(i.GIO_GetIntStatus)
+    i.GPIO0_IRQHandler                       0x00002a50   Section        0  gpio.o(i.GPIO0_IRQHandler)
+    i.HardFault_Handler                      0x00002a80   Section        0  main.o(i.HardFault_Handler)
+    i.I2C0_IRQHandler                        0x00002a84   Section        0  iic_master_920.o(i.I2C0_IRQHandler)
+    i.I2C_ClearIntState                      0x00002a8e   Section        0  peripheral_i2c.o(i.I2C_ClearIntState)
+    i.I2C_CommandWrite                       0x00002a9a   Section        0  peripheral_i2c.o(i.I2C_CommandWrite)
+    i.I2C_DataRead                           0x00002a9e   Section        0  peripheral_i2c.o(i.I2C_DataRead)
+    i.I2C_DataWrite                          0x00002aa6   Section        0  peripheral_i2c.o(i.I2C_DataWrite)
+    i.I2C_FifoEmpty                          0x00002aaa   Section        0  peripheral_i2c.o(i.I2C_FifoEmpty)
+    i.I2C_FifoFull                           0x00002ab4   Section        0  peripheral_i2c.o(i.I2C_FifoFull)
+    i.I2C_GetIntState                        0x00002abe   Section        0  peripheral_i2c.o(i.I2C_GetIntState)
+    i.I2C_IntDisable                         0x00002ac8   Section        0  peripheral_i2c.o(i.I2C_IntDisable)
+    i.KEYSCAN_GetIntStateFifoEmptyRaw        0x00002ad4   Section        0  peripheral_keyscan.o(i.KEYSCAN_GetIntStateFifoEmptyRaw)
+    i.KEYSCAN_GetKeyData                     0x00002af0   Section        0  peripheral_keyscan.o(i.KEYSCAN_GetKeyData)
+    i.KEYSCAN_LoopIntClr                     0x00002b0c   Section        0  peripheral_keyscan.o(i.KEYSCAN_LoopIntClr)
+    i.KEYSCAN_reg_read_bits                  0x00002b28   Section        0  peripheral_keyscan.o(i.KEYSCAN_reg_read_bits)
+    KEYSCAN_reg_read_bits                    0x00002b29   Thumb Code    24  peripheral_keyscan.o(i.KEYSCAN_reg_read_bits)
+    i.KEYSCAN_reg_write_bits                 0x00002b40   Section        0  peripheral_keyscan.o(i.KEYSCAN_reg_write_bits)
+    KEYSCAN_reg_write_bits                   0x00002b41   Thumb Code    34  peripheral_keyscan.o(i.KEYSCAN_reg_write_bits)
+    i.KeyScan_IRQHandler                     0x00002b64   Section        0  keyscan_normal.o(i.KeyScan_IRQHandler)
+    i.NVIC_Configuration                     0x00002bac   Section        0  pdm.o(i.NVIC_Configuration)
+    NVIC_Configuration                       0x00002bad   Thumb Code    34  pdm.o(i.NVIC_Configuration)
+    i.NVIC_Init                              0x00002bd0   Section        0  misc.o(i.NVIC_Init)
+    i.PCAP_ReadData                          0x00002c40   Section        0  peripheral_pwm.o(i.PCAP_ReadData)
+    i.PINCTRL_SelAsdm                        0x00002c50   Section        0  peripheral_pinctrl.o(i.PINCTRL_SelAsdm)
+    i.PINCTRL_SelInput                       0x00002c84   Section        0  peripheral_pinctrl.o(i.PINCTRL_SelInput)
+    PINCTRL_SelInput                         0x00002c85   Thumb Code    86  peripheral_pinctrl.o(i.PINCTRL_SelInput)
+    i.PINCTRL_SelUartRxdIn                   0x00002ce0   Section        0  peripheral_pinctrl.o(i.PINCTRL_SelUartRxdIn)
+    i.PINCTRL_SetPadMux                      0x00002d18   Section        0  peripheral_pinctrl.o(i.PINCTRL_SetPadMux)
+    i.PWM0_IRQHandler                        0x00002df4   Section        0  pwm.o(i.PWM0_IRQHandler)
+    i.PWM_GetFifoStatus                      0x00002e48   Section        0  peripheral_pwm.o(i.PWM_GetFifoStatus)
+    i.PWM_GetMode                            0x00002e58   Section        0  peripheral_pwm.o(i.PWM_GetMode)
+    i.QSPI_IRQHandler                        0x00002e6c   Section        0  spi_flash.o(i.QSPI_IRQHandler)
+    i.SEGGER_RTT_Init                        0x00002e76   Section        0  segger_rtt.o(i.SEGGER_RTT_Init)
+    i.SEGGER_RTT_Write                       0x00002e80   Section        0  segger_rtt.o(i.SEGGER_RTT_Write)
+    i.SEGGER_RTT_WriteNoLock                 0x00002ec8   Section        0  segger_rtt.o(i.SEGGER_RTT_WriteNoLock)
+    i.SEGGER_RTT_printf                      0x00002f4c   Section        0  segger_rtt_printf.o(i.SEGGER_RTT_printf)
+    i.SEGGER_RTT_vprintf                     0x00002f6e   Section        0  segger_rtt_printf.o(i.SEGGER_RTT_vprintf)
+    i.SYSCTRL_ClearClkGate                   0x00003178   Section        0  peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate)
+    i.SYSCTRL_ClearClkGateMulti              0x00003186   Section        0  peripheral_sysctrl.o(i.SYSCTRL_ClearClkGateMulti)
+    i.SYSCTRL_ClkGateCtrl                    0x000031a8   Section        0  peripheral_sysctrl.o(i.SYSCTRL_ClkGateCtrl)
+    SYSCTRL_ClkGateCtrl                      0x000031a9   Thumb Code   476  peripheral_sysctrl.o(i.SYSCTRL_ClkGateCtrl)
+    i.SYSCTRL_DelayCycles                    0x00003388   Section        0  peripheral_sysctrl.o(i.SYSCTRL_DelayCycles)
+    i.SYSCTRL_GetDmaId                       0x000033c4   Section        0  peripheral_sysctrl.o(i.SYSCTRL_GetDmaId)
+    i.SYSCTRL_GetHClk                        0x00003408   Section        0  peripheral_sysctrl.o(i.SYSCTRL_GetHClk)
+    i.SYSCTRL_SelectUsedDmaItems             0x00003410   Section        0  peripheral_sysctrl.o(i.SYSCTRL_SelectUsedDmaItems)
+    i.SYSCTRL_Update_sdm_clk                 0x00003478   Section        0  peripheral_sysctrl.o(i.SYSCTRL_Update_sdm_clk)
+    i.SysTick_Handler                        0x00003498   Section        0  timer_delay.o(i.SysTick_Handler)
+    i.TIMER0_IRQHandler                      0x000034a8   Section        0  timer_pte.o(i.TIMER0_IRQHandler)
+    i.TIMER1_IRQHandler                      0x000034e8   Section        0  timer_pte.o(i.TIMER1_IRQHandler)
+    i.TMR_IntClr                             0x00003524   Section        0  peripheral_timer.o(i.TMR_IntClr)
+    i.UART0_IRQHandler                       0x00003532   Section        0  uart.o(i.UART0_IRQHandler)
+    i.UART_SendData                          0x0000353a   Section        0  peripheral_uart.o(i.UART_SendData)
+    i._DoInit                                0x00003540   Section        0  segger_rtt.o(i._DoInit)
+    _DoInit                                  0x00003541   Thumb Code    76  segger_rtt.o(i._DoInit)
+    i._GetAvailWriteSpace                    0x000035b0   Section        0  segger_rtt.o(i._GetAvailWriteSpace)
+    _GetAvailWriteSpace                      0x000035b1   Thumb Code    28  segger_rtt.o(i._GetAvailWriteSpace)
+    i._PrintInt                              0x000035cc   Section        0  segger_rtt_printf.o(i._PrintInt)
+    _PrintInt                                0x000035cd   Thumb Code   236  segger_rtt_printf.o(i._PrintInt)
+    i._PrintUnsigned                         0x000036b8   Section        0  segger_rtt_printf.o(i._PrintUnsigned)
+    _PrintUnsigned                           0x000036b9   Thumb Code   230  segger_rtt_printf.o(i._PrintUnsigned)
+    i._StoreChar                             0x000037a4   Section        0  segger_rtt_printf.o(i._StoreChar)
+    _StoreChar                               0x000037a5   Thumb Code    68  segger_rtt_printf.o(i._StoreChar)
+    i._WriteBlocking                         0x000037e8   Section        0  segger_rtt.o(i._WriteBlocking)
+    _WriteBlocking                           0x000037e9   Thumb Code   114  segger_rtt.o(i._WriteBlocking)
+    i._WriteNoCheck                          0x0000385a   Section        0  segger_rtt.o(i._WriteNoCheck)
+    _WriteNoCheck                            0x0000385b   Thumb Code    76  segger_rtt.o(i._WriteNoCheck)
+    i.__0vsnprintf                           0x000038a8   Section        0  printfa.o(i.__0vsnprintf)
+    i.__NVIC_SetPriority                     0x000038dc   Section        0  main.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x000038dd   Thumb Code    32  main.o(i.__NVIC_SetPriority)
+    i.__scatterload_copy                     0x00003904   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00003912   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00003914   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._fp_digits                             0x00003924   Section        0  printfa.o(i._fp_digits)
+    _fp_digits                               0x00003925   Thumb Code   366  printfa.o(i._fp_digits)
+    i._printf_core                           0x00003aa8   Section        0  printfa.o(i._printf_core)
+    _printf_core                             0x00003aa9   Thumb Code  1704  printfa.o(i._printf_core)
+    i._printf_post_padding                   0x0000415c   Section        0  printfa.o(i._printf_post_padding)
+    _printf_post_padding                     0x0000415d   Thumb Code    36  printfa.o(i._printf_post_padding)
+    i._printf_pre_padding                    0x00004180   Section        0  printfa.o(i._printf_pre_padding)
+    _printf_pre_padding                      0x00004181   Thumb Code    46  printfa.o(i._printf_pre_padding)
+    i._snputc                                0x000041ae   Section        0  printfa.o(i._snputc)
+    _snputc                                  0x000041af   Thumb Code    22  printfa.o(i._snputc)
+    i.apSSP_ClearIntStatus                   0x000041c4   Section        0  peripheral_ssp.o(i.apSSP_ClearIntStatus)
+    i.apSSP_GetIntRawStatus                  0x000041cc   Section        0  peripheral_ssp.o(i.apSSP_GetIntRawStatus)
+    i.apUART_BaudRateSet                     0x000041d2   Section        0  peripheral_uart.o(i.apUART_BaudRateSet)
+    i.apUART_Check_RXFIFO_EMPTY              0x0000420e   Section        0  peripheral_uart.o(i.apUART_Check_RXFIFO_EMPTY)
+    i.apUART_Check_TXFIFO_EMPTY              0x00004218   Section        0  peripheral_uart.o(i.apUART_Check_TXFIFO_EMPTY)
+    i.apUART_Get_all_raw_int_stat            0x00004222   Section        0  peripheral_uart.o(i.apUART_Get_all_raw_int_stat)
+    i.apUART_Initialize                      0x00004228   Section        0  peripheral_uart.o(i.apUART_Initialize)
+    i.config_uart                            0x0000429c   Section        0  uart.o(i.config_uart)
+    i.debug_hex                              0x000042f4   Section        0  debug_print.o(i.debug_hex)
+    i.debug_uart                             0x00004304   Section        0  debug_print.o(i.debug_uart)
+    i.key_scan_check                         0x00004338   Section        0  keyscan_normal.o(i.key_scan_check)
+    i.main                                   0x000043a8   Section        0  main.o(i.main)
+    i.pdm_dma_init                           0x00004470   Section        0  pdm.o(i.pdm_dma_init)
+    i.pdm_init                               0x000044b8   Section        0  pdm.o(i.pdm_init)
+    i.pdm_io_init                            0x00004674   Section        0  pdm.o(i.pdm_io_init)
+    i.pdm_test                               0x0000468c   Section        0  pdm.o(i.pdm_test)
+    i.peripherals_i2c_isr                    0x000046ec   Section        0  iic_master_920.o(i.peripherals_i2c_isr)
+    peripherals_i2c_isr                      0x000046ed   Thumb Code   272  iic_master_920.o(i.peripherals_i2c_isr)
+    i.peripherals_spi_isr                    0x0000481c   Section        0  spi_flash.o(i.peripherals_spi_isr)
+    peripherals_spi_isr                      0x0000481d   Thumb Code    30  spi_flash.o(i.peripherals_spi_isr)
+    i.pin_id_for_input_source                0x00004840   Section        0  peripheral_pinctrl.o(i.pin_id_for_input_source)
+    pin_id_for_input_source                  0x00004841   Thumb Code    86  peripheral_pinctrl.o(i.pin_id_for_input_source)
+    i.set_reg_bit                            0x0000489c   Section        0  pdm.o(i.set_reg_bit)
+    set_reg_bit                              0x0000489d   Thumb Code    22  pdm.o(i.set_reg_bit)
+    i.set_reg_bit                            0x000048b2   Section        0  peripheral_sysctrl.o(i.set_reg_bit)
+    set_reg_bit                              0x000048b3   Thumb Code    22  peripheral_sysctrl.o(i.set_reg_bit)
+    i.set_reg_bits                           0x000048c8   Section        0  pdm.o(i.set_reg_bits)
+    set_reg_bits                             0x000048c9   Thumb Code    26  pdm.o(i.set_reg_bits)
+    i.set_reg_bits                           0x000048e2   Section        0  peripheral_sysctrl.o(i.set_reg_bits)
+    set_reg_bits                             0x000048e3   Thumb Code    26  peripheral_sysctrl.o(i.set_reg_bits)
+    i.set_reg_bits                           0x000048fc   Section        0  peripheral_pinctrl.o(i.set_reg_bits)
+    set_reg_bits                             0x000048fd   Thumb Code    30  peripheral_pinctrl.o(i.set_reg_bits)
+    i.source_id_on_pin                       0x0000491c   Section        0  peripheral_pinctrl.o(i.source_id_on_pin)
+    source_id_on_pin                         0x0000491d   Thumb Code    96  peripheral_pinctrl.o(i.source_id_on_pin)
+    i.uart_init_board                        0x00004980   Section        0  uart.o(i.uart_init_board)
+    i.uart_int_fifo_callback                 0x000049b4   Section        0  uart.o(i.uart_int_fifo_callback)
+    uart_int_fifo_callback                   0x000049b5   Thumb Code   152  uart.o(i.uart_int_fifo_callback)
+    i.uart_send_test                         0x00004a7c   Section        0  uart.o(i.uart_send_test)
+    i.write_uart_buffer                      0x00004aa8   Section        0  debug_print.o(i.write_uart_buffer)
+    .constdata                               0x00004ab8   Section       16  segger_rtt_printf.o(.constdata)
+    _aV2C                                    0x00004ab8   Data          16  segger_rtt_printf.o(.constdata)
+    .constdata                               0x00004ac8   Section      960  peripheral_pinctrl.o(.constdata)
+    source_tab                               0x00004e10   Data          12  peripheral_pinctrl.o(.constdata)
+    reg_tab                                  0x00004e1c   Data          12  peripheral_pinctrl.o(.constdata)
+    bit_offset_tab                           0x00004e28   Data          12  peripheral_pinctrl.o(.constdata)
+    source_tab                               0x00004e34   Data          12  peripheral_pinctrl.o(.constdata)
+    settings                                 0x00004e40   Data          72  peripheral_pinctrl.o(.constdata)
+    .data                                    0x20000000   Section        4  timer_delay.o(.data)
+    .data                                    0x20000004   Section       37  uart.o(.data)
+    .data                                    0x2000002c   Section       14  iic_master_920.o(.data)
+    send_buf_ptr                             0x20000030   Data           4  iic_master_920.o(.data)
+    read_buf_ptr                             0x20000034   Data           4  iic_master_920.o(.data)
+    wr_flag                                  0x20000038   Data           1  iic_master_920.o(.data)
+    dir                                      0x20000039   Data           1  iic_master_920.o(.data)
+    .data                                    0x2000003c   Section       50  keyscan_normal.o(.data)
+    keyscan_set                              0x2000004c   Data          32  keyscan_normal.o(.data)
+    num                                      0x2000006c   Data           2  keyscan_normal.o(.data)
+    .data                                    0x20000070   Section        8  timer_pte.o(.data)
+    .data                                    0x20000078   Section        4  pdm.o(.data)
+    .bss                                     0x2000007c   Section      588  segger_rtt.o(.bss)
+    _acUpBuffer                              0x200000c4   Data         500  segger_rtt.o(.bss)
+    _acDownBuffer                            0x200002b8   Data          16  segger_rtt.o(.bss)
+    .bss                                     0x200002c8   Section      284  uart.o(.bss)
+    .bss                                     0x200003e4   Section       50  keyscan_normal.o(.bss)
+    key_ctx                                  0x200003e4   Data          30  keyscan_normal.o(.bss)
+    key_vale                                 0x20000402   Data          20  keyscan_normal.o(.bss)
+    .bss                                     0x20000418   Section     4124  pdm.o(.bss)
+    STACK                                    0x20001438   Section     1024  startup_ing920.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __arm_fini_                               - Undefined Weak Reference
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors                                0x00002000   Data           4  startup_ing920.o(RESET)
+    __main                                   0x000020d5   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000020d5   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000020d9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000020dd   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000020dd   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000020dd   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000020dd   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_lib_shutdown_fini                   0x000020e5   Thumb Code     0  entry12b.o(.ARM.Collect$$$$0000000E)
+    __rt_final_cpp                           0x000020e9   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000F)
+    __rt_final_exit                          0x000020e9   Thumb Code     0  entry11a.o(.ARM.Collect$$$$00000011)
+    Reset_Handler                            0x000020ed   Thumb Code     4  startup_ing920.o(.text)
+    NMI_Handler                              0x000020f1   Thumb Code     2  startup_ing920.o(.text)
+    MemManage_Handler                        0x000020f5   Thumb Code     2  startup_ing920.o(.text)
+    BusFault_Handler                         0x000020f7   Thumb Code     2  startup_ing920.o(.text)
+    UsageFault_Handler                       0x000020f9   Thumb Code     2  startup_ing920.o(.text)
+    SVC_Handler                              0x000020fb   Thumb Code     2  startup_ing920.o(.text)
+    DebugMon_Handler                         0x000020fd   Thumb Code     2  startup_ing920.o(.text)
+    PendSV_Handler                           0x000020ff   Thumb Code     2  startup_ing920.o(.text)
+    ACTCNT32K_IRQHandler                     0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    APBSPI_IRQHandler                        0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    AudioEnc_IRQHandler                      0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    CacheI_IRQHandler                        0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    GPIO1_IRQHandler                         0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    I2S_IRQHandler                           0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    LLEAES_IRQHandler                        0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    LLEERR_IRQHandler                        0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    LLEFUN_IRQHandler                        0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    PMUPDR_IRQHandler                        0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    PMUPVD_IRQHandler                        0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    POW_CS_IRQHandler                        0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    PWM1_IRQHandler                          0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    PWM2_IRQHandler                          0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    QDEC0_IRQHandler                         0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    QDEC1_IRQHandler                         0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    QDEC2_IRQHandler                         0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    RCMFDTRIM_IRQHandler                     0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    SADC_IRQHandler                          0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    SPIFlash_IRQHandler                      0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    TBCU_IRQHandler                          0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    TRNG_IRQHandler                          0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    UART1_IRQHandler                         0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    USB_IRQHandler                           0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    WDT_IRQHandler                           0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    XOREADY_IRQHandler                       0x00002103   Thumb Code     0  startup_ing920.o(.text)
+    __aeabi_uldivmod                         0x00002109   Thumb Code    98  uldiv.o(.text)
+    __aeabi_memcpy                           0x0000216b   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x0000216b   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x0000216b   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memset                           0x0000218f   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x0000218f   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x0000218f   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x0000219d   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x0000219d   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x0000219d   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x000021a1   Thumb Code    18  memseta.o(.text)
+    strcpy                                   0x000021b3   Thumb Code    18  strcpy.o(.text)
+    __aeabi_dadd                             0x000021c5   Thumb Code   322  dadd.o(.text)
+    __aeabi_dsub                             0x00002307   Thumb Code     6  dadd.o(.text)
+    __aeabi_drsub                            0x0000230d   Thumb Code     6  dadd.o(.text)
+    __aeabi_ddiv                             0x00002313   Thumb Code   222  ddiv.o(.text)
+    __aeabi_uidiv                            0x000023f1   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x000023f1   Thumb Code    44  uidiv.o(.text)
+    __aeabi_llsl                             0x0000241d   Thumb Code    30  llshl.o(.text)
+    _ll_shift_l                              0x0000241d   Thumb Code     0  llshl.o(.text)
+    __aeabi_llsr                             0x0000243b   Thumb Code    32  llushr.o(.text)
+    _ll_ushift_r                             0x0000243b   Thumb Code     0  llushr.o(.text)
+    __aeabi_lasr                             0x0000245b   Thumb Code    36  llsshr.o(.text)
+    _ll_sshift_r                             0x0000245b   Thumb Code     0  llsshr.o(.text)
+    __I$use$fp                               0x0000247f   Thumb Code     0  iusefp.o(.text)
+    _double_round                            0x0000247f   Thumb Code    30  depilogue.o(.text)
+    _double_epilogue                         0x0000249d   Thumb Code   156  depilogue.o(.text)
+    __aeabi_dmul                             0x00002539   Thumb Code   228  dmul.o(.text)
+    __aeabi_d2ulz                            0x0000261d   Thumb Code    48  dfixul.o(.text)
+    __aeabi_cdrcmple                         0x0000264d   Thumb Code    48  cdrcmple.o(.text)
+    __scatterload                            0x0000267d   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x0000267d   Thumb Code     0  init.o(.text)
+    DMA_ClearChannelIntState                 0x000026a1   Thumb Code    68  peripheral_dma.o(i.DMA_ClearChannelIntState)
+    DMA_EnableChannel                        0x000026e9   Thumb Code    54  peripheral_dma.o(i.DMA_EnableChannel)
+    DMA_GetChannelIntState                   0x00002725   Thumb Code    42  peripheral_dma.o(i.DMA_GetChannelIntState)
+    DMA_IRQHandler                           0x00002909   Thumb Code    34  pdm.o(i.DMA_IRQHandler)
+    DMA_PreparePeripheral2Mem                0x00002935   Thumb Code   158  peripheral_dma.o(i.DMA_PreparePeripheral2Mem)
+    GIO_ClearIntStatus                       0x000029f1   Thumb Code    40  peripheral_gpio.o(i.GIO_ClearIntStatus)
+    GIO_GetIntStatus                         0x00002a21   Thumb Code    38  peripheral_gpio.o(i.GIO_GetIntStatus)
+    GPIO0_IRQHandler                         0x00002a51   Thumb Code    26  gpio.o(i.GPIO0_IRQHandler)
+    HardFault_Handler                        0x00002a81   Thumb Code     4  main.o(i.HardFault_Handler)
+    I2C0_IRQHandler                          0x00002a85   Thumb Code    10  iic_master_920.o(i.I2C0_IRQHandler)
+    I2C_ClearIntState                        0x00002a8f   Thumb Code    12  peripheral_i2c.o(i.I2C_ClearIntState)
+    I2C_CommandWrite                         0x00002a9b   Thumb Code     4  peripheral_i2c.o(i.I2C_CommandWrite)
+    I2C_DataRead                             0x00002a9f   Thumb Code     8  peripheral_i2c.o(i.I2C_DataRead)
+    I2C_DataWrite                            0x00002aa7   Thumb Code     4  peripheral_i2c.o(i.I2C_DataWrite)
+    I2C_FifoEmpty                            0x00002aab   Thumb Code    10  peripheral_i2c.o(i.I2C_FifoEmpty)
+    I2C_FifoFull                             0x00002ab5   Thumb Code    10  peripheral_i2c.o(i.I2C_FifoFull)
+    I2C_GetIntState                          0x00002abf   Thumb Code    10  peripheral_i2c.o(i.I2C_GetIntState)
+    I2C_IntDisable                           0x00002ac9   Thumb Code    12  peripheral_i2c.o(i.I2C_IntDisable)
+    KEYSCAN_GetIntStateFifoEmptyRaw          0x00002ad5   Thumb Code    22  peripheral_keyscan.o(i.KEYSCAN_GetIntStateFifoEmptyRaw)
+    KEYSCAN_GetKeyData                       0x00002af1   Thumb Code    22  peripheral_keyscan.o(i.KEYSCAN_GetKeyData)
+    KEYSCAN_LoopIntClr                       0x00002b0d   Thumb Code    22  peripheral_keyscan.o(i.KEYSCAN_LoopIntClr)
+    KeyScan_IRQHandler                       0x00002b65   Thumb Code    46  keyscan_normal.o(i.KeyScan_IRQHandler)
+    NVIC_Init                                0x00002bd1   Thumb Code   100  misc.o(i.NVIC_Init)
+    PCAP_ReadData                            0x00002c41   Thumb Code    12  peripheral_pwm.o(i.PCAP_ReadData)
+    PINCTRL_SelAsdm                          0x00002c51   Thumb Code    50  peripheral_pinctrl.o(i.PINCTRL_SelAsdm)
+    PINCTRL_SelUartRxdIn                     0x00002ce1   Thumb Code    56  peripheral_pinctrl.o(i.PINCTRL_SelUartRxdIn)
+    PINCTRL_SetPadMux                        0x00002d19   Thumb Code   214  peripheral_pinctrl.o(i.PINCTRL_SetPadMux)
+    PWM0_IRQHandler                          0x00002df5   Thumb Code    52  pwm.o(i.PWM0_IRQHandler)
+    PWM_GetFifoStatus                        0x00002e49   Thumb Code    12  peripheral_pwm.o(i.PWM_GetFifoStatus)
+    PWM_GetMode                              0x00002e59   Thumb Code    16  peripheral_pwm.o(i.PWM_GetMode)
+    QSPI_IRQHandler                          0x00002e6d   Thumb Code    10  spi_flash.o(i.QSPI_IRQHandler)
+    SEGGER_RTT_Init                          0x00002e77   Thumb Code     8  segger_rtt.o(i.SEGGER_RTT_Init)
+    SEGGER_RTT_Write                         0x00002e81   Thumb Code    68  segger_rtt.o(i.SEGGER_RTT_Write)
+    SEGGER_RTT_WriteNoLock                   0x00002ec9   Thumb Code   126  segger_rtt.o(i.SEGGER_RTT_WriteNoLock)
+    SEGGER_RTT_printf                        0x00002f4d   Thumb Code    34  segger_rtt_printf.o(i.SEGGER_RTT_printf)
+    SEGGER_RTT_vprintf                       0x00002f6f   Thumb Code   522  segger_rtt_printf.o(i.SEGGER_RTT_vprintf)
+    SYSCTRL_ClearClkGate                     0x00003179   Thumb Code    14  peripheral_sysctrl.o(i.SYSCTRL_ClearClkGate)
+    SYSCTRL_ClearClkGateMulti                0x00003187   Thumb Code    32  peripheral_sysctrl.o(i.SYSCTRL_ClearClkGateMulti)
+    SYSCTRL_DelayCycles                      0x00003389   Thumb Code    60  peripheral_sysctrl.o(i.SYSCTRL_DelayCycles)
+    SYSCTRL_GetDmaId                         0x000033c5   Thumb Code    68  peripheral_sysctrl.o(i.SYSCTRL_GetDmaId)
+    SYSCTRL_GetHClk                          0x00003409   Thumb Code     4  peripheral_sysctrl.o(i.SYSCTRL_GetHClk)
+    SYSCTRL_SelectUsedDmaItems               0x00003411   Thumb Code   102  peripheral_sysctrl.o(i.SYSCTRL_SelectUsedDmaItems)
+    SYSCTRL_Update_sdm_clk                   0x00003479   Thumb Code    28  peripheral_sysctrl.o(i.SYSCTRL_Update_sdm_clk)
+    SysTick_Handler                          0x00003499   Thumb Code    12  timer_delay.o(i.SysTick_Handler)
+    TIMER0_IRQHandler                        0x000034a9   Thumb Code    34  timer_pte.o(i.TIMER0_IRQHandler)
+    TIMER1_IRQHandler                        0x000034e9   Thumb Code    32  timer_pte.o(i.TIMER1_IRQHandler)
+    TMR_IntClr                               0x00003525   Thumb Code    14  peripheral_timer.o(i.TMR_IntClr)
+    UART0_IRQHandler                         0x00003533   Thumb Code     8  uart.o(i.UART0_IRQHandler)
+    UART_SendData                            0x0000353b   Thumb Code     4  peripheral_uart.o(i.UART_SendData)
+    __0vsnprintf                             0x000038a9   Thumb Code    46  printfa.o(i.__0vsnprintf)
+    __1vsnprintf                             0x000038a9   Thumb Code     0  printfa.o(i.__0vsnprintf)
+    __2vsnprintf                             0x000038a9   Thumb Code     0  printfa.o(i.__0vsnprintf)
+    __c89vsnprintf                           0x000038a9   Thumb Code     0  printfa.o(i.__0vsnprintf)
+    vsnprintf                                0x000038a9   Thumb Code     0  printfa.o(i.__0vsnprintf)
+    __scatterload_copy                       0x00003905   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00003913   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00003915   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    apSSP_ClearIntStatus                     0x000041c5   Thumb Code     8  peripheral_ssp.o(i.apSSP_ClearIntStatus)
+    apSSP_GetIntRawStatus                    0x000041cd   Thumb Code     6  peripheral_ssp.o(i.apSSP_GetIntRawStatus)
+    apUART_BaudRateSet                       0x000041d3   Thumb Code    60  peripheral_uart.o(i.apUART_BaudRateSet)
+    apUART_Check_RXFIFO_EMPTY                0x0000420f   Thumb Code    10  peripheral_uart.o(i.apUART_Check_RXFIFO_EMPTY)
+    apUART_Check_TXFIFO_EMPTY                0x00004219   Thumb Code    10  peripheral_uart.o(i.apUART_Check_TXFIFO_EMPTY)
+    apUART_Get_all_raw_int_stat              0x00004223   Thumb Code     6  peripheral_uart.o(i.apUART_Get_all_raw_int_stat)
+    apUART_Initialize                        0x00004229   Thumb Code   114  peripheral_uart.o(i.apUART_Initialize)
+    config_uart                              0x0000429d   Thumb Code    84  uart.o(i.config_uart)
+    debug_hex                                0x000042f5   Thumb Code    16  debug_print.o(i.debug_hex)
+    debug_uart                               0x00004305   Thumb Code    52  debug_print.o(i.debug_uart)
+    key_scan_check                           0x00004339   Thumb Code    74  keyscan_normal.o(i.key_scan_check)
+    main                                     0x000043a9   Thumb Code   160  main.o(i.main)
+    pdm_dma_init                             0x00004471   Thumb Code    60  pdm.o(i.pdm_dma_init)
+    pdm_init                                 0x000044b9   Thumb Code   432  pdm.o(i.pdm_init)
+    pdm_io_init                              0x00004675   Thumb Code    24  pdm.o(i.pdm_io_init)
+    pdm_test                                 0x0000468d   Thumb Code    82  pdm.o(i.pdm_test)
+    uart_init_board                          0x00004981   Thumb Code    42  uart.o(i.uart_init_board)
+    uart_send_test                           0x00004a7d   Thumb Code    38  uart.o(i.uart_send_test)
+    write_uart_buffer                        0x00004aa9   Thumb Code    16  debug_print.o(i.write_uart_buffer)
+    io_output_source_map                     0x00004ac8   Data         840  peripheral_pinctrl.o(.constdata)
+    Region$$Table$$Base                      0x00004e88   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00004ea8   Number         0  anon$$obj.o(Region$$Table)
+    jiffes                                   0x20000000   Data           4  timer_delay.o(.data)
+    src                                      0x20000004   Data          30  uart.o(.data)
+    index                                    0x20000024   Data           4  uart.o(.data)
+    rc_data                                  0x20000028   Data           1  uart.o(.data)
+    write_data_len                           0x2000002c   Data           1  iic_master_920.o(.data)
+    write_data_cnt                           0x2000002d   Data           1  iic_master_920.o(.data)
+    read_data_len                            0x2000002e   Data           1  iic_master_920.o(.data)
+    read_data_cnt                            0x2000002f   Data           1  iic_master_920.o(.data)
+    key_out_row                              0x2000003c   Data           8  keyscan_normal.o(.data)
+    key_in_col                               0x20000044   Data           8  keyscan_normal.o(.data)
+    data                                     0x20000070   Data           4  timer_pte.o(.data)
+    reg_ptr                                  0x20000074   Data           4  timer_pte.o(.data)
+    dma_data                                 0x20000078   Data           1  pdm.o(.data)
+    out_data                                 0x2000007a   Data           2  pdm.o(.data)
+    _SEGGER_RTT                              0x2000007c   Data          72  segger_rtt.o(.bss)
+    test                                     0x200002c8   Data          28  uart.o(.bss)
+    dst                                      0x200002e4   Data         256  uart.o(.bss)
+    mda_rc_pdm_data                          0x20000418   Data        4096  pdm.o(.bss)
+    pdm_dma                                  0x20001418   Data          28  pdm.o(.bss)
+    __initial_sp                             0x20001838   Data           0  startup_ing920.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000020d5
+
+  Load Region LR_IROM1 (Base: 0x00002000, Size: 0x00002f24, Max: 0x00010000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x00002000, Load base: 0x00002000, Size: 0x00002ea8, Max: 0x00010000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00002000   0x00002000   0x000000d4   Data   RO         1396    RESET               startup_ing920.o
+    0x000020d4   0x000020d4   0x00000000   Code   RO         3162  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000020d4   0x000020d4   0x00000004   Code   RO         3247    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000020d8   0x000020d8   0x00000004   Code   RO         3250    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000020dc   0x000020dc   0x00000000   Code   RO         3252    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000020dc   0x000020dc   0x00000000   Code   RO         3254    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000020dc   0x000020dc   0x00000008   Code   RO         3255    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000020e4   0x000020e4   0x00000004   Code   RO         3262    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
+    0x000020e8   0x000020e8   0x00000000   Code   RO         3257    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
+    0x000020e8   0x000020e8   0x00000000   Code   RO         3259    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
+    0x000020e8   0x000020e8   0x00000004   Code   RO         3248    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000020ec   0x000020ec   0x0000001c   Code   RO         1397    .text               startup_ing920.o
+    0x00002108   0x00002108   0x00000062   Code   RO         3165    .text               mc_w.l(uldiv.o)
+    0x0000216a   0x0000216a   0x00000024   Code   RO         3167    .text               mc_w.l(memcpya.o)
+    0x0000218e   0x0000218e   0x00000024   Code   RO         3169    .text               mc_w.l(memseta.o)
+    0x000021b2   0x000021b2   0x00000012   Code   RO         3173    .text               mc_w.l(strcpy.o)
+    0x000021c4   0x000021c4   0x0000014e   Code   RO         3235    .text               mf_w.l(dadd.o)
+    0x00002312   0x00002312   0x000000de   Code   RO         3237    .text               mf_w.l(ddiv.o)
+    0x000023f0   0x000023f0   0x0000002c   Code   RO         3264    .text               mc_w.l(uidiv.o)
+    0x0000241c   0x0000241c   0x0000001e   Code   RO         3266    .text               mc_w.l(llshl.o)
+    0x0000243a   0x0000243a   0x00000020   Code   RO         3268    .text               mc_w.l(llushr.o)
+    0x0000245a   0x0000245a   0x00000024   Code   RO         3270    .text               mc_w.l(llsshr.o)
+    0x0000247e   0x0000247e   0x00000000   Code   RO         3274    .text               mc_w.l(iusefp.o)
+    0x0000247e   0x0000247e   0x000000ba   Code   RO         3277    .text               mf_w.l(depilogue.o)
+    0x00002538   0x00002538   0x000000e4   Code   RO         3279    .text               mf_w.l(dmul.o)
+    0x0000261c   0x0000261c   0x00000030   Code   RO         3281    .text               mf_w.l(dfixul.o)
+    0x0000264c   0x0000264c   0x00000030   Code   RO         3283    .text               mf_w.l(cdrcmple.o)
+    0x0000267c   0x0000267c   0x00000024   Code   RO         3285    .text               mc_w.l(init.o)
+    0x000026a0   0x000026a0   0x00000048   Code   RO         2104    i.DMA_ClearChannelIntState  peripheral_dma.o
+    0x000026e8   0x000026e8   0x0000003c   Code   RO         2105    i.DMA_EnableChannel  peripheral_dma.o
+    0x00002724   0x00002724   0x00000030   Code   RO         2106    i.DMA_GetChannelIntState  peripheral_dma.o
+    0x00002754   0x00002754   0x00000070   Code   RO         2108    i.DMA_GetCtrlConfigSrc  peripheral_dma.o
+    0x000027c4   0x000027c4   0x000000d8   Code   RO         2110    i.DMA_GetPeripheralDataAddr  peripheral_dma.o
+    0x0000289c   0x0000289c   0x0000006c   Code   RO         2111    i.DMA_GetPeripheralWidth  peripheral_dma.o
+    0x00002908   0x00002908   0x0000002c   Code   RO         1303    i.DMA_IRQHandler    pdm.o
+    0x00002934   0x00002934   0x0000009e   Code   RO         2115    i.DMA_PreparePeripheral2Mem  peripheral_dma.o
+    0x000029d2   0x000029d2   0x0000001e   Code   RO         2118    i.DMG_GetSPIDMAWidth  peripheral_dma.o
+    0x000029f0   0x000029f0   0x00000030   Code   RO         1406    i.GIO_ClearIntStatus  peripheral_gpio.o
+    0x00002a20   0x00002a20   0x00000030   Code   RO         1412    i.GIO_GetIntStatus  peripheral_gpio.o
+    0x00002a50   0x00002a50   0x00000030   Code   RO          470    i.GPIO0_IRQHandler  gpio.o
+    0x00002a80   0x00002a80   0x00000004   Code   RO            4    i.HardFault_Handler  main.o
+    0x00002a84   0x00002a84   0x0000000a   Code   RO          867    i.I2C0_IRQHandler   iic_master_920.o
+    0x00002a8e   0x00002a8e   0x0000000c   Code   RO         2705    i.I2C_ClearIntState  peripheral_i2c.o
+    0x00002a9a   0x00002a9a   0x00000004   Code   RO         2706    i.I2C_CommandWrite  peripheral_i2c.o
+    0x00002a9e   0x00002a9e   0x00000008   Code   RO         2714    i.I2C_DataRead      peripheral_i2c.o
+    0x00002aa6   0x00002aa6   0x00000004   Code   RO         2715    i.I2C_DataWrite     peripheral_i2c.o
+    0x00002aaa   0x00002aaa   0x0000000a   Code   RO         2718    i.I2C_FifoEmpty     peripheral_i2c.o
+    0x00002ab4   0x00002ab4   0x0000000a   Code   RO         2719    i.I2C_FifoFull      peripheral_i2c.o
+    0x00002abe   0x00002abe   0x0000000a   Code   RO         2720    i.I2C_GetIntState   peripheral_i2c.o
+    0x00002ac8   0x00002ac8   0x0000000c   Code   RO         2722    i.I2C_IntDisable    peripheral_i2c.o
+    0x00002ad4   0x00002ad4   0x0000001c   Code   RO         2848    i.KEYSCAN_GetIntStateFifoEmptyRaw  peripheral_keyscan.o
+    0x00002af0   0x00002af0   0x0000001c   Code   RO         2851    i.KEYSCAN_GetKeyData  peripheral_keyscan.o
+    0x00002b0c   0x00002b0c   0x0000001c   Code   RO         2858    i.KEYSCAN_LoopIntClr  peripheral_keyscan.o
+    0x00002b28   0x00002b28   0x00000018   Code   RO         2880    i.KEYSCAN_reg_read_bits  peripheral_keyscan.o
+    0x00002b40   0x00002b40   0x00000022   Code   RO         2881    i.KEYSCAN_reg_write_bits  peripheral_keyscan.o
+    0x00002b62   0x00002b62   0x00000002   PAD
+    0x00002b64   0x00002b64   0x00000048   Code   RO         1090    i.KeyScan_IRQHandler  keyscan_normal.o
+    0x00002bac   0x00002bac   0x00000022   Code   RO         1304    i.NVIC_Configuration  pdm.o
+    0x00002bce   0x00002bce   0x00000002   PAD
+    0x00002bd0   0x00002bd0   0x00000070   Code   RO          543    i.NVIC_Init         misc.o
+    0x00002c40   0x00002c40   0x00000010   Code   RO         2222    i.PCAP_ReadData     peripheral_pwm.o
+    0x00002c50   0x00002c50   0x00000032   Code   RO         1669    i.PINCTRL_SelAsdm   peripheral_pinctrl.o
+    0x00002c82   0x00002c82   0x00000002   PAD
+    0x00002c84   0x00002c84   0x0000005c   Code   RO         1674    i.PINCTRL_SelInput  peripheral_pinctrl.o
+    0x00002ce0   0x00002ce0   0x00000038   Code   RO         1684    i.PINCTRL_SelUartRxdIn  peripheral_pinctrl.o
+    0x00002d18   0x00002d18   0x000000dc   Code   RO         1686    i.PINCTRL_SetPadMux  peripheral_pinctrl.o
+    0x00002df4   0x00002df4   0x00000054   Code   RO          766    i.PWM0_IRQHandler   pwm.o
+    0x00002e48   0x00002e48   0x00000010   Code   RO         2226    i.PWM_GetFifoStatus  peripheral_pwm.o
+    0x00002e58   0x00002e58   0x00000014   Code   RO         2227    i.PWM_GetMode       peripheral_pwm.o
+    0x00002e6c   0x00002e6c   0x0000000a   Code   RO         1152    i.QSPI_IRQHandler   spi_flash.o
+    0x00002e76   0x00002e76   0x00000008   Code   RO          241    i.SEGGER_RTT_Init   segger_rtt.o
+    0x00002e7e   0x00002e7e   0x00000002   PAD
+    0x00002e80   0x00002e80   0x00000048   Code   RO          256    i.SEGGER_RTT_Write  segger_rtt.o
+    0x00002ec8   0x00002ec8   0x00000084   Code   RO          259    i.SEGGER_RTT_WriteNoLock  segger_rtt.o
+    0x00002f4c   0x00002f4c   0x00000022   Code   RO          502    i.SEGGER_RTT_printf  segger_rtt_printf.o
+    0x00002f6e   0x00002f6e   0x0000020a   Code   RO          503    i.SEGGER_RTT_vprintf  segger_rtt_printf.o
+    0x00003178   0x00003178   0x0000000e   Code   RO         1537    i.SYSCTRL_ClearClkGate  peripheral_sysctrl.o
+    0x00003186   0x00003186   0x00000020   Code   RO         1538    i.SYSCTRL_ClearClkGateMulti  peripheral_sysctrl.o
+    0x000031a6   0x000031a6   0x00000002   PAD
+    0x000031a8   0x000031a8   0x000001e0   Code   RO         1539    i.SYSCTRL_ClkGateCtrl  peripheral_sysctrl.o
+    0x00003388   0x00003388   0x0000003c   Code   RO         1540    i.SYSCTRL_DelayCycles  peripheral_sysctrl.o
+    0x000033c4   0x000033c4   0x00000044   Code   RO         1543    i.SYSCTRL_GetDmaId  peripheral_sysctrl.o
+    0x00003408   0x00003408   0x00000008   Code   RO         1544    i.SYSCTRL_GetHClk   peripheral_sysctrl.o
+    0x00003410   0x00003410   0x00000066   Code   RO         1550    i.SYSCTRL_SelectUsedDmaItems  peripheral_sysctrl.o
+    0x00003476   0x00003476   0x00000002   PAD
+    0x00003478   0x00003478   0x00000020   Code   RO         1553    i.SYSCTRL_Update_sdm_clk  peripheral_sysctrl.o
+    0x00003498   0x00003498   0x00000010   Code   RO          200    i.SysTick_Handler   timer_delay.o
+    0x000034a8   0x000034a8   0x00000040   Code   RO         1245    i.TIMER0_IRQHandler  timer_pte.o
+    0x000034e8   0x000034e8   0x0000003c   Code   RO         1246    i.TIMER1_IRQHandler  timer_pte.o
+    0x00003524   0x00003524   0x0000000e   Code   RO         2002    i.TMR_IntClr        peripheral_timer.o
+    0x00003532   0x00003532   0x00000008   Code   RO          592    i.UART0_IRQHandler  uart.o
+    0x0000353a   0x0000353a   0x00000004   Code   RO         1832    i.UART_SendData     peripheral_uart.o
+    0x0000353e   0x0000353e   0x00000002   PAD
+    0x00003540   0x00003540   0x00000070   Code   RO          263    i._DoInit           segger_rtt.o
+    0x000035b0   0x000035b0   0x0000001c   Code   RO          264    i._GetAvailWriteSpace  segger_rtt.o
+    0x000035cc   0x000035cc   0x000000ec   Code   RO          504    i._PrintInt         segger_rtt_printf.o
+    0x000036b8   0x000036b8   0x000000ec   Code   RO          505    i._PrintUnsigned    segger_rtt_printf.o
+    0x000037a4   0x000037a4   0x00000044   Code   RO          506    i._StoreChar        segger_rtt_printf.o
+    0x000037e8   0x000037e8   0x00000072   Code   RO          266    i._WriteBlocking    segger_rtt.o
+    0x0000385a   0x0000385a   0x0000004c   Code   RO          267    i._WriteNoCheck     segger_rtt.o
+    0x000038a6   0x000038a6   0x00000002   PAD
+    0x000038a8   0x000038a8   0x00000034   Code   RO         3183    i.__0vsnprintf      mc_w.l(printfa.o)
+    0x000038dc   0x000038dc   0x00000028   Code   RO            5    i.__NVIC_SetPriority  main.o
+    0x00003904   0x00003904   0x0000000e   Code   RO         3289    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x00003912   0x00003912   0x00000002   Code   RO         3290    i.__scatterload_null  mc_w.l(handlers.o)
+    0x00003914   0x00003914   0x0000000e   Code   RO         3291    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x00003922   0x00003922   0x00000002   PAD
+    0x00003924   0x00003924   0x00000184   Code   RO         3185    i._fp_digits        mc_w.l(printfa.o)
+    0x00003aa8   0x00003aa8   0x000006b4   Code   RO         3186    i._printf_core      mc_w.l(printfa.o)
+    0x0000415c   0x0000415c   0x00000024   Code   RO         3187    i._printf_post_padding  mc_w.l(printfa.o)
+    0x00004180   0x00004180   0x0000002e   Code   RO         3188    i._printf_pre_padding  mc_w.l(printfa.o)
+    0x000041ae   0x000041ae   0x00000016   Code   RO         3189    i._snputc           mc_w.l(printfa.o)
+    0x000041c4   0x000041c4   0x00000008   Code   RO         2426    i.apSSP_ClearIntStatus  peripheral_ssp.o
+    0x000041cc   0x000041cc   0x00000006   Code   RO         2430    i.apSSP_GetIntRawStatus  peripheral_ssp.o
+    0x000041d2   0x000041d2   0x0000003c   Code   RO         1834    i.apUART_BaudRateSet  peripheral_uart.o
+    0x0000420e   0x0000420e   0x0000000a   Code   RO         1836    i.apUART_Check_RXFIFO_EMPTY  peripheral_uart.o
+    0x00004218   0x00004218   0x0000000a   Code   RO         1839    i.apUART_Check_TXFIFO_EMPTY  peripheral_uart.o
+    0x00004222   0x00004222   0x00000006   Code   RO         1849    i.apUART_Get_all_raw_int_stat  peripheral_uart.o
+    0x00004228   0x00004228   0x00000072   Code   RO         1850    i.apUART_Initialize  peripheral_uart.o
+    0x0000429a   0x0000429a   0x00000002   PAD
+    0x0000429c   0x0000429c   0x00000058   Code   RO          596    i.config_uart       uart.o
+    0x000042f4   0x000042f4   0x00000010   Code   RO          955    i.debug_hex         debug_print.o
+    0x00004304   0x00004304   0x00000034   Code   RO          956    i.debug_uart        debug_print.o
+    0x00004338   0x00004338   0x00000070   Code   RO         1092    i.key_scan_check    keyscan_normal.o
+    0x000043a8   0x000043a8   0x000000c8   Code   RO            8    i.main              main.o
+    0x00004470   0x00004470   0x00000048   Code   RO         1305    i.pdm_dma_init      pdm.o
+    0x000044b8   0x000044b8   0x000001bc   Code   RO         1306    i.pdm_init          pdm.o
+    0x00004674   0x00004674   0x00000018   Code   RO         1307    i.pdm_io_init       pdm.o
+    0x0000468c   0x0000468c   0x00000060   Code   RO         1308    i.pdm_test          pdm.o
+    0x000046ec   0x000046ec   0x00000130   Code   RO          874    i.peripherals_i2c_isr  iic_master_920.o
+    0x0000481c   0x0000481c   0x00000024   Code   RO         1153    i.peripherals_spi_isr  spi_flash.o
+    0x00004840   0x00004840   0x0000005c   Code   RO         1687    i.pin_id_for_input_source  peripheral_pinctrl.o
+    0x0000489c   0x0000489c   0x00000016   Code   RO         1309    i.set_reg_bit       pdm.o
+    0x000048b2   0x000048b2   0x00000016   Code   RO         1554    i.set_reg_bit       peripheral_sysctrl.o
+    0x000048c8   0x000048c8   0x0000001a   Code   RO         1310    i.set_reg_bits      pdm.o
+    0x000048e2   0x000048e2   0x0000001a   Code   RO         1555    i.set_reg_bits      peripheral_sysctrl.o
+    0x000048fc   0x000048fc   0x0000001e   Code   RO         1688    i.set_reg_bits      peripheral_pinctrl.o
+    0x0000491a   0x0000491a   0x00000002   PAD
+    0x0000491c   0x0000491c   0x00000064   Code   RO         1689    i.source_id_on_pin  peripheral_pinctrl.o
+    0x00004980   0x00004980   0x00000034   Code   RO          600    i.uart_init_board   uart.o
+    0x000049b4   0x000049b4   0x000000c8   Code   RO          602    i.uart_int_fifo_callback  uart.o
+    0x00004a7c   0x00004a7c   0x0000002c   Code   RO          605    i.uart_send_test    uart.o
+    0x00004aa8   0x00004aa8   0x00000010   Code   RO          958    i.write_uart_buffer  debug_print.o
+    0x00004ab8   0x00004ab8   0x00000010   Data   RO          507    .constdata          segger_rtt_printf.o
+    0x00004ac8   0x00004ac8   0x000003c0   Data   RO         1690    .constdata          peripheral_pinctrl.o
+    0x00004e88   0x00004e88   0x00000020   Data   RO         3287    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00004ea8, Size: 0x00001838, Max: 0x00004000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00004ea8   0x00000004   Data   RW          201    .data               timer_delay.o
+    0x20000004   0x00004eac   0x00000025   Data   RW          610    .data               uart.o
+    0x20000029   0x00004ed1   0x00000003   PAD
+    0x2000002c   0x00004ed4   0x0000000e   Data   RW          877    .data               iic_master_920.o
+    0x2000003a   0x00004ee2   0x00000002   PAD
+    0x2000003c   0x00004ee4   0x00000032   Data   RW         1095    .data               keyscan_normal.o
+    0x2000006e   0x00004f16   0x00000002   PAD
+    0x20000070   0x00004f18   0x00000008   Data   RW         1250    .data               timer_pte.o
+    0x20000078   0x00004f20   0x00000004   Data   RW         1312    .data               pdm.o
+    0x2000007c        -       0x0000024c   Zero   RW          268    .bss                segger_rtt.o
+    0x200002c8        -       0x0000011c   Zero   RW          609    .bss                uart.o
+    0x200003e4        -       0x00000032   Zero   RW         1094    .bss                keyscan_normal.o
+    0x20000416   0x00004f24   0x00000002   PAD
+    0x20000418        -       0x0000101c   Zero   RW         1311    .bss                pdm.o
+    0x20001434   0x00004f24   0x00000004   PAD
+    0x20001438        -       0x00000400   Zero   RW         1394    STACK               startup_ing920.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        84          0          0          0          0       1589   debug_print.o
+        48         22          0          0          0        407   gpio.o
+       314         32          0         14          0       2028   iic_master_920.o
+       184         64          0         50         50       4239   keyscan_normal.o
+       244         48          0          0          0      72490   main.o
+       112         12          0          0          0        968   misc.o
+       762         48          0          4       4124       4580   pdm.o
+       804        124          0          0          0       6856   peripheral_dma.o
+        96         18          0          0          0       3000   peripheral_gpio.o
+        70          0          0          0          0       4184   peripheral_i2c.o
+       142         18          0          0          0       4732   peripheral_keyscan.o
+       640         22        960          0          0       7810   peripheral_pinctrl.o
+        52         12          0          0          0       3110   peripheral_pwm.o
+        14          0          0          0          0       7487   peripheral_ssp.o
+       844         32          0          0          0       6192   peripheral_sysctrl.o
+        14          0          0          0          0       1005   peripheral_timer.o
+       204          0          0          0          0       7975   peripheral_uart.o
+        84         32          0          0          0        502   pwm.o
+       542         46          0          0        588       8236   segger_rtt.o
+      1096          6         16          0          0       5321   segger_rtt_printf.o
+        46          6          0          0          0        950   spi_flash.o
+        28          4        212          0       1024        736   startup_ing920.o
+        16          4          0          4          0        919   timer_delay.o
+       124         58          0          8          0       1659   timer_pte.o
+       392         68          0         37        284       3581   uart.o
+
+    ----------------------------------------------------------------------
+      6976        676       1220        124       6076     160556   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        20          0          0          7          6          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         4          0          0          0          0          0   entry12b.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+        30          0          0          0          0         68   llshl.o
+        36          0          0          0          0         68   llsshr.o
+        32          0          0          0          0         68   llushr.o
+        36          0          0          0          0         68   memcpya.o
+        36          0          0          0          0        108   memseta.o
+      2260         86          0          0          0        528   printfa.o
+        18          0          0          0          0         68   strcpy.o
+        44          0          0          0          0         80   uidiv.o
+        98          0          0          0          0         92   uldiv.o
+        48          0          0          0          0         68   cdrcmple.o
+       334          0          0          0          0        148   dadd.o
+       222          0          0          0          0        100   ddiv.o
+       186          0          0          0          0        176   depilogue.o
+        48          0          0          0          0         68   dfixul.o
+       228          0          0          0          0         96   dmul.o
+
+    ----------------------------------------------------------------------
+      3748        102          0          0          0       1872   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+      2680        102          0          0          0       1216   mc_w.l
+      1066          0          0          0          0        656   mf_w.l
+
+    ----------------------------------------------------------------------
+      3748        102          0          0          0       1872   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     10724        778       1220        124       6076     156860   Grand Totals
+     10724        778       1220        124       6076     156860   ELF Image Totals
+     10724        778       1220        124          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                11944 (  11.66kB)
+    Total RW  Size (RW Data + ZI Data)              6200 (   6.05kB)
+    Total ROM Size (Code + RO Data + RW Data)      12068 (  11.79kB)
+
+==============================================================================
+

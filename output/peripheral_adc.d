@@ -1,0 +1,12 @@
+.\output\peripheral_adc.o: FWlib\peripheral_adc.c
+.\output\peripheral_adc.o: FWlib\peripheral_adc.h
+.\output\peripheral_adc.o: D:\keil\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\peripheral_adc.o: .\FWlib\ing920\ingsoc.h
+.\output\peripheral_adc.o: D:\keil\Keil_v5\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h
+.\output\peripheral_adc.o: D:\keil\Keil_v5\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h
+.\output\peripheral_adc.o: D:\keil\Keil_v5\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h
+.\output\peripheral_adc.o: D:\keil\Keil_v5\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h
+.\output\peripheral_adc.o: D:\keil\Keil_v5\ARM\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h
+.\output\peripheral_adc.o: .\FWlib\ing920\__ingsoc.h
+.\output\peripheral_adc.o: D:\keil\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\output\peripheral_adc.o: D:\keil\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

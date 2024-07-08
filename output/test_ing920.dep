@@ -1,0 +1,811 @@
+Dependencies for Project 'test', Target 'ing920': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
+F (.\src\main.c)(0x668766F4)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\main.o --omf_browse .\output\main.crf --depend .\output\main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+I (src\timer_delay.h)(0x662DB46F)
+I (src\gpio.h)(0x66385313)
+I (src\uart.h)(0x66470682)
+I (src\test.h)(0x6638B09B)
+I (src\timer.h)(0x663AE23F)
+I (src\PWM.h)(0x664DC13B)
+I (src\iic_master_920.h)(0x6641B937)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E3CC2)
+I (src\misc.h)(0x663B1BCA)
+I (.\src\keyscan_demo\keyscan_normal.h)(0x666D3983)
+I (.\FWlib\peripheral_keyscan.h)(0x66610987)
+I (src\qdec.h)(0x666270B4)
+I (.\src\spi\spi_normal\spi_normal.h)(0x6670EDB6)
+I (.\src\PTE\timer_pte\timer_pte.h)(0x667D1BC9)
+I (.\src\audioadc\PDM.h)(0x668514FB)
+I (src\SEGGER_RTT.h)(0x6628D56A)
+I (src\SEGGER_RTT_Conf.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8E3CC2)
+I (src\debug_print.h)(0x668761B1)
+F (.\src\timer_delay.c)(0x662DB457)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\timer_delay.o --omf_browse .\output\timer_delay.crf --depend .\output\timer_delay.d)
+I (src\timer_delay.h)(0x662DB46F)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+F (.\src\SEGGER_RTT.c)(0x66868D74)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\segger_rtt.o --omf_browse .\output\segger_rtt.crf --depend .\output\segger_rtt.d)
+I (src\SEGGER_RTT.h)(0x6628D56A)
+I (src\SEGGER_RTT_Conf.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
+F (.\src\gpio.c)(0x663AE289)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\gpio.o --omf_browse .\output\gpio.crf --depend .\output\gpio.d)
+I (src\gpio.h)(0x66385313)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+I (src\misc.h)(0x663B1BCA)
+I (src\SEGGER_RTT.h)(0x6628D56A)
+I (src\SEGGER_RTT_Conf.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8E3CC2)
+F (.\src\SEGGER_RTT_printf.c)(0x5C6855BA)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\segger_rtt_printf.o --omf_browse .\output\segger_rtt_printf.crf --depend .\output\segger_rtt_printf.d)
+I (src\SEGGER_RTT.h)(0x6628D56A)
+I (src\SEGGER_RTT_Conf.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8E3CC2)
+F (.\src\misc.c)(0x662DFD49)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\misc.o --omf_browse .\output\misc.crf --depend .\output\misc.d)
+I (src\misc.h)(0x663B1BCA)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+F (.\src\uart.c)(0x668751D3)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\uart.o --omf_browse .\output\uart.crf --depend .\output\uart.d)
+I (src\uart.h)(0x66470682)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
+I (src\misc.h)(0x663B1BCA)
+I (src\SEGGER_RTT.h)(0x6628D56A)
+I (src\SEGGER_RTT_Conf.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8E3CC2)
+F (.\src\test.c)(0x663AE289)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\test.o --omf_browse .\output\test.crf --depend .\output\test.d)
+I (src\test.h)(0x6638B09B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+I (src\timer_delay.h)(0x662DB46F)
+I (src\gpio.h)(0x66385313)
+I (src\uart.h)(0x66470682)
+I (src\SEGGER_RTT.h)(0x6628D56A)
+I (src\SEGGER_RTT_Conf.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8E3CC2)
+F (.\src\PWM.c)(0x665186F3)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\pwm.o --omf_browse .\output\pwm.crf --depend .\output\pwm.d)
+I (src\PWM.h)(0x664DC13B)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+I (src\misc.h)(0x663B1BCA)
+I (src\SEGGER_RTT.h)(0x6628D56A)
+I (src\SEGGER_RTT_Conf.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8E3CC2)
+I (src\debug_print.h)(0x668761B1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
+F (.\src\iic_master_920.c)(0x6641C726)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\iic_master_920.o --omf_browse .\output\iic_master_920.crf --depend .\output\iic_master_920.d)
+I (src\iic_master_920.h)(0x6641B937)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+I (src\misc.h)(0x663B1BCA)
+F (.\src\debug_print.c)(0x668761A8)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\debug_print.o --omf_browse .\output\debug_print.crf --depend .\output\debug_print.d)
+I (src\debug_print.h)(0x668761B1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (src\uart.h)(0x66470682)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
+I (src\ano_protocol.h)(0x66875501)
+F (.\src\pingpong.c)(0x663AF0C2)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\pingpong.o --omf_browse .\output\pingpong.crf --depend .\output\pingpong.d)
+I (src\pingpong.h)(0x663AF093)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+F (.\src\qdec.c)(0x6662B3CA)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\qdec.o --omf_browse .\output\qdec.crf --depend .\output\qdec.d)
+I (src\qdec.h)(0x666270B4)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+I (src\SEGGER_RTT.h)(0x6628D56A)
+I (src\SEGGER_RTT_Conf.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8E3CC2)
+I (src\debug_print.h)(0x668761B1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
+F (.\src\keyscan_demo\keyscan_normal.c)(0x666D4778)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\keyscan_normal.o --omf_browse .\output\keyscan_normal.crf --depend .\output\keyscan_normal.d)
+I (src\keyscan_demo\keyscan_normal.h)(0x666D3983)
+I (.\FWlib\peripheral_keyscan.h)(0x66610987)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+I (.\src\misc.h)(0x663B1BCA)
+I (.\src\SEGGER_RTT.h)(0x6628D56A)
+I (.\src\SEGGER_RTT_Conf.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8E3CC2)
+I (.\src\debug_print.h)(0x668761B1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
+F (.\src\spi\spi_flash\spi_flash.c)(0x6674DCD5)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\spi_flash.o --omf_browse .\output\spi_flash.crf --depend .\output\spi_flash.d)
+I (src\spi\spi_flash\spi_flash.h)(0x6673E1A9)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
+I (.\src\misc.h)(0x663B1BCA)
+I (.\src\SEGGER_RTT.h)(0x6628D56A)
+I (.\src\SEGGER_RTT_Conf.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8E3CC2)
+I (.\src\debug_print.h)(0x668761B1)
+F (.\src\PTE\timer_pte\timer_pte.c)(0x667E2B54)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\timer_pte.o --omf_browse .\output\timer_pte.crf --depend .\output\timer_pte.d)
+I (src\PTE\timer_pte\timer_pte.h)(0x667D1BC9)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+I (.\src\misc.h)(0x663B1BCA)
+I (.\src\SEGGER_RTT.h)(0x6628D56A)
+I (.\src\SEGGER_RTT_Conf.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8E3CC2)
+I (.\src\debug_print.h)(0x668761B1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
+F (.\src\audioadc\PDM.c)(0x668BA17D)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\pdm.o --omf_browse .\output\pdm.crf --depend .\output\pdm.d)
+I (src\audioadc\PDM.h)(0x668514FB)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+I (.\src\misc.h)(0x663B1BCA)
+I (.\src\SEGGER_RTT.h)(0x6628D56A)
+I (.\src\SEGGER_RTT_Conf.h)(0x6628D56A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8E3CC2)
+I (.\src\debug_print.h)(0x668761B1)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
+F (.\src\ano_protocol.c)(0x66875513)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\ano_protocol.o --omf_browse .\output\ano_protocol.crf --depend .\output\ano_protocol.d)
+I (src\ano_protocol.h)(0x66875501)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
+F (.\src\startup_ing920.s)(0x66383191)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include--pd "__UVISION_VERSION SETA 537" --pd "_RTE_ SETA 1" --pd "_RTE_ SETA 1"--list .\listing\startup_ing920.lst --xref -o .\output\startup_ing920.o --depend .\output\startup_ing920.d)
+F (.\FWlib\peripheral_gpio.c)(0x6638519D)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\peripheral_gpio.o --omf_browse .\output\peripheral_gpio.crf --depend .\output\peripheral_gpio.d)
+I (FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+F (.\FWlib\peripheral_sysctrl.c)(0x6683B15C)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\peripheral_sysctrl.o --omf_browse .\output\peripheral_sysctrl.crf --depend .\output\peripheral_sysctrl.d)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+F (.\FWlib\peripheral_pinctrl.c)(0x66839F9F)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\peripheral_pinctrl.o --omf_browse .\output\peripheral_pinctrl.crf --depend .\output\peripheral_pinctrl.d)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+F (.\FWlib\peripheral_uart.c)(0x6638A2CC)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\peripheral_uart.o --omf_browse .\output\peripheral_uart.crf --depend .\output\peripheral_uart.d)
+I (FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+F (.\FWlib\peripheral_timer.c)(0x6638C680)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\peripheral_timer.o --omf_browse .\output\peripheral_timer.crf --depend .\output\peripheral_timer.d)
+I (FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+F (.\FWlib\peripheral_dma.c)(0x6685146E)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\peripheral_dma.o --omf_browse .\output\peripheral_dma.crf --depend .\output\peripheral_dma.d)
+I (FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+F (.\FWlib\peripheral_pwm.c)(0x66836780)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\peripheral_pwm.o --omf_browse .\output\peripheral_pwm.crf --depend .\output\peripheral_pwm.d)
+I (FWlib\peripheral_pwm.h)(0x66542CA5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+F (.\FWlib\peripheral_ssp.c)(0x6675306E)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\peripheral_ssp.o --omf_browse .\output\peripheral_ssp.crf --depend .\output\peripheral_ssp.d)
+I (FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+F (.\FWlib\peripheral_i2c.c)(0x6641AFCD)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\peripheral_i2c.o --omf_browse .\output\peripheral_i2c.crf --depend .\output\peripheral_i2c.d)
+I (FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+F (.\FWlib\peripheral_keyscan.c)(0x666A8E73)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\peripheral_keyscan.o --omf_browse .\output\peripheral_keyscan.crf --depend .\output\peripheral_keyscan.d)
+I (FWlib\peripheral_keyscan.h)(0x66610987)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)
+F (.\FWlib\peripheral_qdec.c)(0x66616916)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\FWlib\ing920 -I .\FWlib -I .\src -I .\src\keyscan_demo -I .\src\spi\spi_normal -I .\src\spi\spi_flash -I .\src\PTE\timer_pte -I .\src\audioadc-I.\RTE\_ing920-IC:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-D__UVISION_VERSION="537" -D_RTE_ -D_RTE_-o .\output\peripheral_qdec.o --omf_browse .\output\peripheral_qdec.crf --depend .\output\peripheral_qdec.d)
+I (FWlib\peripheral_qdec.h)(0x6661813B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (.\FWlib\ing920\ingsoc.h)(0x66824FBD)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x626F4ADE)
+I (C:\Keil_v5\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F4ADE)
+I (.\FWlib\ing920\__ingsoc.h)(0x662A22D1)
+I (.\FWlib\peripheral_pinctrl.h)(0x66839FB7)
+I (.\FWlib\peripheral_adc.h)(0x663AE187)
+I (.\FWlib\peripheral_dma.h)(0x663AEEE9)
+I (.\FWlib\peripheral_sysctrl.h)(0x66851DC6)
+I (.\FWlib\peripheral_gpio.h)(0x662F0811)
+I (.\FWlib\peripheral_i2c.h)(0x664AACC2)
+I (.\FWlib\peripheral_i2s.h)(0x6628D56A)
+I (.\FWlib\peripheral_pdm.h)(0x6628D56A)
+I (.\FWlib\peripheral_pte.h)(0x6628D56A)
+I (.\FWlib\peripheral_pwm.h)(0x66542CA5)
+I (.\FWlib\peripheral_qdec.h)(0x6661813B)
+I (.\FWlib\peripheral_rtc.h)(0x663CB323)
+I (.\FWlib\peripheral_ssp.h)(0x66754692)
+I (.\FWlib\peripheral_timer.h)(0x6638C6BE)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
+I (.\FWlib\peripheral_uart.h)(0x6628D56A)
+I (.\FWlib\peripheral_usb.h)(0x6628D56A)

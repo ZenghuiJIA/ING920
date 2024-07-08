@@ -858,6 +858,14 @@ int PINCTRL_SelSwIn(uint8_t io_pin_dio, uint8_t io_pin_clk)
     return 0;
 }
 
+int PINCTRL_SelAsdm(uint8_t io_pin_sck, uint8_t io_pin_data)
+{
+    if (PINCTRL_SelInput(io_pin_data, IO_SOURCE_ASDM_DMIC_IN, 11, 5, 0)) return -1;
+    if (PINCTRL_SetPadMux(io_pin_sck,IO_SOURCE_ASDM_DMIC_MCLK)) return -2;
+
+    return 0;
+}
+
 static int PINCTRL_SelSpiIn0(spi_port_t port,
                              uint8_t io_pin_clk,
                              uint8_t io_pin_csn,

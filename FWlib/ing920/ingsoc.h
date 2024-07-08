@@ -48,6 +48,7 @@ typedef enum
     PLATFORM_CB_IRQ_PMU_PDR,
     PLATFORM_CB_IRQ_32K_CNT,
     PLATFORM_CB_IRQ_ASDM,
+    PLATFORM_CB_IRQ_XO_READY,
 
     PLATFORM_CB_IRQ_MAX
 } platform_irq_callback_type_t;
@@ -508,10 +509,108 @@ typedef struct
     __IO uint32_t      key_data;          //0x001C
     __IO uint32_t      key_trig;          //0x0020
     __IO uint32_t      key_err_cfg;       //0x0024
-    __IO uint32_t      key_debouncd_cfg0; //0x0028
+    __IO uint32_t      key_debouncd_cfg0; //0x0028 
     __IO uint32_t      key_debouncd_cfg1; //0x002C
 } KEYSCAN_TypeDef;
 
+typedef struct
+{
+    __IO uint32_t      reg_task_chg_en[4];     //0x000
+    __IO uint32_t      reg_task_chg_DIS[4];    //0x010
+    __IO uint32_t      reg_sub_task_chg_en[4]; //0x020
+    __IO uint32_t      reg_sub_task_chg_DIS[4];//0x030
+    __IO uint32_t      _NOT_USED_1[48];        //0x040
+    __IO uint32_t      reg_ch_en;              //0x100
+    __IO uint32_t      reg_ch_en_set;          //0x104
+    __IO uint32_t      reg_ch_en_clr;          //0x108
+    __IO uint32_t      reg_chg_map[4];         //0x10C
+}PTEC_TypeDef;
+
+typedef struct
+{
+    __IO uint32_t      reg_p1_task[6];         //0x000
+    __IO uint32_t      _NOT_USED_1[2];         //0x01c
+    __IO uint32_t      reg_p1_sub_task[6];     //0x020
+    __IO uint32_t      _NOT_USED_2[2];         //0x03c
+    __IO uint32_t      reg_p1_event;           //0x040
+    __IO uint32_t      reg_p1_pub_event[3];    //0x044
+    __IO uint32_t      reg_p2_event;           //0x050
+    __IO uint32_t      reg_p2_pub_event[8];    //0x054
+    __IO uint32_t      _NOT_USED_3[3];         //0x074
+    __IO uint32_t      reg_p3_task[24];         //0x080
+    __IO uint32_t      reg_p3_sub_task[24];         //0x0f0
+    __IO uint32_t      reg_p3_event;           //0x160
+    __IO uint32_t      reg_p3_pub_event[8];         //0x164
+    __IO uint32_t      reg_p4_task[16];         //0x0f0
+    __IO uint32_t      reg_p4_sub_task[16];         //0x160
+    __IO uint32_t      reg_p4_event;           //0x160
+    __IO uint32_t      reg_p4_pub_event[8];         //0x164
+    __IO uint32_t      reg_p5_task[2];         //0x0f0
+    __IO uint32_t      reg_p5_sub_task[2];         //0x160
+    __IO uint32_t      reg_p5_event;           //0x160
+    __IO uint32_t      reg_p5_pub_event0;         //0x164
+    __IO uint32_t      reg_p6_task0;         //0x0f0
+    __IO uint32_t      reg_p6_sub_task0;         //0x160
+    __IO uint32_t      reg_p6_event;           //0x160
+    __IO uint32_t      reg_p6_pub_event0;         //0x164
+    __IO uint32_t      reg_p7_task[3];         //0x0f0
+    __IO uint32_t      reg_p7_sub_task[3];         //0x160
+    __IO uint32_t      reg_p7_event;           //0x160
+    __IO uint32_t      reg_p7_pub_event[2];         //0x164
+    __IO uint32_t      reg_p8_task[4];         //0x0f0
+    __IO uint32_t      reg_p8_sub_task[4];         //0x160
+    __IO uint32_t      reg_p8_event;           //0x160
+    __IO uint32_t      reg_p8_pub_event[2];         //0x164
+    __IO uint32_t      reg_p9_task[4];         //0x0f0
+    __IO uint32_t      reg_p9_sub_task[4];         //0x160
+    __IO uint32_t      reg_p9_event;           //0x160
+    __IO uint32_t      reg_p9_pub_event[2];         //0x164
+    __IO uint32_t      reg_p10_task[2];         //0x0f0
+    __IO uint32_t      reg_p10_sub_task[2];         //0x160
+    __IO uint32_t      reg_p10_event;           //0x160
+    __IO uint32_t      reg_p10_pub_event0;         //0x164
+    __IO uint32_t      reg_p11_task[21];         //0x0f0
+    __IO uint32_t      reg_p11_sub_task[21];         //0x160
+    __IO uint32_t      reg_p11_event;           //0x160
+    __IO uint32_t      reg_p11_pub_event[9];         //0x164
+    __IO uint32_t      reg_p12_task[16];         //0x0f0
+    __IO uint32_t      reg_p12_sub_task[16];         //0x160
+    __IO uint32_t      reg_p12_event;           //0x160
+    __IO uint32_t      reg_p12_pub_event[8];         //0x164
+    __IO uint32_t      reg_p13_task[4];         //0x0f0
+    __IO uint32_t      reg_p13_sub_task[4];         //0x160
+    __IO uint32_t      reg_p13_event;           //0x160
+    __IO uint32_t      reg_p13_pub_event0;         //0x164
+}PTE_BUS_TypeDef;
+
+typedef struct
+{
+    __IO uint32_t reg_gpiote_config[8];
+}GPIOTE_TypeDef;
+
+typedef struct
+{
+    __IO uint32_t asdm_ctrl;
+    __IO uint32_t asdm_sr;
+    __IO uint32_t asdm_clr;
+    __IO uint32_t asdm_mute_ctrl;
+    __IO uint32_t asdm_vol_ctrl;
+    __IO uint32_t asdm_dout;
+    __IO uint32_t asdm_hpf_coef;
+    __IO uint32_t asdm_rx_ctrl;
+    __IO uint32_t asdm_agc_ctrl0;
+    __IO uint32_t asdm_agc_ctrl1;
+    __IO uint32_t asdm_agc_ctrl2;
+    __IO uint32_t asdm_agc_st;
+    __IO uint32_t asdm_ana_ctrl0;
+    __IO uint32_t asdm_pga_en_ibias;
+    __IO uint32_t Reserved1;
+    __IO uint32_t pga_l_ctrl;
+    __IO uint32_t pga_l_vol_ctrl;
+    __IO uint32_t micbias_ctrl;
+    __IO uint32_t ckgt_ctrl;
+    __IO uint32_t fifo_addr;
+}ASDM_TypeDef;
 /******************************************************************************/
 /*                         memory map                                         */
 /******************************************************************************/
@@ -539,7 +638,7 @@ typedef struct
 #define APB_I2C0_BASE      (APB_BASE + 0x13000)
 #define APB_GPIO0_BASE     (APB_BASE + 0x15000)
 #define APB_GPIO1_BASE     (APB_BASE + 0x16000)
-#define APB_PTE_BUS        (APB_BASE + 0x18000)
+#define APB_PTE_BUS_BASE   (APB_BASE + 0x18000)
 #define APB_PTE_BASE       (APB_BASE + 0x19000)
 #define APB_ASDM_BASE      (APB_BASE + 0x1a000)
 
@@ -549,10 +648,10 @@ typedef struct
 
 #define AHB_QSPI_BASE      ((uint32_t)0x40160000UL)
 #define AHB_USB_BASE       ((uint32_t)0x40180000UL)
+#define APB_GPIOTE_BASE    (APB_SYSCTRL_BASE + 0x1f0)
 #define APB_PINC_BASE      APB_IOMUX_BASE
 
 #define APB_SYSCTRL        ((SYSCTRL_TypeDef *)APB_SYSCTRL_BASE)
-#define APB_PTE            ((PTE_TypeDef *)(APB_SYSCTRL_BASE + 0x1a0))
 #define APB_WDT            ((WDT_TypeDef *)APB_WDT_BASE)
 #define APB_TMR0           ((TMR_TypeDef *)APB_TMR0_BASE)
 #define APB_TMR1           ((TMR_TypeDef *)APB_TMR1_BASE)
@@ -569,9 +668,12 @@ typedef struct
 #define AHB_SSP0           ((SSP_TypeDef *)AHB_QSPI_BASE)
 #define APB_SSP1           ((SSP_TypeDef *)APB_SPI_BASE)
 #define APB_DMA            ((DMA_TypeDef *)APB_DMACFG_BASE)
-#define APB_RTC            ((RTC_TypeDef *)AON_RTC_BASE)
 #define AHB_USB            ((USB_TypeDef *)AHB_USB_BASE)
 #define APB_KEYSCAN        ((KEYSCAN_TypeDef *)APB_KEYSCAN_BASE)
+#define APB_PTE            ((PTEC_TypeDef *)APB_PTE_BASE)
+#define APB_PTE_BUS        ((PTE_BUS_TypeDef *)APB_PTE_BUS_BASE)
+#define APB_GPIOTE         ((GPIOTE_TypeDef *)APB_GPIOTE_BASE)
+#define APB_ASDM           ((ASDM_TypeDef *)APB_ASDM_BASE)
 
 #define APB_SPI            APB_SSP1
 #define AHB_QSPI           AHB_SSP0
