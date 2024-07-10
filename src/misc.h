@@ -44,7 +44,7 @@ typedef enum
     TIMER1_IRQ,
     I2S_IRQ,
     TBCU_IRQ,
-    AudioEnc_IRQ,
+    ASDM_IRQ,
 }ING_IRQn_Type;
 
 typedef struct

@@ -53,7 +53,7 @@ void HardFault_Handler(void)
 int main()
 {
     __disable_irq();
-    SCB->VTOR = 0x2000;
+    SCB->VTOR = 0x2002000;
     __enable_irq();
     SEGGER_RTT_Init();
     NVIC_SetPriorityGrouping(0x500);

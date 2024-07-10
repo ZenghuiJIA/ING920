@@ -113,8 +113,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 EXPORT TIMER1_IRQHandler    [WEAK] ; n31_IQRn
                 EXPORT I2S_IRQHandler       [WEAK] ; n32_IQRn
 				EXPORT TBCU_IRQHandler      [WEAK] ; n33_IRQn					
-                EXPORT AudioEnc_IRQHandler  [WEAK] ; n34_IRQn
-                EXPORT ASDM_IRQHandler      [WEAK] ; n35_IRQn
+                EXPORT ASDM_IRQHandler      [WEAK] ; n34_IRQn
 
                 DCD CacheI_IRQHandler
                 DCD KeyScan_IRQHandler
@@ -150,7 +149,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD TIMER1_IRQHandler
                 DCD I2S_IRQHandler
 				DCD TBCU_IRQHandler
-                DCD AudioEnc_IRQHandler
+                DCD ASDM_IRQHandler
 
 __Vectors_End
 
@@ -287,7 +286,7 @@ Default_Handler PROC
     EXPORT TIMER1_IRQHandler    [WEAK] ; n31_IQRn
     EXPORT I2S_IRQHandler       [WEAK] ; n32_IQRn
     EXPORT TBCU_IRQHandler      [WEAK] ; n33_IRQn		
-    EXPORT AudioEnc_IRQHandler  [WEAK] ; n34_IRQn
+    EXPORT ASDM_IRQHandler      [WEAK] ; n34_IRQn
 
 CacheI_IRQHandler
 KeyScan_IRQHandler
@@ -323,7 +322,7 @@ LLEAES_IRQHandler
 TIMER1_IRQHandler
 I2S_IRQHandler
 TBCU_IRQHandler
-AudioEnc_IRQHandler
+ASDM_IRQHandler
 
                 B       .
                 ENDP

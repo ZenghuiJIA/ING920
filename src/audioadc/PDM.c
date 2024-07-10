@@ -56,7 +56,7 @@ void pdm_init(void)
     //if use pull 30 - 12.801MHz, 34 - 11.295MHz 
     //fpga use 24m 1 12m
     //更新模块fclk时钟10分频
-    SYSCTRL_Update_sdm_clk(9);
+    SYSCTRL_UpdateAsdmClk(9);
     set_reg_bit(&APB_ASDM->asdm_ctrl, 1, 2);//asdm_posedge_sample
     set_reg_bit(&APB_ASDM->asdm_ctrl, 1, 3);//asdm_hpf_en
     set_reg_bit(&APB_ASDM->asdm_ctrl, 0, 4);//asdm_hpf_fb_dis
@@ -98,11 +98,17 @@ void pdm_init(void)
     set_reg_bit(&APB_ASDM->fifo_addr, 0, 18);//int_fifo_empty_en
     set_reg_bits(&APB_ASDM->fifo_addr, 3, 3, 19);//fifo_trig
     
-    set_reg_bit(&APB_ASDM->asdm_ctrl, 1, 0);//int_fifo_empty_en
-    set_reg_bit(&APB_ASDM->asdm_ctrl, 1, 1);//fifo_trig
+    set_reg_bit(&APB_ASDM->asdm_ctrl, 1, 0);//DIG_en
+    set_reg_bit(&APB_ASDM->asdm_ctrl, 1, 1);//dig_l_en
     
 //    SYSCTRL_Update_sdm_clk(1);
 
+}
+
+void disable_pdm()
+{
+    set_reg_bit(&APB_ASDM->asdm_ctrl, 0, 0);//DIG_en
+    set_reg_bit(&APB_ASDM->asdm_ctrl, 0, 1);//dig_l_en
 }
 #define DMA_LEN     1024
 uint32_t mda_rc_pdm_data[DMA_LEN];
@@ -137,13 +143,20 @@ void DMA_IRQHandler(void)
     DMA_EnableChannel(0, &pdm_dma);
 }
 
+void ASDM_IRQHandler(void)
+{
+    dma_data = 1;
+}
+
 #define ANO     0
 
 void pdm_test(void)
 {
     pdm_io_init();
     pdm_init();
+//    NVIC_Configuration();
     pdm_dma_init();
+//    disable_pdm();
     while(1)
     {
         if(dma_data)
