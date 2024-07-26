@@ -3,13 +3,14 @@
     {
       "name": "windows-gcc-x64",
       "includePath": [
-        "${workspaceFolder}/**"
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/FWlib/ing920/**"
       ],
       "defines": [
         "USE_STDPERIPH_DRIVER",
         "INGCHIPS_FAMILY_920"
       ],
-      "compilerPath": "D:/Program/mingw64/bin/gcc.exe",
+      "compilerPath": "C:/Program Files/arm-gnu-toolchain-13.2.Rel1-mingw-w64-i686-arm-none-eabi/bin/arm-none-eabi-gcc.exe",
       "cStandard": "${default}",
       "cppStandard": "${default}",
       "intelliSenseMode": "windows-gcc-x64",

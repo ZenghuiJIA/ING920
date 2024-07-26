@@ -30,8 +30,8 @@
 
 uint32_t cb_putc(char *c, void *dummy)
 {
-//    while (apUART_Check_TXFIFO_FULL(PRINT_PORT) == 1);
-//    UART_SendData(PRINT_PORT, (uint8_t)*c);
+    while (apUART_Check_TXFIFO_FULL(APB_UART0) == 1);
+    UART_SendData(APB_UART0, (uint8_t)*c);
     return 0;
 }
 
@@ -67,7 +67,7 @@ int main()
     uart_init_board();
     debug_uart("debug uart_test\r\n");
     
-    SEGGER_RTT_Init();
+//    SEGGER_RTT_Init();
 //    SEGGER_RTT_Write(1, &g_SineWave128[(i_num++)%128], 2);
     DEBUG_LOG("debug rtt\r\n");
 //    pte_test();

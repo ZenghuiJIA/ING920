@@ -27,6 +27,7 @@
 .\output\pdm.o: .\FWlib\peripheral_uart.h
 .\output\pdm.o: .\FWlib\peripheral_usb.h
 .\output\pdm.o: .\src\misc.h
+.\output\pdm.o: .\FWlib\peripheral_asdm.h
 .\output\pdm.o: .\src\SEGGER_RTT.h
 .\output\pdm.o: .\src\SEGGER_RTT_Conf.h
 .\output\pdm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

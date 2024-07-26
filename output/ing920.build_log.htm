@@ -22,13 +22,21 @@ Dialog DLL:      TCM.DLL V1.56.1.0
  
 <h2>Project:</h2>
 C:\ming\source\ING920_SDK\test.uvprojx
-Project File Date:  07/05/2024
+Project File Date:  07/26/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ing920'
+compiling peripheral_pte.c...
+compiling PDM.c...
+src\audioadc\PDM.c(40): warning:  #177-D: function "NVIC_PDM"  was declared but never referenced
+  static void NVIC_PDM(void)
+src\audioadc\PDM.c: 1 warning, 0 errors
+linking...
+Program Size: Code=11336 RO-data=1220 RW-data=124 ZI-data=6076  
+FromELF: creating hex file...
 After Build - User command #1: fromelf.exe --bin -o ing920.bin ./output/ing920.axf
-".\output\ing920.axf" - 0 Error(s), 0 Warning(s).
+".\output\ing920.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -50,7 +58,7 @@ Package Vendor: INGChips
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.6.0
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

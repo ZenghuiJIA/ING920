@@ -1601,11 +1601,11 @@ void SYSCTRL_EnablePLL(uint8_t enable);
 
 typedef enum
 {
-    SYSCTRL_SLOW_RC_8M = 0,
-    SYSCTRL_SLOW_RC_16M = 1,
+    SYSCTRL_SLOW_RC_8M = 1,
+    SYSCTRL_SLOW_RC_16M = 2,
     SYSCTRL_SLOW_RC_24M = 3,
-    SYSCTRL_SLOW_RC_32M = 7,
-    SYSCTRL_SLOW_RC_48M = 0xf,
+    SYSCTRL_SLOW_RC_32M = 4,
+    SYSCTRL_SLOW_RC_48M = 5,
 } SYSCTRL_SlowRCClkMode;
 
 /**
@@ -2125,7 +2125,7 @@ int SYSCTRL_Init(void);
  */
 void SYSCTRL_DelayCycles(uint32_t freq, uint32_t cycles);
 
-void SYSCTRL_Update_sdm_clk(uint32_t div);
+void SYSCTRL_UpdateAsdmClk(uint32_t div);
 
 #ifdef __cplusplus
 } /* allow C++ to use these headers */

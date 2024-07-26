@@ -15,8 +15,8 @@ echo >build_log
 ::c clean project
 ::cr clean and rebuid
 ::d start debug
-echo %UV% -j0 -b %UV_PRO_PATH% -o %cd%\build_log
-%UV% -j0 -b %UV_PRO_PATH% -o %cd%\build_log
+echo %UV% -j16 -b %UV_PRO_PATH% -o %cd%\build_log
+%UV% -j16 -b %UV_PRO_PATH% -o %cd%\build_log
 type build_log
 echo Done.
 pause

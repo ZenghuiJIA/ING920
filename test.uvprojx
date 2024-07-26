@@ -14,14 +14,14 @@
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>ING91800</Device>
+          <Device>ING92000</Device>
           <Vendor>INGChips</Vendor>
           <PackID>INGChips.INGCHIPS_DeviceFamilyPack.0.9.0</PackID>
           <PackURL>http://www.ingchips.com</PackURL>
-          <Cpu>IRAM(0x20000000,0x00010000) IROM(0x00004000,0x00080000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
+          <Cpu>IRAM(0x20000000,0x00008000) IROM(0x2000000,0x00200000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC8000 -FN1 -FF0ING91800 -FS04000 -FL080000 -FP0($$Device:ING91800$Flash\ING91800.flm))</FlashDriverDll>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC8000 -FN1 -FF0ING92000 -FS02000000 -FL0200000 -FP0($$Device:ING92000$Flash\ING92000.flm))</FlashDriverDll>
           <DeviceId>0</DeviceId>
           <RegisterFile></RegisterFile>
           <MemoryEnv></MemoryEnv>
@@ -247,12 +247,12 @@
               <IRAM>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x10000</Size>
+                <Size>0x8000</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
-                <StartAddress>0x4000</StartAddress>
-                <Size>0x80000</Size>
+                <StartAddress>0x2000000</StartAddress>
+                <Size>0x200000</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -276,8 +276,8 @@
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
-                <StartAddress>0x2000</StartAddress>
-                <Size>0x10000</Size>
+                <StartAddress>0x2002000</StartAddress>
+                <Size>0x20000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -302,7 +302,7 @@
               <OCR_RVCT9>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x4000</Size>
+                <Size>0x8000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
@@ -546,6 +546,16 @@
               <FileName>peripheral_qdec.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\FWlib\peripheral_qdec.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_asdm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FWlib\peripheral_asdm.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_pte.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FWlib\peripheral_pte.c</FilePath>
             </File>
           </Files>
         </Group>

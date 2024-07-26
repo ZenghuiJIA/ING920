@@ -29,9 +29,6 @@ void PWM_SetMask(const uint8_t channel_index, const uint8_t mask_a, const uint8_
     PWM_SetRegBit(0x00, channel_index, (mask_b << 1) | mask_a, 2);
 }
 
-
-
-
 void PWM_SetMode(const uint8_t channel_index, const PWM_WorkMode_t mode)
 {
     PWM_SetRegBit(0x14, channel_index, mode, 3);

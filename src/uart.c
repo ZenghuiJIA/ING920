@@ -77,7 +77,7 @@ void uart_init_board(void)
                           | (1 << SYSCTRL_ClkGate_APB_PinCtrl));
     PINCTRL_SetPadMux(GIO_GPIO_1, IO_SOURCE_UART0_TXD);
     PINCTRL_SelUartRxdIn(UART_PORT_1,GIO_GPIO_2);
-    config_uart(24000000,115200);
+    config_uart(24000000,1000000);
 #if defined(UART_INT)
     apUART_Enable_RECEIVE_INT(APB_UART0);
     apUART_Enable_TRANSMIT_INT(APB_UART0);

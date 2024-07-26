@@ -1,5 +1,6 @@
 #include "PDM.h"
 #include "misc.h"
+#include "peripheral_asdm.h"
 
 #define MAIN_DEBUG
 #ifdef MAIN_DEBUG
@@ -36,11 +37,74 @@ static void NVIC_Configuration(void)
     NVIC_Init(&NVIC_InitStructure);
 }
 
+static void NVIC_PDM(void)
+{
+    NVIC_InitTypeDef NVIC_InitStructure;
+  
+    NVIC_InitStructure.NVIC_IRQChannel = ASDM_IRQ;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = 1;
+    /* init NVIC */
+    NVIC_Init(&NVIC_InitStructure);
+}
+
 void pdm_io_init(void)
 {
     SYSCTRL_ClearClkGate(SYSCTRL_ClkGate_APB_GPIO0);//gpio0
     SYSCTRL_ClearClkGate(SYSCTRL_ClkGate_APB_PinCtrl);
     PINCTRL_SelAsdm(GIO_GPIO_9,GIO_GPIO_10);
+}
+
+void pdm_init_per(void)
+{
+    //pclk_in
+    set_reg_bit((uint32_t*)&(APB_SYSCTRL->CguCfg[4]), 0, 28);//asdm_posedge_sample
+    *((uint32_t*) 0x40102028) |= 1;
+    
+    //enable clk
+    SYSCTRL_ClearClkGate(SYSCTRL_ITEM_APB_ASDM);
+    //fclk clk
+    //if use pull 30 - 12.801MHz, 34 - 11.295MHz 
+    //fpga use 24m 1 12m
+    //更新模块fclk时钟10分频
+    SYSCTRL_UpdateAsdmClk(9);
+    
+    ASDM_SetEdgeSample(APB_ASDM,1);
+    ASDM_SetHighPassEn(APB_ASDM,1);
+    ASDM_HighPassErrorEn(APB_ASDM,0);
+    ASDM_InvertInput(APB_ASDM,1);
+    ASDM_SelMic(APB_ASDM,1);
+    ASDM_SelDownSample(APB_ASDM,1);
+    
+    ASDM_UpdateSr(APB_ASDM, 1<<7);//asdm_sr fs 12k 
+
+    ASDM_MuteEn(APB_ASDM,0);//asdm_mute_l
+    ASDM_FadeInOutEn(APB_ASDM,0);//asdm_fadedis_l
+    ASDM_SetVolStep(APB_ASDM, 3);//asdm_vol_step
+
+    ASDM_SetVol(APB_ASDM, 0x3fff);//asdm_vol_l
+
+    ASDM_SetHighPassFilter(APB_ASDM, 0xFF);//asdm_hpf_coef
+
+    ASDM_AGCEn(APB_ASDM,1);//asdm_agc_sel
+    ASDM_SetAGCMaxLevel(APB_ASDM, 1<<4);//asdm_max_level
+
+    ASDM_SetAGCFrameTime(APB_ASDM, 8);//asdm_frame_time
+
+    ASDM_SetAGCNoiseThresh(APB_ASDM, 0xf);//asdm_noise_th
+    ASDM_SetAGCNoiseMode(APB_ASDM, 0);//asdm_noise_mode
+    ASDM_AGCNoiseGateEn(APB_ASDM, 1);//asdm_noise_gt_en
+    ASDM_SetAGCGateMode(APB_ASDM, 0);//asdm_noise_gt_mode
+    ASDM_NoiseHold(APB_ASDM, 0x7);//asdm_noise_hold
+
+    ASDM_SetAGCMute(APB_ASDM, 0);//asdm_agc_mute
+
+    
+    ASDM_FifoEn(APB_ASDM, 1);//fifo enable
+    ASDM_SetFifoInt(APB_ASDM, 0);
+    ASDM_SetFifoTrig(APB_ASDM, 3);//fifo_trig
+    
 }
 
 void pdm_init(void)
@@ -73,7 +137,7 @@ void pdm_init(void)
 
     set_reg_bits(&APB_ASDM->asdm_vol_ctrl, 0x3fff, 14, 0);//asdm_vol_l
 
-    set_reg_bits(&APB_ASDM->asdm_hpf_coef, 0xffe, 12, 2);//asdm_hpf_coef
+    set_reg_bits(&APB_ASDM->asdm_hpf_coef, 0x0FF, 12, 2);//asdm_hpf_coef
 
     set_reg_bit(&APB_ASDM->asdm_agc_ctrl0, 1, 0);//asdm_agc_sel
     set_reg_bits(&APB_ASDM->asdm_agc_ctrl0, 1<<4, 5, 1);//asdm_max_level
@@ -127,6 +191,8 @@ void pdm_dma_init(void)
     (1<<SYSCTRL_DMA_QDEC1) | (1<<SYSCTRL_DMA_KeyScan) | (1<<SYSCTRL_DMA_I2S_TX) | (1<<SYSCTRL_DMA_SDADC_RX));
     
 //    pdm_dma.Next = &pdm_dma;
+    
+    
 //    DMA_PrepareMem2Mem(&APB_DMA->Channels[0].Descriptor,mda_rc_pdm_data,in_data,80,DMA_ADDRESS_INC,DMA_ADDRESS_INC,0);
     //配置DMA发送
     pdm_dma.Ctrl |= 2<<24;
@@ -145,7 +211,18 @@ void DMA_IRQHandler(void)
 
 void ASDM_IRQHandler(void)
 {
-    dma_data = 1;
+    uint8_t i;
+    
+    i = ASDM_GetFifoCount(APB_ASDM);
+
+    while (ASDM_GetFifoCount(APB_ASDM))
+    {
+        uint32_t sample = ASDM_GetOutData(APB_ASDM);
+        debug_hex(&sample,4);
+//        ano_output(&sample,2);
+        i--;
+    }
+    PDM_Enable(APB_ASDM,0);
 }
 
 #define ANO     0
@@ -153,8 +230,10 @@ void ASDM_IRQHandler(void)
 void pdm_test(void)
 {
     pdm_io_init();
-    pdm_init();
-//    NVIC_Configuration();
+    pdm_init_per();
+    PDM_Enable(APB_ASDM,1);
+//    pdm_init();
+//    NVIC_PDM();
     pdm_dma_init();
 //    disable_pdm();
     while(1)
