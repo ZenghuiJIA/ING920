@@ -1107,6 +1107,8 @@ typedef enum
     SYSCTRL_ITEM_APB_PinCtrl   ,
     SYSCTRL_ITEM_APB_USB       ,
 	SYSCTRL_ITEM_APB_ASDM       ,
+    SYSCTRL_ITEM_APB_RTIMER2    ,
+    SYSCTRL_ITEM_APB_RTIMER3    ,
     SYSCTRL_ITEM_NUMBER,
 } SYSCTRL_Item;
 
@@ -1129,6 +1131,8 @@ typedef enum
 #define  SYSCTRL_ClkGate_APB_I2C0               SYSCTRL_ITEM_APB_I2C0
 #define  SYSCTRL_ClkGate_APB_PinCtrl            SYSCTRL_ITEM_APB_PinCtrl
 #define  SYSCTRL_ClkGate_APB_SDM                SYSCTRL_ITEM_APB_ASDM
+#define  SYSCTRL_ClkGate_APB_RTMR2              SYSCTRL_ITEM_APB_RTIMER2
+#define  SYSCTRL_ClkGate_APB_RTMR3              SYSCTRL_ITEM_APB_RTIMER3
 
 typedef SYSCTRL_Item SYSCTRL_ClkGateItem;
 

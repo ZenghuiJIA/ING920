@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\FWlib\ing920;.\FWlib;.\src;.\src\keyscan_demo;.\src\spi\spi_normal;.\src\spi\spi_flash;.\src\PTE\timer_pte;.\src\audioadc</IncludePath>
+              <IncludePath>.\FWlib\ing920;.\FWlib;.\src;.\src\keyscan_demo;.\src\spi\spi_normal;.\src\spi\spi_flash;.\src\PTE\timer_pte;.\src\audioadc;.\src\timer</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -474,6 +474,11 @@
               <FileType>1</FileType>
               <FilePath>.\src\ano_protocol.c</FilePath>
             </File>
+            <File>
+              <FileName>r_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\timer\r_timer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -511,11 +516,6 @@
               <FileName>peripheral_uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\FWlib\peripheral_uart.c</FilePath>
-            </File>
-            <File>
-              <FileName>peripheral_timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\FWlib\peripheral_timer.c</FilePath>
             </File>
             <File>
               <FileName>peripheral_dma.c</FileName>
@@ -556,6 +556,11 @@
               <FileName>peripheral_pte.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\FWlib\peripheral_pte.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FWlib\peripheral_timer.c</FilePath>
             </File>
           </Files>
         </Group>

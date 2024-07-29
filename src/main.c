@@ -13,6 +13,7 @@
 #include "spi_normal.h"
 #include "timer_pte.h"
 #include "PDM.h"
+#include "r_timer.h"
 
 
 #define MAIN_DEBUG
@@ -82,7 +83,8 @@ int main()
 //    pwm_test_step();
 //    uart_test_dma_recive();
 //    pcap_test_read();
-    pdm_test();
+//    pdm_test();
+    rtimer_test();
 //    uart_test_fifo_recive();
 
 //    uart_send_test(test_send,sizeof (test_send));

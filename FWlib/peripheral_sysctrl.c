@@ -1197,11 +1197,11 @@ static void SYSCTRL_ClkGateCtrl(SYSCTRL_ClkGateItem item, uint8_t v)
     // TODO
     switch (item)
     {
-    case SYSCTRL_ITEM_APB_GPIO0     :
+    case SYSCTRL_ITEM_APB_GPIO0:
         set_reg_bit(APB_SYSCTRL->CguCfg + 3, v, 21);
         set_reg_bit(APB_SYSCTRL->CguCfg + 5, v, 18);
         break;
-    case SYSCTRL_ITEM_APB_GPIO1     :
+    case SYSCTRL_ITEM_APB_GPIO1:
         set_reg_bit(APB_SYSCTRL->CguCfg + 3, v, 22);
         set_reg_bit(APB_SYSCTRL->CguCfg + 5, v, 18);
         break;
@@ -1263,13 +1263,21 @@ static void SYSCTRL_ClkGateCtrl(SYSCTRL_ClkGateItem item, uint8_t v)
     case SYSCTRL_ITEM_APB_PinCtrl   :
         set_reg_bit(APB_SYSCTRL->CguCfg + 3, v, 6);
         break;
-    case SYSCTRL_ITEM_APB_USB       :
+    case SYSCTRL_ITEM_APB_USB:
         set_reg_bit(&APB_SYSCTRL->USBCfg, v, 5);
         set_reg_bit(&APB_SYSCTRL->USBCfg, v, 7);
         break;
     case SYSCTRL_ITEM_APB_ASDM       :
         set_reg_bit(APB_SYSCTRL->CguCfg + 3, v, 28);
         set_reg_bit(APB_SYSCTRL->CguCfg + 5, v, 21);
+        break;
+    case SYSCTRL_ITEM_APB_RTIMER2    :
+        set_reg_bit(APB_SYSCTRL->CguCfg + 3, v, 4);
+        set_reg_bit(APB_SYSCTRL->CguCfg + 5, v, 2);
+        break;
+    case SYSCTRL_ITEM_APB_RTIMER3    :
+        set_reg_bit(APB_SYSCTRL->CguCfg + 3, v, 4);
+        set_reg_bit(APB_SYSCTRL->CguCfg + 5, v, 2);
         break;
     default:
         break;
@@ -1429,6 +1437,14 @@ static void SYSCTRL_ResetBlockCtrl(SYSCTRL_ResetItem item, uint8_t v)
         set_reg_bit(APB_SYSCTRL->RstuCfg + 0, v, 21);
         set_reg_bit(APB_SYSCTRL->RstuCfg + 1, v, 27);
         break;
+    case SYSCTRL_ITEM_APB_RTIMER2   :
+        set_reg_bit(APB_SYSCTRL->RstuCfg + 0, v, 14);
+        set_reg_bit(APB_SYSCTRL->RstuCfg + 1, v, 4);
+        break;
+    case SYSCTRL_ITEM_APB_RTIMER3   :
+        set_reg_bit(APB_SYSCTRL->RstuCfg + 0, v, 14);
+        set_reg_bit(APB_SYSCTRL->RstuCfg + 1, v, 4);
+        break;
     default:
         break;
     }
@@ -1467,8 +1483,8 @@ uint32_t SYSCTRL_GetSlowClk(void)
     {
         // TODO: RC should be tune to a specific frequency
         // 24M is recommended?
-    return 24000000;
-}
+        return 24000000;
+    }
 }
 
 int SYSCTRL_ConfigPLLClk(uint32_t div_pre, uint32_t loop, uint32_t div_output)

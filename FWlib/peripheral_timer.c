@@ -298,119 +298,82 @@ void TMR_WatchDogClearInt(void)
     APB_WDT->St = 1;
 }
 
-
-
-
-
 // TMR_CTL
-#define bsTMR_CTL_TMR_EN                    0            // timer enable
-#define bwTMR_CTL_TMR_EN                    1
-#define bsTMR_CTL_RELOAD                    1            // when set, timer counter clear zero.
-#define bwTMR_CTL_RELOAD                    1
-#define bsTMR_CTL_OP_MODE                   2
-#define bwTMR_CTL_OP_MODE                   1
+#define bsRTMR_CTL_TMR_EN                    0            // timer enable
+#define bwRTMR_CTL_TMR_EN                    1
+#define bsRTMR_CTL_RELOAD                    1            // when set, timer counter clear zero.
+#define bwRTMR_CTL_RELOAD                    1
+#define bsRTMR_CTL_OP_MODE                   2
+#define bwRTMR_CTL_OP_MODE                   1
 
-#define bsTMR_CTL_INT_EN                    4            // int enable
-#define bwTMR_CTL_INT_EN                    1
-#define bsTMR_CTL_WatchDog_EN               5            // watchdog enable, timer 0 only
-#define bwTMR_CTL_WatchDog_EN               1
-#define bsTMR_CTL_INT_STATUS                6            // read as int status, write as int clear
-#define bwTMR_CTL_INT_STATUS                1
-#define bsTMR_CTL_WatchDog_STATUS           7            // watchdog status, timer 0 only
-#define bwTMR_CTL_WatchDog_STATUS           1
+#define bsRTMR_CTL_INT_EN                    4            // int enable
+#define bwRTMR_CTL_INT_EN                    1
+#define bsRTMR_CTL_INT_STATUS                6            // read as int status, write as int clear
+#define bwRTMR_CTL_INT_STATUS                1
 
-#define bsTMR_CTL_HALTENA                   15           // hardware do not support for all three timer 0, 1, 2.
-#define bwTMR_CTL_HALTENA                   1
+#define bsRTMR_CTL_HALTENA                   15           // hardware do not support for all three timer 0, 1, 2.
+#define bwRTMR_CTL_HALTENA                   1
 
-uint32_t TMR_GetCNT(TMR_TypeDef *pTMR)
+uint32_t RTMR_GetCNT(RTMR_TypeDef *pRTMR)
 {
-	return pTMR->CNT;
+	return pRTMR->CNT;
 }
 
-void TMR_Reload(TMR_TypeDef *pTMR)
+void RTMR_Reload(RTMR_TypeDef *pRTMR)
 {
-    pTMR->CTL |= 1 << bsTMR_CTL_RELOAD;
+    pRTMR->CTL |= 1 << bsRTMR_CTL_RELOAD;
 }
 
 //-----------
 // TMR_CMP
 //
-void TMR_SetCMP(TMR_TypeDef *pTMR, uint32_t value)
+void RTMR_SetCMP(RTMR_TypeDef *pRTMR, uint32_t value)
 {
-	pTMR->CMP = value;
+	pRTMR->CMP = value;
 }
 
-uint32_t TMR_GetCMP(TMR_TypeDef *pTMR)
+uint32_t RTMR_GetCMP(RTMR_TypeDef *pRTMR)
 {
-	return pTMR->CMP;
-}
-
-//
-void TMR_Enable(TMR_TypeDef *pTMR)
-{
-	pTMR->CTL |= 1 << bsTMR_CTL_TMR_EN;
-}
-
-void TMR_Disable(TMR_TypeDef *pTMR)
-{
-	pTMR->CTL &= ~(1 << bsTMR_CTL_TMR_EN);
+	return pRTMR->CMP;
 }
 
 //
-void TMR_SetOpMode(TMR_TypeDef *pTMR, uint8_t mode)
+void RTMR_Enable(RTMR_TypeDef *pRTMR)
 {
-    #define mask (2 << bsTMR_CTL_OP_MODE)
-    pTMR->CTL = (pTMR->CTL & ~mask) | (mode << bsTMR_CTL_OP_MODE);
+	pRTMR->CTL |= 1 << bsRTMR_CTL_TMR_EN;
+}
+
+void RTMR_Disable(RTMR_TypeDef *pRTMR)
+{
+	pRTMR->CTL &= ~(1 << bsRTMR_CTL_TMR_EN);
 }
 
 //
-void TMR_IntEnable(TMR_TypeDef *pTMR)
+void RTMR_SetOpMode(RTMR_TypeDef *pRTMR, uint8_t mode)
 {
-	pTMR->CTL |= 1 << bsTMR_CTL_INT_EN;
-}
-
-void TMR_IntDisable(TMR_TypeDef *pTMR)
-{
-	pTMR->CTL &= ~(1 << bsTMR_CTL_INT_EN);
+   #define mask (2 << bsRTMR_CTL_OP_MODE)
+   pRTMR->CTL = (pRTMR->CTL & ~mask) | (mode << bsRTMR_CTL_OP_MODE);
 }
 
 //
-void TMR_WatchDogEnable(uint32_t timeout)
+void RTMR_IntEnable(RTMR_TypeDef *pRTMR)
 {
-    APB_TMR0->CTL = (1 << bsTMR_CTL_RELOAD);
-    APB_TMR0->CMP = timeout;
-	APB_TMR0->CTL |= (1 << bsTMR_CTL_TMR_EN) | (1 << bsTMR_CTL_WatchDog_EN);
-    TMR0_LOCK();
+	pRTMR->CTL |= (1 << bsRTMR_CTL_INT_EN);
 }
 
-void TMR_WatchDogDisable(void)
+void RTMR_IntDisable(RTMR_TypeDef *pRTMR)
 {
-    TMR0_UNLOCK();
-	APB_TMR0->CTL &= ~(1 << bsTMR_CTL_WatchDog_EN);
+	pRTMR->CTL &= ~(1 << bsRTMR_CTL_INT_EN);
 }
 
-//
-uint8_t TMR_IntHappened(TMR_TypeDef *pTMR)
+void RTMR_IntClr(RTMR_TypeDef *pTMR)
 {
-	return ( (pTMR->CTL >> bsTMR_CTL_INT_STATUS) & BW2M(bsTMR_CTL_INT_STATUS) );
+	pTMR->CTL |= 1 << bsRTMR_CTL_INT_STATUS;
 }
 
-void TMR_IntClr(TMR_TypeDef *pTMR)
+uint8_t RTMR_IntHappened(RTMR_TypeDef *pTMR)
 {
-	pTMR->CTL |= 1 << bsTMR_CTL_INT_STATUS;
-}
-
-//-----------
-// TMR_LOCK
-//
-void TMR0_LOCK() // timer 0 only
-{
-	APB_TMR0->LOCK = 1;
-}
-
-void TMR0_UNLOCK() // timer 0 only
-{
-	APB_TMR0->LOCK = 0xDEADFACE;
+	return ( (pTMR->CTL >> bsRTMR_CTL_INT_STATUS) & BW2M(bsRTMR_CTL_INT_STATUS) );
 }
 
 #endif
