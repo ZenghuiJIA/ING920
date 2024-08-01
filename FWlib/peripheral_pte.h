@@ -227,6 +227,17 @@ typedef enum
     PTEC_CHANNEL_GROUP_3,
 }PTEC_ChannelGroup;
 
+void PTE_ChxEnable(uint32_t items);
+void PTE_ChxDisable(uint32_t items);
+uint8_t PTE_SetModuleTaskEventConfig(PTE_Module SetPTEModule, PTE_Channal SetTaskChannal, PTE_ModuleTaskEvt PTETaskEvt, uint32_t TaskEvtSer);
+uint8_t PTE_TaskEnable(PTE_Module SetPTEModule, PTE_ModuleTaskEvt PTETaskEvt, uint32_t PTEModuleTask, uint8_t enable, uint32_t TaskEvtSer);
+uint32_t PTE_TriggerTask(PTE_Module SetPTEModule, PTE_Channal SetTaskChannal, PTE_ModuleTaskEvt PTETaskEvt, uint32_t TaskEvtSer);
+void PTE_SetTaskChxGroupEN(PTEC_ChannelGroup SetChannelGroup);
+void PTE_SetTaskChxGroupDis(PTEC_ChannelGroup SetChannelGroup);
+void PTE_SetTaskChxGroupEnConfig(PTEC_ChannelGroup SetChannelGroup,uint32_t SetSubChannel);
+void PTE_SetTaskChxGroupDisConfig(PTEC_ChannelGroup SetChannelGroup,uint32_t SetSubChannel);
+void PTE_SetTaskChxGroupMap(PTEC_ChannelGroup SetChannelGroup,uint32_t SetGroupMap);
+
 #ifdef __cplusplus
 } /* allow C++ to use these headers */
 #endif    /* __cplusplus */

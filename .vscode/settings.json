@@ -16,6 +16,7 @@
     "stdint.h": "c",
     "xutility": "c",
     "cstdlib": "c",
-    "peripheral_pte.h": "c"
+    "peripheral_pte.h": "c",
+    "peripheral_ssp.h": "c"
   }
 }

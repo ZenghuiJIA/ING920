@@ -30,3 +30,5 @@
 .\output\r_timer.o: .\src\SEGGER_RTT_Conf.h
 .\output\r_timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\output\r_timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\output\r_timer.o: .\src\debug_print.h
+.\output\r_timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

@@ -11,7 +11,7 @@
 #include "keyscan_normal.h"
 #include "qdec.h"
 #include "spi_normal.h"
-#include "timer_pte.h"
+#include "PTE_lib_timer.h"
 #include "PDM.h"
 #include "r_timer.h"
 
@@ -60,7 +60,8 @@ int main()
     NVIC_SetPriorityGrouping(0x500);
     
     SysTick_Config(24000);
-    NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL);
+    
+    
     
     
     
@@ -68,7 +69,7 @@ int main()
     uart_init_board();
     debug_uart("debug uart_test\r\n");
     
-//    SEGGER_RTT_Init();
+    SEGGER_RTT_Init();
 //    SEGGER_RTT_Write(1, &g_SineWave128[(i_num++)%128], 2);
     DEBUG_LOG("debug rtt\r\n");
 //    pte_test();
@@ -84,12 +85,12 @@ int main()
 //    uart_test_dma_recive();
 //    pcap_test_read();
 //    pdm_test();
-    rtimer_test();
+//    rtimer_test();
 //    uart_test_fifo_recive();
 
 //    uart_send_test(test_send,sizeof (test_send));
 //    watchdog_test();
-//    timer_pem_test();
+    pte_test();
     for(;;)
     {
         SYSCTRL_DelayCycles(1000,1000);

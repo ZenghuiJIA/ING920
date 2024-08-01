@@ -278,7 +278,7 @@ static void _DoInit(void) {
   // Initialize control block
   //
   p = &_SEGGER_RTT;
-  p->MaxNumUpBuffers    = 3;
+  p->MaxNumUpBuffers    = SEGGER_RTT_MAX_NUM_UP_BUFFERS;
   p->MaxNumDownBuffers  = SEGGER_RTT_MAX_NUM_DOWN_BUFFERS;
   //
   // Initialize up buffer 0

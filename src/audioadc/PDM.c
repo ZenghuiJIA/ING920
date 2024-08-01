@@ -194,7 +194,6 @@ void pdm_dma_init(void)
     
     
 //    DMA_PrepareMem2Mem(&APB_DMA->Channels[0].Descriptor,mda_rc_pdm_data,in_data,80,DMA_ADDRESS_INC,DMA_ADDRESS_INC,0);
-    //≈‰÷√DMA∑¢ÀÕ
     pdm_dma.Ctrl |= 2<<24;
     DMA_PreparePeripheral2Mem(&pdm_dma,mda_rc_pdm_data,SYSCTRL_DMA_SDADC_RX,DMA_LEN * 4,DMA_ADDRESS_INC,0);;
     DMA_EnableChannel(0, &pdm_dma);
@@ -252,11 +251,11 @@ void pdm_test(void)
                 #if ANO
                 ano_output(&out_data,2);
                 #else                
-                debug_hex(&out_data,2);   
+                debug_hex(&out_data,2);
                 #endif
             }
             dma_data = 0;
-        }
+        } 
 //        test_ano();
 //            set_reg_bit(&APB_ASDM->fifo_addr, 1, 2);
     }

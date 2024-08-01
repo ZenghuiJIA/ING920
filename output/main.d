@@ -40,7 +40,7 @@
 .\output\main.o: .\FWlib\peripheral_keyscan.h
 .\output\main.o: src\qdec.h
 .\output\main.o: .\src\spi\spi_normal\spi_normal.h
-.\output\main.o: .\src\PTE\timer_pte\timer_pte.h
+.\output\main.o: .\src\PTE\PTE_LIB\PTE_lib_timer.h
 .\output\main.o: .\src\audioadc\PDM.h
 .\output\main.o: .\src\timer\r_timer.h
 .\output\main.o: src\SEGGER_RTT.h

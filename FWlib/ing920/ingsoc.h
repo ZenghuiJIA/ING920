@@ -596,11 +596,12 @@ typedef struct
 typedef struct
 {
     __IO uint32_t      reg_task[21];         //0x300
+    __IO uint32_t      _NOT_USED0[3];
     __IO uint32_t      reg_sub_task[21];         //0x160
-    __IO uint32_t      _NOT_USED[3];
+    __IO uint32_t      _NOT_USED1[3];
     __IO uint32_t      reg_event;           //0x160
     __IO uint32_t      reg_pub_event[9];         //0x164
-    __IO uint32_t      _NOT_USED1[2];
+    __IO uint32_t      _NOT_USED2[2];
 }PTE_PWM_TypeDef;
 
 typedef struct

@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\FWlib\ing920;.\FWlib;.\src;.\src\keyscan_demo;.\src\spi\spi_normal;.\src\spi\spi_flash;.\src\PTE\timer_pte;.\src\audioadc;.\src\timer</IncludePath>
+              <IncludePath>.\FWlib\ing920;.\FWlib;.\src;.\src\keyscan_demo;.\src\spi\spi_normal;.\src\spi\spi_flash;.\src\PTE\timer_pte;.\src\audioadc;.\src\timer;.\src\PTE\PTE_LIB</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -460,11 +460,6 @@
               <FilePath>.\src\spi\spi_flash\spi_flash.c</FilePath>
             </File>
             <File>
-              <FileName>timer_pte.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\PTE\timer_pte\timer_pte.c</FilePath>
-            </File>
-            <File>
               <FileName>PDM.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\audioadc\PDM.c</FilePath>
@@ -478,6 +473,11 @@
               <FileName>r_timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\timer\r_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>PTE_lib_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\PTE\PTE_LIB\PTE_lib_timer.c</FilePath>
             </File>
           </Files>
         </Group>
