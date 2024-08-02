@@ -224,7 +224,8 @@ void ASDM_IRQHandler(void)
     PDM_Enable(APB_ASDM,0);
 }
 
-#define ANO     0
+#define ANO     1
+#define UART     0
 
 void pdm_test(void)
 {
@@ -244,18 +245,24 @@ void pdm_test(void)
                 out_data = (mda_rc_pdm_data[i] & 0xffff);
                 #if ANO
                 ano_output(&out_data,2);
-                #else                
-                debug_hex(&out_data,2);   
+                #elif UART            
+                debug_hex(&out_data,2);  
+                #else
+                rtt_line_int16(out_data);                
                 #endif
                 out_data = (mda_rc_pdm_data[i] >> 16);
                 #if ANO
                 ano_output(&out_data,2);
-                #else                
+                #elif UART              
                 debug_hex(&out_data,2);
+                #else
+                rtt_line_int16(out_data);
                 #endif
             }
             dma_data = 0;
         } 
+//        SYSCTRL_DelayCycles(2400,1);
+//        rtt_printf_float_test();
 //        test_ano();
 //            set_reg_bit(&APB_ASDM->fifo_addr, 1, 2);
     }

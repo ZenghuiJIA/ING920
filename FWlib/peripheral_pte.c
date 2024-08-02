@@ -90,6 +90,11 @@ static void PTE_SetRegBit(volatile uint32_t *reg, uint8_t v, uint8_t bit_offset)
     *reg = (*reg & ~mask) | (v << bit_offset);
 }
 
+uint32_t PTE_ChxGetEnableState(void)
+{
+    return APB_PTE->reg_ch_en;
+}
+
 void PTE_ChxEnable(uint32_t items)
 {
     APB_PTE->reg_ch_en_set = items;
@@ -567,10 +572,7 @@ uint32_t PTE_TriggerTask(PTE_Module SetPTEModule, PTE_Channal SetTaskChannal, PT
 }
 
 void PTE_SetTaskChxGroupEN(PTEC_ChannelGroup SetChannelGroup)
-{
-
-
-    
+{   
     APB_PTE->reg_task_chg_en[SetChannelGroup] = 1ul;
 }
 

@@ -31,3 +31,6 @@
 .\output\debug_print.o: .\FWlib\peripheral_usb.h
 .\output\debug_print.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\output\debug_print.o: src\ano_protocol.h
+.\output\debug_print.o: src\SEGGER_RTT.h
+.\output\debug_print.o: src\SEGGER_RTT_Conf.h
+.\output\debug_print.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

@@ -62,10 +62,6 @@ int main()
     SysTick_Config(24000);
     
     
-    
-    
-    
-    
     uart_init_board();
     debug_uart("debug uart_test\r\n");
     
@@ -90,7 +86,7 @@ int main()
 
 //    uart_send_test(test_send,sizeof (test_send));
 //    watchdog_test();
-    pte_test();
+//    pte_test();
     for(;;)
     {
         SYSCTRL_DelayCycles(1000,1000);

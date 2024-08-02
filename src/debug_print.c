@@ -1,6 +1,30 @@
 #include "debug_print.h"
 #include "uart.h"
 #include "ano_protocol.h"
+#include "SEGGER_RTT.h"
+#define BDS_COLOR_TAG           "BDSCOL"
+
+#define BDS_LOG_COLOR_BLACK     0x000000 //黑色
+#define BDS_LOG_COLOR_RED       0xFF3030 //共色
+#define BDS_LOG_COLOR_GREEN     0x008B00 //绿色
+#define BDS_LOG_COLOR_BLUE      0x00008B //蓝色
+#define BDS_LOG_COLOR_VIOLET    0x9932CC //紫色
+
+//char *s = "test\n";
+
+////红色
+//SEGGER_RTT_printf(0, BDS_COLOR_TAG "(%d)%s", BDS_LOG_COLOR_RED, s);
+////绿色
+//SEGGER_RTT_printf(0, BDS_COLOR_TAG "(%d)%s", BDS_LOG_COLOR_GREEN, s);
+////黑色
+//SEGGER_RTT_printf(0, BDS_COLOR_TAG "(%d)%s", BDS_LOG_COLOR_BLACK, s);
+////黑色。不带BDS_COLOR_TAG标签时，RTT_T2按照默认按照黑色显示
+//SEGGER_RTT_printf(0,"%s", s);
+////蓝色
+//SEGGER_RTT_printf(0, BDS_COLOR_TAG "(%d)%s", BDS_LOG_COLOR_BLUE, s);
+////紫色
+//SEGGER_RTT_printf(0, BDS_COLOR_TAG "(%d)%s", BDS_LOG_COLOR_VIOLET, s);
+
 
 __weak void write_uart_buffer(const char *buffer, int len)
 {
@@ -51,5 +75,39 @@ void ano_output(void* data, uint32_t len)
 {
     debug_len = packed_ano(ano_buf,(uint8_t*)data,len);
     debug_hex(ano_buf,debug_len);
+}
+
+void rtt_printf_int_test(void)
+{
+    static uint32_t sn = 0;
+    int32_t X=-100,Y=105,Z=20;
+    int32_t x,y,z;
+
+    x = X;
+    y = Y;
+    z = Z;
+    SEGGER_RTT_printf(0,  BDS_COLOR_TAG"(%d)TAG=DLOG SN(%d)M*%d(%d,%d,%d)\n", BDS_LOG_COLOR_RED, sn++, 0, x, y, z);
+
+}
+
+void rtt_line_int16(int16_t data)
+{
+    static uint32_t sn = 0;
+
+    SEGGER_RTT_printf(0,  BDS_COLOR_TAG"(%d)TAG=DLOG SN(%d)M*%d(%d,%d,%d)\n", BDS_LOG_COLOR_RED, sn++, 0, data, 0, 0);
+}
+
+void rtt_printf_float_test(void)
+{
+    static uint32_t sn = 0;
+    static float X=0.123,Y=5.638941,Z=9.8874;
+    int32_t x,y,z;
+
+    x = X * 10000;
+    y = Y * 10000;
+    z = Z * 10000;
+    //保留1位小数点
+    SEGGER_RTT_printf(0,  BDS_COLOR_TAG"(%d)TAG=DLOG SN(%d)M*%d(%d,%d,%d)\n", BDS_LOG_COLOR_RED, sn++, 4, x, y, z);
+
 }
 

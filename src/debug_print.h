@@ -9,4 +9,5 @@ void debug_uart(const char *fmt, ...);
 void debug_hex(void* data, uint32_t len);
 void test_ano(void);
 void ano_output(void* data, uint32_t len);
+void rtt_line_int16(int16_t data);
 #endif //ING920_SDK_DEBUG_PRINT_H

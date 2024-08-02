@@ -122,6 +122,8 @@ int PTE_ConnectPeripheral(SYSCTRL_PTE_CHANNEL_ID ch,
 
 #elif (INGCHIPS_FAMILY == INGCHIPS_FAMILY_920)
 
+
+
 typedef enum
 {
     PTE_QDEC_MODULE = 0,
