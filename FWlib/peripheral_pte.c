@@ -290,7 +290,7 @@ uint8_t PTE_SetModuleTaskEventConfig(PTE_Module SetPTEModule, PTE_Channal SetTas
     return 1;
 }
 
-uint8_t PTE_TaskEnable(PTE_Module SetPTEModule, PTE_ModuleTaskEvt PTETaskEvt, uint32_t PTEModuleTask, uint8_t enable, uint32_t TaskEvtSer)
+uint8_t PTE_TaskEnable(PTE_Module SetPTEModule, PTE_ModuleTaskEvt PTETaskEvt, uint8_t enable, uint32_t TaskEvtSer)
 {
     uint32_t  reg_num = 0;
     switch (SetPTEModule)
@@ -475,7 +475,7 @@ uint8_t PTE_TaskEnable(PTE_Module SetPTEModule, PTE_ModuleTaskEvt PTETaskEvt, ui
     return 1;
 }
 
-uint32_t PTE_TriggerTask(PTE_Module SetPTEModule, PTE_Channal SetTaskChannal, PTE_ModuleTaskEvt PTETaskEvt, uint32_t TaskEvtSer)
+uint8_t PTE_TriggerTask(PTE_Module SetPTEModule, PTE_ModuleTaskEvt PTETaskEvt, uint32_t TaskEvtSer)
 {
         uint32_t  reg_num = 0;
     switch (SetPTEModule)

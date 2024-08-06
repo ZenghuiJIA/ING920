@@ -41,8 +41,6 @@ void ASDM_PDM_Config(ASDM_TypeDef *base, ASDM_PdmControlTypeDef* pParam)
     ASDM_SetAGCGateMode(APB_ASDM, 0);
     ASDM_NoiseHold(APB_ASDM, 0x7);
 
-    ASDM_SetAGCMute(APB_ASDM, 0);
-
     
     ASDM_FifoEn(APB_ASDM, 1);
     ASDM_SetFifoInt(APB_ASDM, pParam->INT_mask);
@@ -86,7 +84,7 @@ void ASDM_SelDownSample(ASDM_TypeDef *base, uint8_t enable)
     ASDM_SetRegBit(&base->asdm_ctrl, enable, 7);
 }
 
-void ASDM_UpdateSr(ASDM_TypeDef *base, uint32_t div)
+void ASDM_UpdateSr(ASDM_TypeDef *base, ASDM_SampleRatek div)
 {
     ASDM_SetRegBits(&base->asdm_sr, div, 9, 0);
     ASDM_SetRegBit(&base->asdm_sr, 1, 9);
@@ -177,14 +175,14 @@ void ASDM_SetAGCGateMode(ASDM_TypeDef *base, uint8_t mode)
     ASDM_SetRegBit(&base->asdm_agc_ctrl2, mode, 7);
 }
 
-void ASDM_NoiseHold(ASDM_TypeDef *base, uint8_t enable)
+void ASDM_NoiseHold(ASDM_TypeDef *base, uint32_t hold)
 {
-    ASDM_SetRegBits(&base->asdm_agc_ctrl2, enable, 5, 8);
+    ASDM_SetRegBits(&base->asdm_agc_ctrl2, hold, 5, 8);
 }
 
-void ASDM_SetAGCMute(ASDM_TypeDef *base, uint8_t enable)
+uint8_t ASDM_SetAGCMute(ASDM_TypeDef *base)
 {
-    ASDM_SetRegBit(&base->asdm_agc_st, enable, 0);
+    return base->asdm_agc_st&0x1;
 }
 
 uint8_t ASDM_GetFifoFullState(ASDM_TypeDef *base)

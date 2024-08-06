@@ -77,7 +77,7 @@ void pdm_init_per(void)
     ASDM_SelMic(APB_ASDM,1);
     ASDM_SelDownSample(APB_ASDM,1);
     
-    ASDM_UpdateSr(APB_ASDM, 1<<7);//asdm_sr fs 12k 
+    ASDM_UpdateSr(APB_ASDM, ASDM_SR_11k);//asdm_sr fs 12k 
 
     ASDM_MuteEn(APB_ASDM,0);//asdm_mute_l
     ASDM_FadeInOutEn(APB_ASDM,0);//asdm_fadedis_l
@@ -97,8 +97,6 @@ void pdm_init_per(void)
     ASDM_AGCNoiseGateEn(APB_ASDM, 1);//asdm_noise_gt_en
     ASDM_SetAGCGateMode(APB_ASDM, 0);//asdm_noise_gt_mode
     ASDM_NoiseHold(APB_ASDM, 0x7);//asdm_noise_hold
-
-    ASDM_SetAGCMute(APB_ASDM, 0);//asdm_agc_mute
 
     
     ASDM_FifoEn(APB_ASDM, 1);//fifo enable

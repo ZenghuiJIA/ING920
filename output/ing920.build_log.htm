@@ -27,8 +27,18 @@ Project File Date:  07/31/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ing920'
+compiling debug_print.c...
+compiling uart.c...
+src\uart.c(197): warning:  #177-D: function "uart_int_status_callback"  was declared but never referenced
+  static void uart_int_status_callback(void)
+src\uart.c(262): warning:  #177-D: function "uart_int_dma_callback"  was declared but never referenced
+  static void uart_int_dma_callback(void)
+src\uart.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=9356 RO-data=1220 RW-data=116 ZI-data=6604  
+FromELF: creating hex file...
 After Build - User command #1: fromelf.exe --bin -o ing920.bin ./output/ing920.axf
-".\output\ing920.axf" - 0 Error(s), 0 Warning(s).
+".\output\ing920.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 

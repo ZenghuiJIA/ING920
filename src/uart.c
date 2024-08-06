@@ -27,8 +27,8 @@
 DMA_Descriptor test __attribute__((aligned (8)));
 char src[] = "Finished to receive a frame!\n";
 
-char dst[256];
-int index = 0;
+static char dst[256];
+static int index_uart = 0;
 
 
 static void NVIC_Configuration(void)
@@ -236,8 +236,8 @@ static void uart_int_fifo_callback(void)
             while (apUART_Check_RXFIFO_EMPTY(APB_UART0) != 1)
             {
                 char c = APB_UART0->DataRead;
-                dst[index] = c;
-                index++;
+                dst[index_uart] = c;
+                index_uart++;
             }
             DEBUG_LOG("full init\r\n");
         }
@@ -248,13 +248,13 @@ static void uart_int_fifo_callback(void)
             while (apUART_Check_RXFIFO_EMPTY(APB_UART0) != 1)
             {
                 char c = APB_UART0->DataRead;
-                dst[index] = c;
-                index++;
+                dst[index_uart] = c;
+                index_uart++;
             }
             DEBUG_LOG("time out");
         }
-        dst[index] = 0;
-        index = 0;
+        dst[index_uart] = 0;
+        index_uart = 0;
         DEBUG_LOG("\ndst = %s\n",dst);
     }
 }
@@ -279,9 +279,9 @@ static void uart_int_dma_callback(void)
             while (apUART_Check_RXFIFO_EMPTY(APB_UART0) != 1)
             {
                 char c = APB_UART0->DataRead;
-                int index = APB_DMA->Channels[1].Descriptor.DstAddr - (uint32_t)dst;
-                dst[index] = c;
-                if (index == 255)
+                int index_uart = APB_DMA->Channels[1].Descriptor.DstAddr - (uint32_t)dst;
+                dst[index_uart] = c;
+                if (index_uart == 255)
                 {
                     APB_DMA->Channels[1].Descriptor.DstAddr = (uint32_t)dst;
                     UART_trigger_DmaSend();

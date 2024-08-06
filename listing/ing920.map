@@ -147,7 +147,7 @@ Section Cross References
     uart.o(i.uart_int_fifo_callback) refers to peripheral_uart.o(i.apUART_Check_RXFIFO_EMPTY) for apUART_Check_RXFIFO_EMPTY
     uart.o(i.uart_int_fifo_callback) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
     uart.o(i.uart_int_fifo_callback) refers to uart.o(.bss) for dst
-    uart.o(i.uart_int_fifo_callback) refers to uart.o(.data) for index
+    uart.o(i.uart_int_fifo_callback) refers to uart.o(.data) for index_uart
     uart.o(i.uart_int_status_callback) refers to peripheral_uart.o(i.apUART_Get_ITStatus) for apUART_Get_ITStatus
     uart.o(i.uart_int_status_callback) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
     uart.o(i.uart_int_status_callback) refers to peripheral_uart.o(i.UART_SendData) for UART_SendData
@@ -442,7 +442,6 @@ Section Cross References
     pdm.o(i.pdm_init_per) refers to peripheral_asdm.o(i.ASDM_AGCNoiseGateEn) for ASDM_AGCNoiseGateEn
     pdm.o(i.pdm_init_per) refers to peripheral_asdm.o(i.ASDM_SetAGCGateMode) for ASDM_SetAGCGateMode
     pdm.o(i.pdm_init_per) refers to peripheral_asdm.o(i.ASDM_NoiseHold) for ASDM_NoiseHold
-    pdm.o(i.pdm_init_per) refers to peripheral_asdm.o(i.ASDM_SetAGCMute) for ASDM_SetAGCMute
     pdm.o(i.pdm_init_per) refers to peripheral_asdm.o(i.ASDM_FifoEn) for ASDM_FifoEn
     pdm.o(i.pdm_init_per) refers to peripheral_asdm.o(i.ASDM_SetFifoInt) for ASDM_SetFifoInt
     pdm.o(i.pdm_init_per) refers to peripheral_asdm.o(i.ASDM_SetFifoTrig) for ASDM_SetFifoTrig
@@ -737,7 +736,6 @@ Section Cross References
     peripheral_asdm.o(i.ASDM_PDM_Config) refers to peripheral_asdm.o(i.ASDM_AGCNoiseGateEn) for ASDM_AGCNoiseGateEn
     peripheral_asdm.o(i.ASDM_PDM_Config) refers to peripheral_asdm.o(i.ASDM_SetAGCGateMode) for ASDM_SetAGCGateMode
     peripheral_asdm.o(i.ASDM_PDM_Config) refers to peripheral_asdm.o(i.ASDM_NoiseHold) for ASDM_NoiseHold
-    peripheral_asdm.o(i.ASDM_PDM_Config) refers to peripheral_asdm.o(i.ASDM_SetAGCMute) for ASDM_SetAGCMute
     peripheral_asdm.o(i.ASDM_PDM_Config) refers to peripheral_asdm.o(i.ASDM_FifoEn) for ASDM_FifoEn
     peripheral_asdm.o(i.ASDM_PDM_Config) refers to peripheral_asdm.o(i.ASDM_SetFifoInt) for ASDM_SetFifoInt
     peripheral_asdm.o(i.ASDM_PDM_Config) refers to peripheral_asdm.o(i.ASDM_SetFifoTrig) for ASDM_SetFifoTrig
@@ -747,7 +745,6 @@ Section Cross References
     peripheral_asdm.o(i.ASDM_SetAGCFrameTime) refers to peripheral_asdm.o(i.ASDM_SetRegBits) for ASDM_SetRegBits
     peripheral_asdm.o(i.ASDM_SetAGCGateMode) refers to peripheral_asdm.o(i.ASDM_SetRegBit) for ASDM_SetRegBit
     peripheral_asdm.o(i.ASDM_SetAGCMaxLevel) refers to peripheral_asdm.o(i.ASDM_SetRegBits) for ASDM_SetRegBits
-    peripheral_asdm.o(i.ASDM_SetAGCMute) refers to peripheral_asdm.o(i.ASDM_SetRegBit) for ASDM_SetRegBit
     peripheral_asdm.o(i.ASDM_SetAGCNoiseMode) refers to peripheral_asdm.o(i.ASDM_SetRegBit) for ASDM_SetRegBit
     peripheral_asdm.o(i.ASDM_SetAGCNoiseThresh) refers to peripheral_asdm.o(i.ASDM_SetRegBits) for ASDM_SetRegBits
     peripheral_asdm.o(i.ASDM_SetEdgeSample) refers to peripheral_asdm.o(i.ASDM_SetRegBit) for ASDM_SetRegBit
@@ -1038,7 +1035,7 @@ Removing Unused input sections from the image.
     Removing pdm.o(i.disable_pdm), (28 bytes).
     Removing pdm.o(i.pdm_dma_init), (72 bytes).
     Removing pdm.o(i.pdm_init), (444 bytes).
-    Removing pdm.o(i.pdm_init_per), (244 bytes).
+    Removing pdm.o(i.pdm_init_per), (236 bytes).
     Removing pdm.o(i.pdm_io_init), (24 bytes).
     Removing pdm.o(i.pdm_test), (108 bytes).
     Removing pdm.o(i.set_reg_bit), (22 bytes).
@@ -1322,14 +1319,14 @@ Removing Unused input sections from the image.
     Removing peripheral_asdm.o(i.ASDM_InvertInput), (18 bytes).
     Removing peripheral_asdm.o(i.ASDM_MuteEn), (20 bytes).
     Removing peripheral_asdm.o(i.ASDM_NoiseHold), (22 bytes).
-    Removing peripheral_asdm.o(i.ASDM_PDM_Config), (208 bytes).
+    Removing peripheral_asdm.o(i.ASDM_PDM_Config), (200 bytes).
     Removing peripheral_asdm.o(i.ASDM_Reset), (18 bytes).
     Removing peripheral_asdm.o(i.ASDM_SelDownSample), (18 bytes).
     Removing peripheral_asdm.o(i.ASDM_SelMic), (18 bytes).
     Removing peripheral_asdm.o(i.ASDM_SetAGCFrameTime), (22 bytes).
     Removing peripheral_asdm.o(i.ASDM_SetAGCGateMode), (20 bytes).
     Removing peripheral_asdm.o(i.ASDM_SetAGCMaxLevel), (22 bytes).
-    Removing peripheral_asdm.o(i.ASDM_SetAGCMute), (20 bytes).
+    Removing peripheral_asdm.o(i.ASDM_SetAGCMute), (10 bytes).
     Removing peripheral_asdm.o(i.ASDM_SetAGCNoiseMode), (20 bytes).
     Removing peripheral_asdm.o(i.ASDM_SetAGCNoiseThresh), (22 bytes).
     Removing peripheral_asdm.o(i.ASDM_SetEdgeSample), (18 bytes).
@@ -1357,7 +1354,7 @@ Removing Unused input sections from the image.
     Removing peripheral_pte.o(i.PTE_SetTaskChxGroupEnConfig), (16 bytes).
     Removing peripheral_pte.o(i.PTE_SetTaskChxGroupMap), (12 bytes).
     Removing peripheral_pte.o(i.PTE_TaskEnable), (816 bytes).
-    Removing peripheral_pte.o(i.PTE_TriggerTask), (408 bytes).
+    Removing peripheral_pte.o(i.PTE_TriggerTask), (404 bytes).
     Removing peripheral_timer.o(.rev16_text), (4 bytes).
     Removing peripheral_timer.o(.revsh_text), (4 bytes).
     Removing peripheral_timer.o(.rrx_text), (6 bytes).
@@ -1391,7 +1388,7 @@ Removing Unused input sections from the image.
     Removing d2f.o(.text), (56 bytes).
     Removing fepilogue.o(.text), (110 bytes).
 
-506 unused section(s) (total 24698 bytes) removed from the image.
+506 unused section(s) (total 24668 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1401,50 +1398,50 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
-    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc.o ABSOLUTE
-    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
-    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
     ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
     ../clib/microlib/malloc/mvars.c          0x00000000   Number         0  mvars.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ../clib/microlib/string/strcpy.c         0x00000000   Number         0  strcpy.o ABSOLUTE
     ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
-    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixi.o ABSOLUTE
-    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
     FWlib\\peripheral_asdm.c                 0x00000000   Number         0  peripheral_asdm.o ABSOLUTE
@@ -1536,8 +1533,8 @@ Image Symbol Table
     .text                                    0x0200241c   Section        0  llshl.o(.text)
     .text                                    0x0200243a   Section        0  llushr.o(.text)
     .text                                    0x0200245a   Section        0  llsshr.o(.text)
-    .text                                    0x0200247e   Section        0  depilogue.o(.text)
     .text                                    0x0200247e   Section        0  iusefp.o(.text)
+    .text                                    0x0200247e   Section        0  depilogue.o(.text)
     .text                                    0x02002538   Section        0  dmul.o(.text)
     .text                                    0x0200261c   Section        0  dfixul.o(.text)
     .text                                    0x0200264c   Section       48  cdrcmple.o(.text)
@@ -1673,6 +1670,7 @@ Image Symbol Table
     settings                                 0x020048e8   Data          72  peripheral_pinctrl.o(.constdata)
     .data                                    0x20000000   Section        4  timer_delay.o(.data)
     .data                                    0x20000004   Section       37  uart.o(.data)
+    index_uart                               0x20000024   Data           4  uart.o(.data)
     .data                                    0x2000002c   Section       14  iic_master_920.o(.data)
     send_buf_ptr                             0x20000030   Data           4  iic_master_920.o(.data)
     read_buf_ptr                             0x20000034   Data           4  iic_master_920.o(.data)
@@ -1686,6 +1684,7 @@ Image Symbol Table
     _acUpBuffer                              0x200000bc   Data        1024  segger_rtt.o(.bss)
     _acDownBuffer                            0x200004bc   Data          16  segger_rtt.o(.bss)
     .bss                                     0x200004d0   Section      284  uart.o(.bss)
+    dst                                      0x200004ec   Data         256  uart.o(.bss)
     .bss                                     0x200005ec   Section       50  keyscan_normal.o(.bss)
     key_ctx                                  0x200005ec   Data          30  keyscan_normal.o(.bss)
     key_vale                                 0x2000060a   Data          20  keyscan_normal.o(.bss)
@@ -1859,7 +1858,6 @@ Image Symbol Table
     Region$$Table$$Limit                     0x02004950   Number         0  anon$$obj.o(Region$$Table)
     jiffes                                   0x20000000   Data           4  timer_delay.o(.data)
     src                                      0x20000004   Data          30  uart.o(.data)
-    index                                    0x20000024   Data           4  uart.o(.data)
     rc_data                                  0x20000028   Data           1  uart.o(.data)
     write_data_len                           0x2000002c   Data           1  iic_master_920.o(.data)
     write_data_cnt                           0x2000002d   Data           1  iic_master_920.o(.data)
@@ -1871,7 +1869,6 @@ Image Symbol Table
     out_data                                 0x20000070   Data           2  pdm.o(.data)
     _SEGGER_RTT                              0x20000074   Data          72  segger_rtt.o(.bss)
     test                                     0x200004d0   Data          28  uart.o(.bss)
-    dst                                      0x200004ec   Data         256  uart.o(.bss)
     mda_rc_pdm_data                          0x20000620   Data        4096  pdm.o(.bss)
     pdm_dma                                  0x20001620   Data          28  pdm.o(.bss)
     __initial_sp                             0x20001a40   Data           0  startup_ing920.o(STACK)
@@ -2081,10 +2078,10 @@ Image component sizes
         46          6          0          0          0        950   spi_flash.o
         28          4        212          0       1024        736   startup_ing920.o
         16          4          0          4          0        919   timer_delay.o
-       388         62          0         37        284       3581   uart.o
+       388         62          0         37        284       3567   uart.o
 
     ----------------------------------------------------------------------
-      5608        532       1220        116       6604     151592   Object Totals
+      5608        532       1220        116       6604     151578   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         14          0          0          7         10          0   (incl. Padding)
 
@@ -2141,8 +2138,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      9356        634       1220        116       6604     148260   Grand Totals
-      9356        634       1220        116       6604     148260   ELF Image Totals
+      9356        634       1220        116       6604     148246   Grand Totals
+      9356        634       1220        116       6604     148246   ELF Image Totals
       9356        634       1220        116          0          0   ROM Totals
 
 ==============================================================================

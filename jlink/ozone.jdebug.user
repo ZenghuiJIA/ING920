@@ -1,0 +1,30 @@
+
+
+
+Breakpoint=C:/ming/source/ING920_SDK/src/main.c:59, State=BP_STATE_ON
+Breakpoint=C:/ming/source/ING920_SDK/ing92000.s:65, State=BP_STATE_ON
+Breakpoint=C:/ming/source/ING920_SDK/ing92000.s:69, State=BP_STATE_ON
+Breakpoint=C:/ming/source/ING920_SDK/ing92000.s:101, State=BP_STATE_ON
+Breakpoint=0x02002A50, State=BP_STATE_ON
+OpenDocument="cmsis_gcc.h", FilePath="C:/ming/source/ING920_SDK/CMSIS/Core/Include/cmsis_gcc.h", Line=944
+OpenDocument="peripheral_pinctrl.c", FilePath="C:/ming/source/ING920_SDK/FWLIB/peripheral_pinctrl.c", Line=946
+OpenDocument="ozone.jdebug", FilePath="C:/ming/source/ING920_SDK/jlink/ozone.jdebug", Line=280
+OpenDocument="ing92000.s", FilePath="C:/ming/source/ING920_SDK/ing92000.s", Line=48
+OpenDocument="main.c", FilePath="C:/ming/source/ING920_SDK/src/main.c", Line=30
+OpenToolbar="Debug", Floating=0, x=0, y=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=1, w=802, h=399, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
+OpenWindow="Source Files", DockArea=LEFT, x=0, y=1, w=473, h=493, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=802, h=595, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Memory 1", DockArea=BOTTOM, x=2, y=0, w=1158, h=319, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, EditorAddress=0x120
+OpenWindow="Functions", DockArea=LEFT, x=0, y=0, w=473, h=501, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Data Sampling", DockArea=BOTTOM, x=0, y=0, w=265, h=319, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VisibleTab=0, UniformSampleSpacing=0
+OpenWindow="Console", DockArea=BOTTOM, x=1, y=0, w=1135, h=319, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+SmartViewPlugin="", Page="", Toolbar="Hidden", Window="SmartView 1"
+TableHeader="Functions", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Address";"Size";"#Insts";"Source"], ColWidths=[212;100;100;100;182]
+TableHeader="Source Files", SortCol="File", SortOrder="DESCENDING", VisibleCols=["File";"Status";"Size";"#Insts";"Path"], ColWidths=[27;106;27;27;656]
+TableHeader="Data Sampling Table", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time"], ColWidths=[100;143]
+TableHeader="Data Sampling Setup", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Type";"Value";"Min";"Max";"Average";"# Changes";"Min. Change";"Max. Change"], ColWidths=[100;100;100;100;100;100;100;100;100]
+TableHeader="Power Sampling", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
+TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[140;105;540]
+TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
+TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[200;100;100;359]

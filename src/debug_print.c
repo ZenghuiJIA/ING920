@@ -25,8 +25,14 @@
 ////紫色
 //SEGGER_RTT_printf(0, BDS_COLOR_TAG "(%d)%s", BDS_LOG_COLOR_VIOLET, s);
 
-
+#if defined(__CC_ARM)
 __weak void write_uart_buffer(const char *buffer, int len)
+#elif defined(__ICCARM__)
+__weak void write_uart_buffer(const char *buffer, int len)
+#elif defined(__GNUC__)
+void write_uart_buffer(const char *buffer, int len) __attribute__((weak));
+void write_uart_buffer(const char *buffer, int len)
+#endif
 {
     uart_send_test(buffer,len);
 }
