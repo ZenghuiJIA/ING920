@@ -43,6 +43,7 @@
 .\output\main.o: .\src\PTE\PTE_LIB\PTE_lib_timer.h
 .\output\main.o: .\src\audioadc\PDM.h
 .\output\main.o: .\src\timer\r_timer.h
+.\output\main.o: .\src\I2S\i2s_master.h
 .\output\main.o: src\SEGGER_RTT.h
 .\output\main.o: src\SEGGER_RTT_Conf.h
 .\output\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

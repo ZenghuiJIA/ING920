@@ -275,7 +275,7 @@ uint8_t erase_addr[3] = {0x02,0x00,0x00};
 void spi_test(void)
 {
     setup_peripherals_spi_pin();
-//    setup_peripherals_spi_module();
+    setup_peripherals_spi_module();
     memset(send_spi_data,0xaa,sizeof(send_spi_data));
     spi_flash_send_command(COMMAND_W_ENABLE);//解锁flash
     spi_flash_read(COMMAND_READ_STATUS,&read_status,1);//读status

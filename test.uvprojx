@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\FWlib\ing920;.\FWlib;.\src;.\src\keyscan_demo;.\src\spi\spi_normal;.\src\spi\spi_flash;.\src\PTE\timer_pte;.\src\audioadc;.\src\timer;.\src\PTE\PTE_LIB</IncludePath>
+              <IncludePath>.\FWlib\ing920;.\FWlib;.\src;.\src\keyscan_demo;.\src\spi\spi_normal;.\src\spi\spi_flash;.\src\PTE\timer_pte;.\src\audioadc;.\src\timer;.\src\PTE\PTE_LIB;.\src\spi;.\src\I2S</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -455,11 +455,6 @@
               <FilePath>.\src\keyscan_demo\keyscan_normal.c</FilePath>
             </File>
             <File>
-              <FileName>spi_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\spi\spi_flash\spi_flash.c</FilePath>
-            </File>
-            <File>
               <FileName>PDM.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\audioadc\PDM.c</FilePath>
@@ -478,6 +473,21 @@
               <FileName>PTE_lib_timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\PTE\PTE_LIB\PTE_lib_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>qdec_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\qdec\qdec_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi_slave.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\spi\spi_slave.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2s_master.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\I2S\i2s_master.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -561,6 +571,11 @@
               <FileName>peripheral_timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\FWlib\peripheral_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_i2s.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FWlib\peripheral_i2s.c</FilePath>
             </File>
           </Files>
         </Group>

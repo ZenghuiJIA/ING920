@@ -4,7 +4,8 @@
       "name": "windows-gcc-x64",
       "includePath": [
         "${workspaceFolder}/**",
-        "${workspaceFolder}/FWlib/ing920/**"
+        "${workspaceFolder}/FWlib/ing920/**",
+        "${workspaceFolder}/src/**"
       ],
       "defines": [
         "USE_STDPERIPH_DRIVER",

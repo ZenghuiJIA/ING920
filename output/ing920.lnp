@@ -13,11 +13,13 @@
 ".\output\pingpong.o"
 ".\output\qdec.o"
 ".\output\keyscan_normal.o"
-".\output\spi_flash.o"
 ".\output\pdm.o"
 ".\output\ano_protocol.o"
 ".\output\r_timer.o"
 ".\output\pte_lib_timer.o"
+".\output\qdec_timer.o"
+".\output\spi_slave.o"
+".\output\i2s_master.o"
 ".\output\startup_ing920.o"
 ".\output\peripheral_gpio.o"
 ".\output\peripheral_sysctrl.o"
@@ -32,6 +34,7 @@
 ".\output\peripheral_asdm.o"
 ".\output\peripheral_pte.o"
 ".\output\peripheral_timer.o"
+".\output\peripheral_i2s.o"
 --library_type=microlib --strict --scatter ".\output\ing920.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

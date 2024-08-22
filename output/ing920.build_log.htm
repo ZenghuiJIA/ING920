@@ -17,25 +17,24 @@ Library Manager: ArmAr.exe V5.06 update 7 (build 960)
 Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
 CPU DLL:         SARMCM3.DLL V5.37.0.0
 Dialog DLL:      DCM.DLL V1.17.5.0
-Target DLL:      Segger\JL2CM3.dll V2.99.42.0
+Target DLL:      CMSIS_AGDI.dll V1.33.12.0
 Dialog DLL:      TCM.DLL V1.56.1.0
  
 <h2>Project:</h2>
 C:\ming\source\ING920_SDK\test.uvprojx
-Project File Date:  07/31/2024
+Project File Date:  08/20/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ing920'
-compiling debug_print.c...
-compiling uart.c...
-src\uart.c(197): warning:  #177-D: function "uart_int_status_callback"  was declared but never referenced
-  static void uart_int_status_callback(void)
-src\uart.c(262): warning:  #177-D: function "uart_int_dma_callback"  was declared but never referenced
-  static void uart_int_dma_callback(void)
-src\uart.c: 2 warnings, 0 errors
+compiling i2s_master.c...
+src\I2S\i2s_master.c(42): warning:  #188-D: enumerated type mixed with another type
+      SYSCTRL_SelectI2sClk(SYSCTRL_CLK_PLL_DIV_1 + 4); // I2s_Clk = 51.2MHz
+src\I2S\i2s_master.c(62): warning:  #223-D: function "memset" declared implicitly
+      memset(sendData,0x55,sizeof(sendData));
+src\I2S\i2s_master.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=9356 RO-data=1220 RW-data=116 ZI-data=6604  
+Program Size: Code=12036 RO-data=1220 RW-data=124 ZI-data=6644  
 FromELF: creating hex file...
 After Build - User command #1: fromelf.exe --bin -o ing920.bin ./output/ing920.axf
 ".\output\ing920.axf" - 0 Error(s), 2 Warning(s).
@@ -60,7 +59,7 @@ Package Vendor: INGChips
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.6.0
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

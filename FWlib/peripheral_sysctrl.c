@@ -1627,15 +1627,22 @@ void SYSCTRL_SelectMemoryBlocks(uint32_t block_map)
     uint32_t masked = block_map & 0x3f;
     set_reg_bits((volatile uint32_t *)(AON2_CTRL_BASE + 0x04), masked, 6, 12);
 }
-int SYSCTRL_Init(void)
 
+int SYSCTRL_Init(void)
 {
     // TODO:
     return 0;
-
-
 }
 
+void SYSCTRL_SelectI2sClk(SYSCTRL_ClkMode mode)
+{
+    set_reg_bit(APB_SYSCTRL->CguCfg + 1, mode == 0 ? 0 : 1, 11);
+    if (mode >= SYSCTRL_CLK_PLL_DIV_1)
+    {
+        set_reg_bits(APB_SYSCTRL->CguCfg + 1, mode, 4, 6);
+        set_reg_bit(APB_SYSCTRL->CguCfg + 1, 1, 10);
+    }
+}
 
 void SYSCTRL_UpdateAsdmClk(uint32_t div)
 {

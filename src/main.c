@@ -14,6 +14,7 @@
 #include "PTE_lib_timer.h"
 #include "PDM.h"
 #include "r_timer.h"
+#include "i2s_master.h"
 
 
 #define MAIN_DEBUG
@@ -56,7 +57,6 @@ int main()
     __disable_irq();
     SCB->VTOR = 0x2002000;
     __enable_irq();
-    SEGGER_RTT_Init();
     NVIC_SetPriorityGrouping(0x500);
     
     SysTick_Config(24000);
@@ -74,7 +74,7 @@ int main()
 //    IR_test_cycle();
 //    __enable_irq();
 //    all_send_test_data();
-//    iic_test();
+//    iic_test();  
 //    spi_test();
 //    pwm_test_simple();
 //    pwm_test_step();
@@ -83,6 +83,7 @@ int main()
 //    pdm_test();
 //    rtimer_test();
 //    uart_test_fifo_recive();
+    I2sTest();
 
 //    uart_send_test(test_send,sizeof (test_send));
 //    watchdog_test();
