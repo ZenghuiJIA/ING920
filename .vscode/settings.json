@@ -19,6 +19,9 @@
     "peripheral_pte.h": "c",
     "peripheral_ssp.h": "c",
     "peripheral_i2s.h": "c",
-    "i2s_master.h": "c"
+    "i2s_master.h": "c",
+    "iic_master.h": "c",
+    "__ingsoc.h": "c",
+    "peripheral_gpio.h": "c"
   }
 }

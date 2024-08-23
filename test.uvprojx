@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\FWlib\ing920;.\FWlib;.\src;.\src\keyscan_demo;.\src\spi\spi_normal;.\src\spi\spi_flash;.\src\PTE\timer_pte;.\src\audioadc;.\src\timer;.\src\PTE\PTE_LIB;.\src\spi;.\src\I2S</IncludePath>
+              <IncludePath>.\FWlib\ing920;.\FWlib;.\src;.\src\keyscan_demo;.\src\spi\spi_normal;.\src\spi\spi_flash;.\src\PTE\timer_pte;.\src\audioadc;.\src\timer;.\src\PTE\PTE_LIB;.\src\spi;.\src\I2S;.\src\iic</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -430,11 +430,6 @@
               <FilePath>.\src\PWM.c</FilePath>
             </File>
             <File>
-              <FileName>iic_master_920.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\iic_master_920.c</FilePath>
-            </File>
-            <File>
               <FileName>debug_print.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\debug_print.c</FilePath>
@@ -488,6 +483,11 @@
               <FileName>i2s_master.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\I2S\i2s_master.c</FilePath>
+            </File>
+            <File>
+              <FileName>iic_slave.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\iic\iic_slave.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -83,11 +83,12 @@ int main()
 //    pdm_test();
 //    rtimer_test();
 //    uart_test_fifo_recive();
-    I2sTest();
+//    I2sTest();
 
 //    uart_send_test(test_send,sizeof (test_send));
 //    watchdog_test();
 //    pte_test();
+    i2c_test();
     for(;;)
     {
         SYSCTRL_DelayCycles(1000,1000);
