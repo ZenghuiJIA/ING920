@@ -49,10 +49,9 @@ void QDEC_ChModeCfg(QDEC_CHX Channel, QDEC_ModuCfg ModeCfg)
 
     {
     case QDEC_TIMER:
-        *(uint32_t*)0x04009004UL |= (1<<15); 
+//        *(uint32_t*)0x040009004UL |= (1<<15); 
         QDEC_SetRegBit(&APB_QDEC->channels[Channel].channel_mode, 1, 15);//Wave
-        QDEC_SetRegBit(&APB_QDEC->bmr, 0, 8);//QdecEn
-        break;
+        QDEC_SetRegBit(&APB_QDEC->bmr, 0, 8);//Qdec        break;
     case QDEC_PWM:
         QDEC_SetRegBit(&APB_QDEC->channels[Channel].channel_mode, 1, 15);//Wave
         QDEC_SetRegBit(&APB_QDEC->bmr, 0, 8);//QdecEn

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "ingsoc.h"
-#include "platform_api.h"
+//#include "platform_api.h"
 #include "bsp_usb_msc.h"
 #include "eflash.h"
 #include "ota_service.h"

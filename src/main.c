@@ -84,11 +84,13 @@ int main()
 //    rtimer_test();
 //    uart_test_fifo_recive();
 //    I2sTest();
+    bsp_usb_init();
+//    QdecTest();
 
 //    uart_send_test(test_send,sizeof (test_send));
 //    watchdog_test();
 //    pte_test();
-    i2c_test();
+//    i2c_test();
     for(;;)
     {
         SYSCTRL_DelayCycles(1000,1000);

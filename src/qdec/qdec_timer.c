@@ -52,12 +52,12 @@ void QdecTimerInit(void)
 {
     SYSCTRL_ClearClkGateMulti((1 << SYSCTRL_ITEM_APB_QDEC));
     SYSCTRL_ReleaseBlock(SYSCTRL_ITEM_APB_QDEC);
-//    QDEC_ChModeCfg(QDEC_CH0,QDEC_TIMER);
-//    QDEC_TmrCfg(QDEC_CH0,QDEC_TMR_RELOAD,QDEC_TMR_RELOAD_UP_VALE);
-//    QDEC_SetCHxTmrCntA(QDEC_CH0,0x300);
-//    QDEC_SetCHxTmrCntA(QDEC_CH0,0xa00);
-//    QDEC_SetCHxTmrCntA(QDEC_CH0,0xF00);
-//    QDEC_SetChxIntEn(QDEC_CH0,1,0x3f);
+    QDEC_ChModeCfg(QDEC_CH0,QDEC_TIMER);
+    QDEC_TmrCfg(QDEC_CH0,QDEC_TMR_RELOAD,QDEC_TMR_RELOAD_UP_FULL);
+    QDEC_SetCHxTmrCntA(QDEC_CH0,0x3000);
+    QDEC_SetCHxTmrCntA(QDEC_CH0,0xa000);
+    QDEC_SetCHxTmrCntA(QDEC_CH0,0xF000);
+    QDEC_SetChxIntEn(QDEC_CH0,1,0x1c);
 }
 
 void QdecTest(void)
@@ -75,6 +75,7 @@ void QdecTest(void)
 void QDEC2_IRQHandler(void)
 {
     uint32_t state = QDEC_GetChxIntStateClr(QDEC_CH0);
+    DEBUG_LOG("state:0x%x\r\n",state);
     if(state&QDEC_INT_BUF_FULL_STATE)
     {
         DEBUG_LOG("QDEC_INT_BUF_FULL_STATE\r\n");
@@ -120,6 +121,7 @@ void QDEC2_IRQHandler(void)
 void QDEC1_IRQHandler(void)
 {
     uint32_t state = QDEC_GetChxIntStateClr(QDEC_CH0);
+    DEBUG_LOG("state:0x%x\r\n",state);
     if(state&QDEC_INT_BUF_FULL_STATE)
     {
         DEBUG_LOG("QDEC_INT_BUF_FULL_STATE\r\n");
@@ -165,6 +167,7 @@ void QDEC1_IRQHandler(void)
 void QDEC0_IRQHandler(void)
 {
     uint32_t state = QDEC_GetChxIntStateClr(QDEC_CH0);
+    DEBUG_LOG("state:0x%x\r\n",state);
     if(state&QDEC_INT_BUF_FULL_STATE)
     {
         DEBUG_LOG("QDEC_INT_BUF_FULL_STATE\r\n");

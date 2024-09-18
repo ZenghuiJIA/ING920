@@ -489,6 +489,11 @@
               <FileType>1</FileType>
               <FilePath>.\src\iic\iic_slave.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp_usb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\bsp_usb.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -576,6 +581,11 @@
               <FileName>peripheral_i2s.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\FWlib\peripheral_i2s.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_usb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FWlib\peripheral_usb.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -1222,7 +1222,7 @@ static void SYSCTRL_ClkGateCtrl(SYSCTRL_ClkGateItem item, uint8_t v)
         set_reg_bit(APB_SYSCTRL->CguCfg + 5, v, 10);
         break;
     case SYSCTRL_ITEM_APB_QDEC      :
-        set_reg_bit(APB_SYSCTRL->CguCfg + 3, v, 9);
+        set_reg_bit(APB_SYSCTRL->CguCfg + 4, v, 9);
         set_reg_bit(&APB_SYSCTRL->QdecCfg, v, 12);
         break;
     case SYSCTRL_ITEM_APB_KeyScan   :
@@ -1648,6 +1648,24 @@ void SYSCTRL_UpdateAsdmClk(uint32_t div)
 {
     set_reg_bits((volatile uint32_t *)(APB_SYSCTRL_BASE + 0x21c), div, 5, 5);
     set_reg_bit((uint32_t*)(APB_SYSCTRL_BASE + 0x21c), 1, 10);
+}
+
+void SYSCTRL_SelectUSBClk(SYSCTRL_ClkMode mode)
+{
+    set_reg_bits(&APB_SYSCTRL->USBCfg, mode, 4, 0);
+    set_reg_bit(&APB_SYSCTRL->USBCfg, 1, 4);
+}
+
+void SYSCTRL_USBPhyConfig(uint8_t enable, uint8_t pull_sel)
+{
+    if(enable)
+    {
+        set_reg_bits((volatile uint32_t *)(AON1_CTRL_BASE), 1ul | (1 << pull_sel) | (4 << 4), 9, 17);
+    }
+    else
+    {
+        set_reg_bits((volatile uint32_t *)(AON1_CTRL_BASE), 0, 9, 17);
+    }
 }
 
 #endif

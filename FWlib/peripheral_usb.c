@@ -2,7 +2,7 @@
 #include "ingsoc.h"
 #include "peripheral_usb.h"
 
-#if (INGCHIPS_FAMILY == INGCHIPS_FAMILY_916)
+#if (INGCHIPS_FAMILY == INGCHIPS_FAMILY_916 || INGCHIPS_FAMILY == INGCHIPS_FAMILY_920)
 
 // =============================================================================
 // PRIVATE VARIABLES
@@ -108,8 +108,9 @@ void USB_DeviceSetThreshold(void)
 void USB_ResetAndConfig(void)
 {
   AHB_USB->UsbConfig |= 1 << 6;
+    printf("core reset\r\n");
   USB_CoreReset();
-
+    printf("reset succes\r\n");
   AHB_USB->UsbAConfig |= (1 << 5) | (3 << 1) | (1 << 0);
   AHB_USB->UsbConfig |= (0x1 << 3) | (AHB_USB->UsbConfig & (~(0xF<<10))) | (9 << 10);
 
@@ -124,7 +125,6 @@ void USB_ResetAndConfig(void)
 
   AHB_USB->UsbIntStat |= AHB_USB->UsbIntStat;
   AHB_USB->UsbOTGIntStat |= AHB_USB->UsbOTGIntStat;
-
   USB_ResetTransfert();
   USB_DeviceSetThreshold();
 }
@@ -147,7 +147,7 @@ USB_ERROR_TYPE_E USB_InitConfig(USB_INIT_CONFIG_T *config)
   g_UsbVar.DeviceState = USB_DEVICE_NONE;
   g_UsbVar.Ep0State = EP0_DISCONNECT;
   memcpy(&(g_UsbVar.UserConfig), config, sizeof(USB_INIT_CONFIG_T));
-
+    printf("reset init\r\n");
   USB_ResetAndConfig();
 
   return status;

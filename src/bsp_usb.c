@@ -1,8 +1,20 @@
 #include <stdio.h>
 #include <string.h>
 #include "ingsoc.h"
-#include "platform_api.h"
+//#include "platform_api.h"
 #include "bsp_usb.h"
+
+#define MAIN_DEBUG
+#ifdef MAIN_DEBUG
+#include "SEGGER_RTT.h"
+#include "debug_print.h"
+#define DEBUG_LOG(...)      SEGGER_RTT_printf(0,##__VA_ARGS__)
+#define DEBUG_UART_log      debug_uart
+#else
+#define DEBUG_LOG(...)
+#define DEBUG_UART_log(...)
+#endif
+
 
 const USB_DEVICE_DESCRIPTOR_REAL_T DeviceDescriptor __attribute__ ((aligned (4))) = USB_DEVICE_DESCRIPTOR;
 const BSP_USB_DESC_STRUCTURE_T ConfigDescriptor __attribute__ ((aligned (4))) =
@@ -226,7 +238,7 @@ static uint32_t bsp_usb_event_handler(USB_EVNET_HANDLER_T *event)
     // if status equals to USB_ERROR_NONE: it is successfully executed.
     if((USB_ERROR_NONE != status) && (USB_ERROR_REQUEST_NOT_SUPPORT != status))
     {
-      platform_printf("USB event exec error %x (0x%x 0x%x)\n", status, *(uint32_t*)setup,*((uint32_t*)setup+1));
+      DEBUG_UART_log("USB event exec error %x (0x%x 0x%x)\n", status, *(uint32_t*)setup,*((uint32_t*)setup+1));
     }
     }break;
 
@@ -239,7 +251,7 @@ static uint32_t bsp_usb_event_handler(USB_EVNET_HANDLER_T *event)
           if(event->data.ep == EP_OUT)
           {
             uint32_t i;
-            platform_printf("(%d)data: ",event->data.ep);for(i=0;i<10;i++){platform_printf(" 0x%x ",DataRecvBuf[i]);}platform_printf("\n");
+            DEBUG_UART_log("(%d)data: ",event->data.ep);for(i=0;i<10;i++){DEBUG_UART_log(" 0x%x ",DataRecvBuf[i]);}DEBUG_UART_log("\n");
 
             memset(DataSendBuf, 0x33, sizeof(DataSendBuf));
             status |= USB_SendData(ConfigDescriptor.endpoint[EP_IN-1].ep, DataRecvBuf, ConfigDescriptor.endpoint[EP_IN-1].mps, 0);
@@ -262,24 +274,50 @@ static uint32_t bsp_usb_event_handler(USB_EVNET_HANDLER_T *event)
 
   return status;
 }
+#include "misc.h"
+static void NVIC_Configuration(void)
+{
+    NVIC_InitTypeDef NVIC_InitStructure;
+  
+    NVIC_InitStructure.NVIC_IRQChannel = USB_IRQ;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = 1;
+    /* init NVIC */
+    NVIC_Init(&NVIC_InitStructure);
+}
+
+void debug_io(void)
+{
+    *(uint32_t*)(0x40000000 + 0x190) |= ((0x1f<<1)|(1)|(1<<6));
+    *(uint32_t*)0x40006000 |= 1;
+}
+
+void USB_IRQHandler(void)
+{
+    USB_IrqHandler(NULL);
+}
 
 void bsp_usb_init(void)
 {
   USB_INIT_CONFIG_T config;
 
-  SYSCTRL_ClearClkGateMulti(1 << SYSCTRL_ITEM_APB_USB);
+  SYSCTRL_ClearClkGateMulti((1 << SYSCTRL_ITEM_APB_USB)|(1<<SYSCTRL_ITEM_APB_GPIO0));
+    NVIC_Configuration();
+    debug_io();
   //use SYSCTRL_GetClk(SYSCTRL_ITEM_APB_USB) to confirm, USB module clock has to be 48M.
-  SYSCTRL_SelectUSBClk((SYSCTRL_ClkMode)(SYSCTRL_GetPLLClk()/48000000));
+//  SYSCTRL_SelectUSBClk((SYSCTRL_ClkMode)(SYSCTRL_GetPLLClk()/48000000));
 
-  platform_set_irq_callback(PLATFORM_CB_IRQ_USB, USB_IrqHandler, NULL);
+//  platform_set_irq_callback(PLATFORM_CB_IRQ_USB, USB_IrqHandler, NULL);
 
-  PINCTRL_SelUSB(USB_PIN_DP,USB_PIN_DM);
+//  PINCTRL_SelUSB(USB_PIN_DP,USB_PIN_DM);
 
-  SYSCTRL_USBPhyConfig(BSP_USB_PHY_ENABLE,BSP_USB_PHY_DP_PULL_UP);
-
+//  SYSCTRL_USBPhyConfig(BSP_USB_PHY_ENABLE,BSP_USB_PHY_DP_PULL_UP);
+    printf("pin config\r\n");
   memset(&config, 0x00, sizeof(USB_INIT_CONFIG_T));
   config.intmask = USBINTMASK_SUSP | USBINTMASK_RESUME;
   config.handler = bsp_usb_event_handler;
+    printf("config init\r\n");
   USB_InitConfig(&config);
 }
 
@@ -300,14 +338,14 @@ static void internal_bsp_usb_device_remote_wakeup_stop(void)
 void bsp_usb_device_remote_wakeup(void)
 {
   USB_DeviceSetRemoteWakeupBit(U_TRUE);
-  platform_set_timer(internal_bsp_usb_device_remote_wakeup_stop,16);// setup timer for 10ms, then disable resume signal
+//  platform_set_timer(internal_bsp_usb_device_remote_wakeup_stop,16);// setup timer for 10ms, then disable resume signal
 }
 
 #ifdef FEATURE_DISCONN_DETECT
 void bsp_usb_device_disconn_timeout(void)
 {
   bsp_usb_disable();
-  platform_printf("USB cable disconnected.");
+  DEBUG_UART_log("USB cable disconnected.");
 }
 #endif
 

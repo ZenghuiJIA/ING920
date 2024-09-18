@@ -56,6 +56,7 @@ file(GLOB_RECURSE SOURCES ./FWlib/*.c ./src/main.c ./cmake/startup_ing920.s
         ./src/spi_master.c
         src/keyscan_demo/keyscan_normal.c
         src/keyscan_demo/keyscan_normal.h
+        src/bsp_usb.c
 )
 
 #添加你的STM32F103ZETx_FLASH.ld的连接脚本路径

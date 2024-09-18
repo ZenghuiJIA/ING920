@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "ingsoc.h"
-#include "platform_api.h"
+//#include "platform_api.h"
 #include "bsp_usb_hid.h"
 
 const USB_DEVICE_DESCRIPTOR_REAL_T DeviceDescriptor __attribute__ ((aligned (4))) = USB_DEVICE_DESCRIPTOR;

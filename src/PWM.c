@@ -211,7 +211,7 @@ void pwm_test_simple(void)
 void pwm_test_step(void)
 {
     pwn_simple_init();
-    PWM_SetupSimpleInit(0,1000,50,3);
+    PWM_SetupSimpleInit(0,240,50,0);
     while(1){
         SYSCTRL_DelayCycles(1000,10);
     }
