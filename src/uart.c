@@ -66,7 +66,7 @@ void config_uart(uint32_t freq, uint32_t baud)
 
 void apUART_SET_INT_FIFO(UART_TypeDef* pBase)
 {
-	pBase->FifoSelect = 0x0100;
+    pBase->FifoSelect = 0x0100;
     pBase->IntMask |= 1<<bsUART_TIMEOUT_INTENAB;
 }
 

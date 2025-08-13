@@ -51,7 +51,6 @@ void HardFault_Handler(void)
         ;
     }
 }
-
 int main()
 {
     __disable_irq();
@@ -60,7 +59,6 @@ int main()
     NVIC_SetPriorityGrouping(0x500);
     
     SysTick_Config(24000);
-    
     
     uart_init_board();
     debug_uart("debug uart_test\r\n");

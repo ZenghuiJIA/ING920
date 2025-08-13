@@ -932,6 +932,15 @@ int PINCTRL_SelQDECIn(uint8_t phase_a,
                       uint8_t phase_b);
 
 /**
+ * @brief Select QDEC Pcap input IOs
+ *
+ * @param[in] index             column index (0..5)
+ * @param[in] io_pin            IO pin index
+ * @return                      0 if successful else non-0
+ */
+int PINCTRL_SelQDECPcapIn(int index, uint8_t io_pin);
+
+/**
  * @brief Set pull mode of a IO source
  *
  *

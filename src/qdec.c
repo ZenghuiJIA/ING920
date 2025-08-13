@@ -23,6 +23,8 @@
 //    if (!(div >> 4))
 //        SYSCTRL_SetPClkDiv(div);
 //}
+uint32_t run_num = 1000000;
+uint32_t fail_num = 0;
 void qudec_test(void)
 {
     // setup qdec
@@ -31,27 +33,45 @@ void qudec_test(void)
     SYSCTRL_ReleaseBlock(SYSCTRL_ITEM_APB_QDEC);
     PINCTRL_SelQDECIn(9, 10);    // set GPIO16=phase_a, GPIO17=phase_b
 
-    SYSCTRL_SelectQDECClk(SYSCTRL_CLK_SLOW, 100);
+//    SYSCTRL_SelectQDECClk(SYSCTRL_CLK_SLOW, 100);
 //    QDEC_PclkCfg();    // set pclk not bigger than sclk_slow
-    QDEC_EnableQdecDiv(QDEC_DIV_1024);
-    QDEC_QdecCfg(50, 1);
+    QDEC_EnableQdecDiv(QDEC_DIV_4);
+    QDEC_QdecCfg(1, 1);
     QDEC_ChannelEnable(1);
 
     // print qdec data and direction when rotate the mouse wheel manually
     uint16_t preData = 0;
     uint16_t data = 0;
     uint8_t dir;
-    while(1) {
+    while(1)
+    {
+        QDEC_ChannelEnable(0);
+        QDEC_QdecCfg(1, 1);
+        QDEC_ChannelEnable(1);
+//        SYSCTRL_DelayCycles(1000,1000);
+        
+    while(run_num--) {
         data = QDEC_GetData();
         dir = QDEC_GetDirection();
         if (data != preData) {
+            fail_num = 0;
             if (dir) {
                 DEBUG_UART_log("data: %d, %s\n", data, "anticlockwise");
             } else {
                 DEBUG_UART_log("data: %d, %s\n", data, "clockwise");
             }
         }
+        fail_num++;
+        if(fail_num>100000)
+        {
+            DEBUG_UART_log("-----------------fail!!!!!!! cant read qdec data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\r\n");
+            fail_num = 0;
+        }
         preData = data;
+    }
+    
+    
+    run_num = 1000000;;
     }
 
 }

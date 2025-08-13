@@ -1,3 +1,0 @@
-C:/ming/source/ING920_SDK/cmake-build-debug/CMakeFiles/ING920.elf.dir
-C:/ming/source/ING920_SDK/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/ming/source/ING920_SDK/cmake-build-debug/CMakeFiles/rebuild_cache.dir

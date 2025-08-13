@@ -642,11 +642,32 @@ void apSSP_SetTransferControl(SSP_TypeDef *SPI_BASE, uint32_t val, uint32_t shif
  * @param[in] SPI_BASE              base address
  * @param[in] val                   write/read cnt number for one spi transfer(CS down and up)
  */
+ 
 void apSSP_SetTransferControlWrTranCnt(SSP_TypeDef *SPI_BASE, uint32_t val);
 void apSSP_SetTransferControlRdTranCnt(SSP_TypeDef *SPI_BASE, uint32_t val);
 
+/**
+ * @brief Set the transfer mode of the SPI master.
+ *
+ * @param[in] SPI_BASE              base address
+ * @param[in] SPI_TransCtrl_TransMode_e   TransMode
+ */
 void apSSP_SetTransMode(SSP_TypeDef *SPI_BASE, SPI_TransCtrl_TransMode_e mode);
+
+/**
+ * @brief Enable master send device address.
+ *
+ * @param[in] SPI_BASE              base address
+ * @param[in] enable                enable: 1; disable: 0
+ */
 void apSSP_SetAddrEn(SSP_TypeDef *SPI_BASE, uint8_t enable);
+
+/**
+ * @brief Enable master send device commond.
+ *
+ * @param[in] SPI_BASE              base address
+ * @param[in] enable                enable: 1; disable: 0
+ */
 void apSSP_SetCmdEn(SSP_TypeDef *SPI_BASE, uint8_t enable);
 /**
  * @brief Enable SPI Int, see apSSP_DeviceParametersSet for reference

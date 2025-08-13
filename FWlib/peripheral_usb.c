@@ -715,6 +715,41 @@ void USB_SetStallEp(uint8_t ep, uint8_t stall)
     }
 }
 
+uint8_t USB_IsEpStall(uint8_t ep)
+{
+    uint8_t epNum = USB_EP_NUM(ep);
+    volatile uint32_t*  diepctrl;
+    volatile uint32_t*  doepctrl;
+
+    if(epNum == 0)
+    {
+        diepctrl = &AHB_USB->UsbDICtrl0;
+        doepctrl = &AHB_USB->UsbDOCtrl0;
+    }
+    else
+    {
+        diepctrl = &AHB_USB->UsbDIxConfig[epNum-1].DICtrlx;
+        doepctrl = &AHB_USB->UsbDOxConfig[epNum-1].DOCtrlx;
+    }
+
+    if(USB_IS_EP_DIRECTION_IN(ep))
+    {
+      if(*diepctrl & (0x1 << 21))
+      {
+        return U_TRUE;
+      }
+    }
+    else
+    {
+      if(*doepctrl & (0x1 << 21))
+      {
+        return U_TRUE;
+      }
+    }
+    
+    return U_FALSE;
+}
+
 void USB_PCStopPhyClcok(uint8_t stop)
 {
   if(U_TRUE == stop)
@@ -1023,7 +1058,7 @@ uint32_t USB_IrqHandler (void *user_data)
       {
         if(0 == epnum)
         {
-          statusEp            = AHB_USB->UsbDOInt0;
+          statusEp = AHB_USB->UsbDOInt0;
           AHB_USB->UsbDOInt0 = statusEp;
 
           if(statusEp & (0x1 << 0))

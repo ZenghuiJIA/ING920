@@ -17,7 +17,7 @@
           <Device>ING92000</Device>
           <Vendor>INGChips</Vendor>
           <PackID>INGChips.INGCHIPS_DeviceFamilyPack.0.9.0</PackID>
-          <PackURL>http://www.ingchips.com</PackURL>
+          <PackURL>http://www.keil.com/pack</PackURL>
           <Cpu>IRAM(0x20000000,0x00008000) IROM(0x2000000,0x00200000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
@@ -314,7 +314,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>4</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -448,11 +448,6 @@
               <FileName>keyscan_normal.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\keyscan_demo\keyscan_normal.c</FilePath>
-            </File>
-            <File>
-              <FileName>PDM.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\audioadc\PDM.c</FilePath>
             </File>
             <File>
               <FileName>ano_protocol.c</FileName>
@@ -600,6 +595,21 @@
   </Targets>
 
   <RTE>
+    <packages>
+      <filter>
+        <targetInfos/>
+      </filter>
+      <package name="CMSIS" vendor="ARM" version="5.9.0">
+        <targetInfos>
+          <targetInfo name="ing920" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="INGCHIPS_DeviceFamilyPack" vendor="INGChips" version="0.9.0">
+        <targetInfos>
+          <targetInfo name="ing920" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+    </packages>
     <apis/>
     <components>
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.6.0" condition="ARMv6_7_8-M Device">
