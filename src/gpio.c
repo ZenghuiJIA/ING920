@@ -94,4 +94,32 @@ void gpio_init(void)
     
     #endif
 }
+
+void gpio_debug_clk(void)
+{
+    SYSCTRL_ClearClkGate(SYSCTRL_ClkGate_APB_GPIO0);//gpio0
+    // PINCTRL_SetPadMux(GIO_GPIO_9, IO_SOURCE_DEBUG_BUS);
+    // io_write(APB_SYSCTRL_BASE + 0x190,
+    //                  (1 << 0)
+    //                  | ((uint32_t)1 << 1)
+    //                  | (1 << 6)
+    //                  | ((uint32_t)0 << 7)
+    //                  | ((uint32_t)settings[i].swap << 12));
+    PINCTRL_SelClockOutput(GIO_GPIO_9);
+    SYSCTRL_EnableClockOutput(1,100);
+}
+
+void config_clk(void)
+{
+//    SYSCTRL_SelectSlowClk(SYSCTRL_SLOW_CLK_24M_RF);
+    SYSCTRL_SelectFlashClk(SYSCTRL_CLK_SLOW);
+    SYSCTRL_SelectHClk(SYSCTRL_CLK_SLOW);
+    // io_write(AON1_CTRL_BASE + 0x1c,0x6030);
+    SYSCTRL_ConfigPLLClk(5,80,1);
+    SYSCTRL_EnablePLL(1);
+    
+    SYSCTRL_SelectHClk(SYSCTRL_CLK_PLL_DIV_3);
+    SYSCTRL_SelectFlashClk(SYSCTRL_CLK_PLL_DIV_5);
+    // *(volatile uint32_t*)(AON1_CTRL_BASE + 0x18) |= (0x3<<28);
+}
 #endif

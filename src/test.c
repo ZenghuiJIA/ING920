@@ -15,7 +15,7 @@
 
 volatile uint8_t timeout_cnt = 0;
 uint8_t GPIO_value = 0,recive_data = 0X39;
-//static uint8_t toggle_flg = 0;
+static uint8_t toggle_flg = 0;
 char test_send_data[20] = {0x36};
 void gpio_output_test(void)
 {

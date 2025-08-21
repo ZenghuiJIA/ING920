@@ -24,7 +24,33 @@
 //SEGGER_RTT_printf(0, BDS_COLOR_TAG "(%d)%s", BDS_LOG_COLOR_BLUE, s);
 ////紫色
 //SEGGER_RTT_printf(0, BDS_COLOR_TAG "(%d)%s", BDS_LOG_COLOR_VIOLET, s);
+void uart_init_board(void)
+{
+    UART_sStateStruct config;
 
+    config.word_length       = UART_WLEN_8_BITS;
+    config.parity            = UART_PARITY_NOT_CHECK;
+    config.fifo_enable       = 1;
+    config.two_stop_bits     = 0;
+    config.receive_en        = 1;
+    config.transmit_en       = 1;
+    config.UART_en           = 1;
+    config.cts_en            = 0;
+    config.rts_en            = 0;
+    config.rxfifo_waterlevel = 1;
+    config.txfifo_waterlevel = 1;
+    config.ClockFrequency    = 24000000;
+    config.BaudRate          = 921600;
+
+    
+    SYSCTRL_ClearClkGate(SYSCTRL_ClkGate_APB_GPIO0);//gpio0
+    SYSCTRL_ClearClkGateMulti((1 << SYSCTRL_ClkGate_APB_UART0)
+                          | (1 << SYSCTRL_ClkGate_APB_PinCtrl));
+    PINCTRL_SetPadMux(GIO_GPIO_1, IO_SOURCE_UART0_TXD);
+    PINCTRL_SelUartRxdIn(UART_PORT_0,GIO_GPIO_2);
+    apUART_Initialize(APB_UART0, &config, UART_INTBIT_RECEIVE | UART_INTBIT_TRANSMIT);
+
+}
 #if defined(__CC_ARM)
 __weak void write_uart_buffer(const char *buffer, int len)
 #elif defined(__ICCARM__)
@@ -34,7 +60,14 @@ void write_uart_buffer(const char *buffer, int len) __attribute__((weak));
 void write_uart_buffer(const char *buffer, int len)
 #endif
 {
-    uart_send_test(buffer,len);
+    for (int i = 0; i < len; i++)
+    {
+        while(!apUART_Check_TXFIFO_EMPTY(APB_UART0))
+        {
+            ;
+        }
+            UART_SendData(APB_UART0,buffer[i]);
+    }
 }
 // 打印到串口
 void debug_uart(const char *fmt, ...)

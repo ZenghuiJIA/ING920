@@ -5,11 +5,11 @@
 #include "peripheral_sysctrl.h"
 #include "peripheral_pinctrl.h"
 
-//#define TEST_GPIO_OUTPUT
-#define TEST_GPIO_INPUT
+#define TEST_GPIO_OUTPUT
+// #define TEST_GPIO_INPUT
 
-#define GPIO_LED        GIO_GPIO_9
+#define GPIO_LED        GIO_GPIO_24
 
 void gpio_init(void);
-
+void gpio_debug_clk(void);
 #endif

@@ -70,21 +70,7 @@ void apUART_SET_INT_FIFO(UART_TypeDef* pBase)
     pBase->IntMask |= 1<<bsUART_TIMEOUT_INTENAB;
 }
 
-void uart_init_board(void)
-{
-    SYSCTRL_ClearClkGate(SYSCTRL_ClkGate_APB_GPIO0);//gpio0
-    SYSCTRL_ClearClkGateMulti((1 << SYSCTRL_ClkGate_APB_UART0)
-                          | (1 << SYSCTRL_ClkGate_APB_PinCtrl));
-    PINCTRL_SetPadMux(GIO_GPIO_1, IO_SOURCE_UART0_TXD);
-    PINCTRL_SelUartRxdIn(UART_PORT_1,GIO_GPIO_2);
-    config_uart(24000000,115200);
-#if defined(UART_INT)
-    apUART_Enable_RECEIVE_INT(APB_UART0);
-    apUART_Enable_TRANSMIT_INT(APB_UART0);
-    NVIC_Configuration();
-    apUART_SET_INT_FIFO(APB_UART0);
-#endif
-}
+
 
 //test function about uart sending
 void uart_send_test(const char *data, int len)

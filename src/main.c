@@ -43,14 +43,32 @@ int fputc(int ch, FILE *f)
     return ch;
 }
 
-
-void HardFault_Handler(void)
+void assert_failed(uint8_t* file, uint32_t line)
 {
+    printf("assert failed: file %s, line %d\r\n", file, (int)line);
     while(1)
     {
         ;
     }
 }
+
+void HardFault_Handler(void)
+{
+    printf("HardFault_Handler\r\n");
+    while(1)
+    {
+        ;
+    }
+}
+
+void setUp(void) {
+}
+
+
+void tearDown(void) {
+}
+
+
 int main()
 {
     __disable_irq();
@@ -66,11 +84,16 @@ int main()
     SEGGER_RTT_Init();
 //    SEGGER_RTT_Write(1, &g_SineWave128[(i_num++)%128], 2);
     DEBUG_LOG("debug rtt\r\n");
+//    gpio_debug_clk();
+//    void config_clk(void);
+//     config_clk();
+//    gpio_init();
+    gpio_output_test();
 //    pte_test();
 //    qudec_test();
 //    key_scan_normal_test();
 //    IR_test_cycle();
-//    __enable_irq();
+//    __enable_irq();s
 //    all_send_test_data();
 //    iic_test();  
 //    spi_test();
@@ -82,7 +105,7 @@ int main()
 //    rtimer_test();
 //    uart_test_fifo_recive();
 //    I2sTest();
-    bsp_usb_init();
+//    bsp_usb_init();
 //    QdecTest();
 
 //    uart_send_test(test_send,sizeof (test_send));
@@ -91,6 +114,7 @@ int main()
 //    i2c_test();
     for(;;)
     {
+        printf("hello world\r\n");
         SYSCTRL_DelayCycles(1000,1000);
         SYSCTRL_DelayCycles(24000,10000);
     }
