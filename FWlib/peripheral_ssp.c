@@ -286,21 +286,21 @@ void apSSP_DeviceParametersSet(SSP_TypeDef *SPI_BASE, apSSP_sDeviceControlBlock 
 
     /* Set Device Parameters */
     SPI_BASE->TransFmt =  (SPI_DATAMERGE_DISABLE     << bsSPI_TRANSFMT_DATAMERGE |
-                           pParam->eSCLKPolarity     << bsSPI_TRANSFMT_CPOL |
-                           pParam->eSCLKPhase        << bsSPI_TRANSFMT_CPHA |
-                           pParam->eLsbMsbOrder      << bsSPI_TRANSFMT_LSB |
-                           pParam->eDataSize         << bsSPI_TRANSFMT_DATALEN |
-                           pParam->eMasterSlaveMode  << bsSPI_TRANSFMT_SLVMODE |
-                           pParam->eAddrLen          << bsSPI_TRANSFMT_ADDRLEN |
-                           pParam->eMOSI_Dir         << bsSPI_TRANSFMT_MOSIBIDIR );
+                          pParam->eSCLKPolarity     << bsSPI_TRANSFMT_CPOL |
+                          pParam->eSCLKPhase        << bsSPI_TRANSFMT_CPHA |
+                          pParam->eLsbMsbOrder      << bsSPI_TRANSFMT_LSB |
+                          pParam->eDataSize         << bsSPI_TRANSFMT_DATALEN |
+                          pParam->eMasterSlaveMode  << bsSPI_TRANSFMT_SLVMODE |
+                          pParam->eAddrLen          << bsSPI_TRANSFMT_ADDRLEN |
+                          pParam->eMOSI_Dir         << bsSPI_TRANSFMT_MOSIBIDIR );
 
     SPI_BASE->TransCtrl = (pParam->eReadWriteMode         << bsSPI_TRANSCTRL_TRANSMODE |
-                           pParam->eQuadMode               << bsSPI_TRANSCTRL_DUALQUAD |
-                           ((pParam->eWriteTransCnt - 1) & 0x1ff) << bsSPI_TRANSCTRL_WRTRANCNT |
-                           ((pParam->eReadTransCnt - 1) & 0x1ff)  << bsSPI_TRANSCTRL_RDTRANCNT |
-                           pParam->eAddrEn                 << bsSPI_TRANSCTRL_ADDREN |
-                           pParam->eCmdEn                  << bsSPI_TRANSCTRL_CMDEN |
-                           pParam->SlaveDataOnly           << bsSPI_TRANSCTRL_SLVDATAONLY);
+                          pParam->eQuadMode               << bsSPI_TRANSCTRL_DUALQUAD |
+                          ((pParam->eWriteTransCnt - 1) & 0x1ff) << bsSPI_TRANSCTRL_WRTRANCNT |
+                          ((pParam->eReadTransCnt - 1) & 0x1ff)  << bsSPI_TRANSCTRL_RDTRANCNT |
+                          pParam->eAddrEn                 << bsSPI_TRANSCTRL_ADDREN |
+                          pParam->eCmdEn                  << bsSPI_TRANSCTRL_CMDEN |
+                          pParam->SlaveDataOnly           << bsSPI_TRANSCTRL_SLVDATAONLY);
 
     apSSP_SetTxThres(SPI_BASE, pParam->TxThres);
     apSSP_SetRxThres(SPI_BASE, pParam->RxThres);
@@ -322,6 +322,7 @@ void apSSP_SetAddrEn(SSP_TypeDef *SPI_BASE, uint8_t enable)
     else
         SPI_BASE->TransCtrl &= (~(1 << bsSPI_TRANSCTRL_ADDREN));
 }
+
 void apSSP_SetCmdEn(SSP_TypeDef *SPI_BASE, uint8_t enable)
 {
     if (enable)
@@ -402,19 +403,19 @@ void apSSP_SetTransferControlAddrFmt(SSP_TypeDef *SPI_BASE, SPI_TransCtrl_AddrFm
 void apSSP_SetTransferControlWrTranCnt(SSP_TypeDef *SPI_BASE, uint32_t val)
 {
     SPI_BASE->TransCtrl &= (~(BW2M(bwSPI_TRANSCTRL_WRTRANCNT) << bsSPI_TRANSCTRL_WRTRANCNT));
-    SPI_BASE->TransCtrl |= ((0x1ff & (val-1)) << bsSPI_TRANSCTRL_WRTRANCNT);
+    SPI_BASE->TransCtrl |= ((val-1) << bsSPI_TRANSCTRL_WRTRANCNT);
 }
 
 void apSSP_SetTransferControlRdTranCnt(SSP_TypeDef *SPI_BASE, uint32_t val)
 {
     SPI_BASE->TransCtrl &= (~(BW2M(bwSPI_TRANSCTRL_RDTRANCNT) << bsSPI_TRANSCTRL_RDTRANCNT));
-    SPI_BASE->TransCtrl |= ((0x1ff & (val-1)) << bsSPI_TRANSCTRL_RDTRANCNT);
+    SPI_BASE->TransCtrl |= ((val-1) << bsSPI_TRANSCTRL_RDTRANCNT);
 }
 
 void apSSP_SetTransferControlDummyCnt(SSP_TypeDef *SPI_BASE, uint8_t cnt)
 {
     SPI_BASE->TransCtrl &= (~(BW2M(bwSPI_TRANSCTRL_DUMMYCNT) << bsSPI_TRANSCTRL_DUMMYCNT));
-    SPI_BASE->TransCtrl |= (((0x3 & (cnt-1)) & BW2M(bwSPI_TRANSCTRL_DUMMYCNT)) << bsSPI_TRANSCTRL_DUMMYCNT);
+    SPI_BASE->TransCtrl |= (((cnt-1) & BW2M(bwSPI_TRANSCTRL_DUMMYCNT)) << bsSPI_TRANSCTRL_DUMMYCNT);
 }
 
 /*====================================================================*/
@@ -431,7 +432,7 @@ uint32_t apSSP_GetIntRawStatus(SSP_TypeDef *SPI_BASE)
 
 void apSSP_ClearIntStatus(SSP_TypeDef *SPI_BASE, uint32_t val)
 {
-    SPI_BASE->IntrSt |= val;
+    SPI_BASE->IntrSt = val;
 }
 
 /*====================================================================*/

@@ -103,7 +103,7 @@ uint32_t RTC_GetIntState(void)
 
 void RTC_ClearIntState(uint32_t state)
 {
-    APB_RTC->St |= state &  _RTC_INT_MASK;
+    APB_RTC->St = state &  _RTC_INT_MASK;
 }
 
 void RTC_EnableDeepSleepWakeupSource(uint8_t enable)
@@ -301,7 +301,7 @@ void RTC_EnableFreeRun(uint8_t enable)
         *AON1_REG3 |= 1u << 4;
     }
     else
-        {
+    {
         *AON1_REG0 &= ~(1u << 3);
         *AON1_REG3 &= ~(1u << 4);
     }
@@ -310,11 +310,11 @@ void RTC_EnableFreeRun(uint8_t enable)
 #elif (INGCHIPS_FAMILY == INGCHIPS_FAMILY_920)
 
 uint32_t RTC_CurrentHigh(void)
-    {
+{
     volatile uint32_t * reg = (volatile uint32_t *)(AON2_CTRL_BASE + 0x4C);
     uint32_t r = RTC_ReadStable(reg);
     return r & 0x7fful;
-    }
+}
 
 uint32_t RTC_Current(void)
 {

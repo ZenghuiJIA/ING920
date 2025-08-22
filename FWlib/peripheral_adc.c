@@ -374,6 +374,10 @@ SADC_channelId ADC_GetDataChannel(const uint32_t data)
     }
     return (SADC_channelId)(ADC_RIGHT_SHIFT(data, 14) & ADC_MK_MASK(4));
 }
+uint16_t ADC_GetRawData(const uint32_t data)
+{
+    return (data & ADC_MK_MASK(14));
+}
 uint16_t ADC_GetData(const uint32_t data)
 {
     if (!ftCali || !ftCali->f) return (data & ADC_MK_MASK(14));
@@ -428,39 +432,43 @@ static void ADC_VrefRegister(float VP, float VN)
 
 void ADC_VrefCalibration(void)
 {
+    uint32_t sum = 0;
+    uint32_t count = 0;
+    uint32_t max_val, min_val, data;
+
     if (!SYSCTRL_GetClk(SYSCTRL_ITEM_APB_ADC)) return;
     if (!ftCali) return;
     ADC_DisableAllChannels();
     ADC_ClrFifo();
-    ADC_ConvCfg(CONTINUES_MODE, PGA_PARA_1, 1, ADC_CH_9, 15, 0,
+    ADC_ConvCfg(CONTINUES_MODE, PGA_PARA_1, 0, ADC_CH_9, 15, 0,
         SINGLE_END_MODE, SYSCTRL_GetClk(SYSCTRL_ITEM_APB_ADC) / 63000);
     ADC_Start(1);
     while (!ADC_GetIntStatus());
     ADC_Start(0);
-    uint8_t i, j;
-    uint32_t data, cnt = 0;
-    uint16_t array[14] = {0};
-    ADC_PopFifoData();
+
     while (!ADC_GetFifoEmpty()) {
-        array[cnt] = ADC_GetData(ADC_PopFifoData());
-        cnt++;
-    }
-    for (i = 0; i < cnt; i++) {
-        for (j = i; j < cnt; j++) {
-            if (array[j] > array[i]) {
-                data = array[i];
-                array[i] = array[j];
-                array[j] = data;
+        data = ADC_GetData(ADC_PopFifoData());
+        if (count == 0) {
+            max_val = data;
+            min_val = data;
+        } else {
+            if (data > max_val) {
+                max_val = data;
+            }
+            if (data < min_val) {
+                min_val = data;
             }
         }
+        
+        sum += data;
+        count++; 
     }
-    data = 0;
-    cnt--;
-    for (i = 1; i < cnt; i++) {
-        data += array[i];
+
+    data = (sum - max_val - min_val) / (count - 2);
+
+    if(data) {
+        ADC_VrefRegister(ftCali->V12Data * ftCali->Vp / data * 0.00001f, 0.f);
     }
-    data /= (cnt - 1);
-    ADC_VrefRegister(ftCali->V12Data * ftCali->Vp / data * 0.00001f, 0.f);
     ADC_EnableChannel(ADC_CH_9, 0);
     ADC_IntEnable(0);
 }
@@ -632,10 +640,10 @@ static void ADC_ftCalParaGet(void)
     if (ftCalPara.ver == 1)
         ftCali->V12Data -= 14;
     if(ftCali->V12Data < 5800 || ftCali->V12Data > 6100)
-{
+    {
         ftCali->V12Data = 5960;
         ftCali->f = 0;
-}
+    }
     else
     ftCali->f = ADC_FtCal;
     ADC_VrefRegister(ftCali->Vp * 0.00001f, 0.f);
@@ -675,8 +683,16 @@ void ADC_AdcClose(void)
     ADC_Start(0);
     ADC_Reset();
     free(ftCali);
-    ftCali = 0;
+    ftCali = NULL;
 }
+
+void ADC_AdcCloseCali(void)
+{
+    ADC_Start(0);
+    ADC_Reset();
+    ftCali = NULL;
+}
+
 
 void ADC_Start(uint8_t start)
 {
@@ -1031,257 +1047,6 @@ uint16_t ADC_ReadChannelData(const uint8_t channel_id)
     return 0;
 }
 
-float ADC_GetVol(const uint16_t data)
-{
-    if (!ADC_adcCal.cb || !ADC_adcCal.vref_P)
-        return 0.f;
-    if (data >= ADC_MK_MASK(14))
-        return ADC_adcCal.vref_P;
-    return ADC_adcCal.cb(data);
-}
-
-static void ADC_VrefRegister(float VP, float VN)
-{
-    if (VP < VN) return;
-    ADC_adcCal.vref_P = VP;
-    ADC_adcCal.vref_N = VN;
-    ADC_CbRegister();
-}
-
-void ADC_VrefCalibration(void)
-{
-    if (!SYSCTRL_GetClk(SYSCTRL_ITEM_APB_ADC)) return;
-    if (!ftCali) return;
-    ADC_DisableAllChannels();
-    ADC_ClrFifo();
-    ADC_ConvCfg(CONTINUES_MODE, PGA_PARA_1, 1, ADC_CH_9, 15, 0,
-        SINGLE_END_MODE, SYSCTRL_GetClk(SYSCTRL_ITEM_APB_ADC) / 63000);
-    ADC_Start(1);
-    while (!ADC_GetIntStatus());
-    ADC_Start(0);
-    uint8_t i, j;
-    uint32_t data, cnt = 0;
-    uint16_t array[14] = {0};
-    ADC_PopFifoData();
-    while (!ADC_GetFifoEmpty()) {
-        array[cnt] = ADC_GetData(ADC_PopFifoData());
-        cnt++;
-    }
-    for (i = 0; i < cnt; i++) {
-        for (j = i; j < cnt; j++) {
-            if (array[j] > array[i]) {
-                data = array[i];
-                array[i] = array[j];
-                array[j] = data;
-            }
-        }
-    }
-    data = 0;
-    cnt--;
-    for (i = 1; i < cnt; i++) {
-        data += array[i];
-    }
-    data /= (cnt - 1);
-    ADC_VrefRegister(ftCali->V12Data * ftCali->Vp / data * 0.00001f, 0.f);
-    ADC_EnableChannel(ADC_CH_9, 0);
-    ADC_IntEnable(0);
-}
-
-static uint16_t ADC_FtCal(const SADC_ftChPara_t *chPara, const uint32_t data)
-{
-    if (data >= 8192)
-        return 18192 - chPara->Coseq + (data - 8192) * 200000 / (chPara->k * ADC_PgaGainGet());
-    else
-        return 18192 - chPara->Coseq - (8192 - data) * 200000 / (chPara->k * ADC_PgaGainGet());
-}
-
-typedef struct {
-    uint8_t readFlg;
-    uint8_t ver;
-    uint32_t flg;
-    const uint16_t *p_adcCali;
-    uint32_t Cin1;
-    uint32_t Cin2;
-    uint32_t Cout1;
-    uint32_t Cout2;
-    uint32_t Cout1Addr;
-    uint32_t Cout2Addr;
-    uint32_t V_cal[4];
-} ADC_ftCalPara_t;
-static void ADC_FtCoutSet(ADC_ftCalPara_t *calPara)
-{
-    #define READ_FLASH_SECURITY_LSB(addr)   ((read_flash_security(addr)) & (ADC_MK_MASK(16)))
-    #define READ_FLASH_SECURITY_MSB(addr)   (((read_flash_security(addr)) >> (16)) & (ADC_MK_MASK(16)))
-    #define READ_ADC_CALI_POINTER(num)      (calPara->p_adcCali[num])
-    #define ADC_CALI_POINTER_NUM_CAL(addr)  (((addr) - (0x2000)) >> (1))
-    if (calPara->readFlg)
-        calPara->Cout1 = READ_FLASH_SECURITY_LSB(calPara->Cout1Addr);
-    else
-        calPara->Cout1 = READ_ADC_CALI_POINTER(ADC_CALI_POINTER_NUM_CAL(calPara->Cout1Addr));
-    if (calPara->Cout1Addr == calPara->Cout2Addr) {
-        if (calPara->readFlg)
-            calPara->Cout2 = READ_FLASH_SECURITY_MSB(calPara->Cout2Addr);
-        else
-            calPara->Cout2 = READ_ADC_CALI_POINTER(ADC_CALI_POINTER_NUM_CAL(calPara->Cout2Addr) + 1);
-    } else {
-        if (calPara->readFlg)
-            calPara->Cout2 = READ_FLASH_SECURITY_LSB(calPara->Cout2Addr);
-        else
-            calPara->Cout2 = READ_ADC_CALI_POINTER(ADC_CALI_POINTER_NUM_CAL(calPara->Cout2Addr));
-    }
-}
-static void ADC_FtParaCal(SADC_ftChPara_t *p, const ADC_ftCalPara_t *calPara)
-{
-    #define P(n)  (calPara->n)
-    p->k = (P(Cout2) - P(Cout1)) * 100000 / (P(Cin2) - P(Cin1));
-    p->Coseq = 18192 - (P(Cin1) * (P(Cout2) - 8192) + P(Cin2) * (8192 - P(Cout1))) / (P(Cout2) - P(Cout1));
-}
-
-//static void ADC_ftCalParaGet(void)
-//{
-//    uint8_t i;
-//    uint8_t ret = flash_prepare_factory_data();
-//    const factory_calib_data_t *p_factoryCali = flash_get_factory_calib_data();
-//    ADC_ftCalPara_t ftCalPara = {0};
-//    if(p_factoryCali == NULL)
-//        return;
-//    ftCalPara.p_adcCali = (const uint16_t *)flash_get_adc_calib_data();
-//    if (ret || !p_factoryCali || !ftCalPara.p_adcCali)
-//        ftCalPara.readFlg = 1;
-
-//    if (ftCalPara.readFlg)
-//        ftCalPara.flg = read_flash_security(0x1170);
-//    else
-//        ftCalPara.flg = p_factoryCali->adc_calib_ver;
-//    ftCalPara.ver = ftCalPara.flg & ADC_MK_MASK(16);
-//    ftCalPara.flg = (ftCalPara.flg >> 16) & ADC_MK_MASK(16);
-//    if (ftCalPara.flg == 0xadc0) {
-//        if (ftCalPara.readFlg) {
-//            ftCali->Vp = read_flash_security(0x1174);
-//            for (i = 0; i < 4; ++i) {
-//                ftCalPara.V_cal[i] = read_flash_security(0x1178 + (i << 2));
-//            }
-//        } else {
-//            const uint32_t *p = (const uint32_t *)&p_factoryCali->slow_rc[0];
-//            ftCali->Vp = p[0];
-//            memcpy(ftCalPara.V_cal, p, 16);
-//        }
-//    } else if (ftCalPara.flg == 0xadcf) {
-//        ftCali->Vp = 330000;
-//        ftCalPara.V_cal[0] = 30000;
-//        ftCalPara.V_cal[1] = 310000;
-//        if (ftCalPara.ver == 2) {
-//            ftCalPara.V_cal[2] = 30000;
-//            ftCalPara.V_cal[3] = 310000;
-//        } else {
-//            ftCalPara.V_cal[2] = 90000;
-//            ftCalPara.V_cal[3] = 230000;
-//        }
-//    } else {
-//        ftCali->f = 0;
-//        return;
-//    }
-
-//    uint32_t mbg;
-//    if (ftCalPara.readFlg)
-//        mbg = read_flash_security(0x1100);
-//    else
-//        mbg = p_factoryCali->band_gap;
-//    if (mbg < 0xffffffff)
-//        *(volatile uint32_t *)0x40102008 = *(volatile uint32_t *)0x40102008 & (~(0x3f << 4)) | (mbg & ADC_MK_MASK(6)) << 4;
-//    ftCalPara.Cin1 = ftCalPara.V_cal[0] * 16384 / ftCali->Vp;
-//    ftCalPara.Cin2 = ftCalPara.V_cal[1] / 10 * 16384 / (ftCali->Vp / 10);
-//    for (i = 0; i < 8; ++i) {
-//        switch (ftCalPara.ver) {
-//        case 1:
-//        case 2:
-//            ftCalPara.Cout1Addr = 0x2000 + (i << 2);
-//            ftCalPara.Cout2Addr = ftCalPara.Cout1Addr;
-//            break;
-//        default:
-//            ftCalPara.Cout1Addr = 0x2002 + (i << 5);
-//            ftCalPara.Cout2Addr = 0x201e + (i << 5);
-//            break;
-//        }
-//        ADC_FtCoutSet(&ftCalPara);
-//        ADC_FtParaCal(&ftCali->chParaSin[i], &ftCalPara);
-//        if (ftCalPara.ver == 2) {
-//            ftCalPara.Cout1Addr = 0x2120 + (i << 2);
-//            ftCalPara.Cout2Addr = ftCalPara.Cout1Addr;
-//            ADC_FtCoutSet(&ftCalPara);
-//            ADC_FtParaCal(&ftCali->chParaSinNoPga[i], &ftCalPara);
-//        }
-//    }
-//    if (ftCalPara.ver == 2) {
-//        for (i = 0; i < 4; ++i) {
-//            if (i == 1) continue;
-//            if (i == 0)
-//                ftCalPara.Cout1Addr = 0x2140;
-//            else
-//                ftCalPara.Cout1Addr = 0x2140 + ((i - 1) << 2);
-//            ftCalPara.Cout2Addr = ftCalPara.Cout1Addr;
-//            ADC_FtCoutSet(&ftCalPara);
-//            ADC_FtParaCal(&ftCali->chParaSinNoPga[i + 8], &ftCalPara);
-//        }
-//    }
-//    ftCalPara.Cin2 = (ftCalPara.V_cal[3] - ftCalPara.V_cal[2]) / 10 * 16384 / (ftCali->Vp / 10) + 8192;
-//    ftCalPara.Cin1 = 16384 - ftCalPara.Cin2;
-//    for (i = 0; i < 4; ++i) {
-//        switch (ftCalPara.ver) {
-//        case 1:
-//        case 2:
-//            ftCalPara.Cout1Addr = 0x2020 + (i << 2);
-//            ftCalPara.Cout2Addr = ftCalPara.Cout1Addr;
-//            break;
-//        default:
-//            ftCalPara.Cout1Addr = 0x2100 + (i << 4);
-//            ftCalPara.Cout2Addr = 0x210e + (i << 4);;
-//            break;
-//        }
-//        ADC_FtCoutSet(&ftCalPara);
-//        ADC_FtParaCal(&ftCali->chParaDiff[i], &ftCalPara);
-//        if (ftCalPara.ver == 2) {
-//            ftCalPara.Cout1Addr = 0x214c + (i << 2);
-//            ftCalPara.Cout2Addr = ftCalPara.Cout1Addr;
-//            ADC_FtCoutSet(&ftCalPara);
-//            ADC_FtParaCal(&ftCali->chParaDiffNoPga[i], &ftCalPara);
-//        }
-//    }
-//    if (ftCalPara.readFlg)
-//        ftCali->V12Data = read_flash_security(0x1144) & ADC_MK_MASK(16);
-//    else
-//        ftCali->V12Data = p_factoryCali->v12_adc[0];
-//    if (ftCalPara.ver == 1)
-//        ftCali->V12Data -= 14;
-//    if(ftCali->V12Data < 5800 || ftCali->V12Data > 6100)
-//{
-//        ftCali->V12Data = 5960;
-//        ftCali->f = 0;
-//}
-//    else
-//    ftCali->f = ADC_FtCal;
-//    ADC_VrefRegister(ftCali->Vp * 0.00001f, 0.f);
-//}
-
-//void ADC_ftInit(void)
-//{
-//    if (ftCali) return;
-
-//    ftCali = calloc(1, sizeof(SADC_ftCali_t));
-//    if(ftCali == NULL) return;
-
-//    ADC_ftCalParaGet();
-//}
-
-//void ADC_ftInitCali(SADC_ftCali_t *ftCali_ptr)
-//{
-//    if (ftCali) return;
-//    if (ftCali_ptr == NULL) return;
-
-//    ftCali = ftCali_ptr;
-//    ADC_ftCalParaGet();
-//}
-
 void ADC_Reset(void)
 {
     ADC_RegWrBits(SADC_CFG_0, 2 << 6, 0, 32);
@@ -1290,14 +1055,6 @@ void ADC_Reset(void)
     ADC_ClrFifo();
     ADC_RegClr(SADC_STATUS  , 0, 32);
     ADC_RegClr(SADC_INT_MAKS, 0, 32);
-}
-
-void ADC_AdcClose(void)
-{
-    ADC_Start(0);
-    ADC_Reset();
-    free(ftCali);
-    ftCali = 0;
 }
 
 void ADC_Start(uint8_t start)
@@ -1311,29 +1068,6 @@ void ADC_Start(uint8_t start)
         ADC_RegClr(SADC_CFG_0, 11, 1);
         while (ADC_GetBusyStatus());
     }
-}
-
-void ADC_Calibration(SADC_adcIputMode mode)
-{
-    ADC_RegClr(SADC_CFG_0, 9, 1);
-    ADC_SetAdcMode(CALIBRATION_MODE);
-    ADC_SetAdcCtrlMode(SINGLE_MODE);
-    ADC_SetInputMode(mode);
-    ADC_EnableChannel(ADC_CH_0, 1);
-    ADC_SetIntTrig(1);
-    ADC_SetCalrpt(CALRPT_32);
-    ADC_IntEnable(1);
-    ADC_EnableCtrlSignal();
-    ADC_RegWr(SADC_CFG_0, 1, 17);
-    ADC_RegWrBits(SADC_CFG_0, 4, 18, 4);
-    ADC_Start(1);
-    while (!ADC_GetIntStatus());
-    ADC_Start(0);
-    ADC_IntEnable(0);
-    ADC_SetAdcMode(CONVERSION_MODE);
-    ADC_EnableChannel(ADC_CH_0, 0);
-    ADC_RegClr(SADC_CFG_0, 17, 1);
-    ADC_ClrFifo();
 }
 
 void ADC_ConvCfg(SADC_adcCtrlMode ctrlMode,

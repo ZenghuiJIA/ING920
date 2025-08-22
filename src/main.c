@@ -28,8 +28,6 @@
 #define DEBUG_UART_log(...)
 #endif
 
-
-
 uint32_t cb_putc(char *c, void *dummy)
 {
     while (apUART_Check_TXFIFO_FULL(APB_UART0) == 1);

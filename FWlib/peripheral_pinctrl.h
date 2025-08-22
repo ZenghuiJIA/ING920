@@ -913,6 +913,15 @@ int PINCTRL_SelPdmIn(uint8_t io_pin_dmic);
 int PINCTRL_SelKeyScanColIn(int index, uint8_t io_pin);
 
 /**
+ * @brief Select KeyScan row input IOs
+ *
+ * @param[in] index             row index (0..19)
+ * @param[in] io_pin            IO pin index
+ * @return                      0 if successful else non-0
+ */
+int PINCTRL_SelKeyScanRowIn(int index, uint8_t io_pin);
+
+/**
  * @brief Select PCAP input IOs
  *
  * @param[in] index             column index (0..5)

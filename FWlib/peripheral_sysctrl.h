@@ -6,6 +6,7 @@ extern "C" {	/* allow C++ to use these headers */
 #endif	/* __cplusplus */
 
 #include "ingsoc.h"
+#include "peripheral_pinctrl.h"
 
 #if (INGCHIPS_FAMILY == INGCHIPS_FAMILY_918)
 
@@ -66,7 +67,7 @@ enum
 {
     SYSCTRL_BOR_0V85 = 0x06,        // BOR Vdd threshold = 0.85V
     SYSCTRL_BOR_0V90 = 0x07,        // BOR Vdd threshold = 0.90V
-    SYSCTRL_BOR_0V95 = 0x09,        // BOR Vdd threshold = 0.95V
+    SYSCTRL_BOR_0V95 = 0x08,        // BOR Vdd threshold = 0.95V
     SYSCTRL_BOR_1V00 = 0x09,        // BOR Vdd threshold = 1.00V
     SYSCTRL_BOR_1V05 = 0x0A,        // BOR Vdd threshold = 1.05V
 };
@@ -1304,17 +1305,6 @@ void SYSCTRL_SelectPWMClk(SYSCTRL_ClkMode mode);
 void SYSCTRL_SelectKeyScanClk(SYSCTRL_ClkMode mode);
 
 /**
- * \brief Select clock mode of PDM
- *
- * Clock of PDM is divided from SLOW_CLK.`mode` should be `(SYSCTRL_ClkMode)N`, where N = 1..63;
- *
- * \param port          the timer
- * \param mode          clock mode
- *
- */
-void SYSCTRL_SelectPDMClk(SYSCTRL_ClkMode mode);
-
-/**
  * \brief Select SPI clock mode
  * \param port          the port
  * \param mode          clock mode
@@ -1322,7 +1312,7 @@ void SYSCTRL_SelectPDMClk(SYSCTRL_ClkMode mode);
  * Note: For SPI0: mode should be `SYSCTRL_CLK_SLOW`, or `SYSCTRL_CLK_PLL_DIV_N`, where N = 1..15;
  *       For SPI1: mode should be `SYSCTRL_CLK_SLOW`, or `SYSCTRL_CLK_HCLK`.
  */
-//void SYSCTRL_SelectSpiClk(spi_port_t port, SYSCTRL_ClkMode mode);
+void SYSCTRL_SelectSpiClk(spi_port_t port, SYSCTRL_ClkMode mode);
 
 /**
  * \brief Select UART clock mode
@@ -2129,7 +2119,16 @@ int SYSCTRL_Init(void);
  */
 void SYSCTRL_DelayCycles(uint32_t freq, uint32_t cycles);
 
+/**
+ * @brief System reset
+ *
+ * This function resets the system with a watchdog, 
+ * and all registers are restored to their default state
+ */
+void SYSCTRL_Reset(void);
+
 void SYSCTRL_UpdateAsdmClk(uint32_t div);
+
 
 #ifdef __cplusplus
 } /* allow C++ to use these headers */

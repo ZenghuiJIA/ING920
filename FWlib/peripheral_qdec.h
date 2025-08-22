@@ -20,6 +20,7 @@ typedef enum {
     QDEC_CH_INT_EN      = 0x24,
     QDEC_BCR            = 0xc0,
     QDEC_BMR            = 0xc4,
+    QDEC_INT_EN         = 0xc8,
     QDEC_STATUS_SEL     = 0xd4,
 } QDEC_qdecReg;
 
@@ -39,7 +40,7 @@ typedef enum {
     QDEC_PWM,
     QDEC_PCM,
     QDEC_QDEC,
-} QDEC_ModuCfg;
+} QDEC_ModCfg;
 
 typedef enum {
     QDEC_CH0 = 0,
@@ -47,6 +48,9 @@ typedef enum {
     QDEC_CH2,
 } QDEC_CHX;
 
+/** 
+ *  Configures the different modes of QDEC external triggering. 
+*/
 typedef enum {
     QDEC_EX_NO_TRIG = 0,
     QDEC_EX_RISING_EDGE,
@@ -54,7 +58,19 @@ typedef enum {
     QDEC_EX_BOTH_EDGE,
 }QDEC_ExTrigger;
 
-
+/** 
+* Qdec module interrupt flag.
+ * - QDEC_INT_COVFS_CMB_STATE: Counter overflow state.
+ * - QDEC_INT_LOVFS_CMB_STATE: Counter underflow state.
+ * - QDEC_INT_CPAS_CMB_STATE: Capture Compare register a state.
+ * - QDEC_INT_CPBS_CMB_STATE: Capture Compare register b state.
+ * - QDEC_INT_CPCS_CMB_STATE: Capture Compare register c state.
+ * - QDEC_INT_LDRAS_CMB_STATE: Load register a state.
+ * - QDEC_INT_LDRBS_CMB_STATE: Load register b state.
+ * - QDEC_INT_ETRGS_CMB_STATE: External trigger state.
+ * - QDEC_INT_PDC_END_STATE: Periodic data conversion end state.
+ * - QDEC_INT_BUF_FULL_STATE: Buffer full state.
+*/ 
 typedef enum {
     QDEC_INT_COVFS_CMB_STATE = 1<<0,
     QDEC_INT_LOVFS_CMB_STATE = 1<<1,
@@ -68,7 +84,9 @@ typedef enum {
     QDEC_INT_BUF_FULL_STATE = 1<<9,
 }QDEC_IntState;
 
-
+/**
+* Configuring Timer Overflow Mode.
+ */
 typedef enum {
     QDEC_TMR_RELOAD = 0,
     QDEC_TMR_STOP,
@@ -79,6 +97,12 @@ typedef enum {
     QDEC_TMR_RELOAD_UP_VALE,
 }QDEC_TMR_RELOAD_MODE;
 
+/**  Qdec Channel x(channel number) output config.
+ * - QDEC_CHX_ACPA: Load config Capture Compare register a Timer input output A
+ * - QDEC_CHX_ACPC: Load config Capture Compare register c Timer input output A
+ * - QDEC_CHX_BCPB: Load config Capture Compare register b Timer input output B
+ * - QDEC_CHX_BCPC: Load config Capture Compare register c Timer input output B
+*/
 typedef enum {
     QDEC_CHX_ACPA = 0,
     QDEC_CHX_ACPC,
@@ -97,12 +121,12 @@ typedef enum {
 void QDEC_EnableQdecDiv(QDEC_indexCfg div);
 
 /**
- * @brief QDEC stantard configuration interface
+ * @brief QDEC standard configuration interface
  *
- * @param[in] fliter         QDEC signal filter value(0-63)
+ * @param[in] filter         QDEC signal filter value(0-63)
  * @param[in] miss           max value of QDEC miss signal(0-15)
  */
-void QDEC_QdecCfg(uint8_t fliter, uint8_t miss);
+void QDEC_QdecCfg(uint8_t filter, uint8_t miss);
 
 /**
  * @brief Enable/disable QDEC channel
@@ -141,15 +165,29 @@ void QDEC_Reset(void);
 void QDEC_IntClear(void);
 
 /**
+ * @brief Enable QDEC other interrupt
+ * @param[in] mask     mask of interrupts(0x1 enable dir changed int)
+ *
+ */
+void QDEC_EnableInt(uint8_t mask);
+
+/**
+ * @brief Enable QDEC rising and falling edge trigger
+ *
+ * @param[in] enable             enable/disable
+ */
+void QDEC_EnableDoubleEdge(uint8_t enable);
+
+/**
  * @brief Set qdec channel mode.
  * @param[in] Channel         QDEC channel
  * @param[in] ModeCfg         qdec mode,can used timer,pacp,pwm,qdec.
  *
  */
-void QDEC_ChModeCfg(QDEC_CHX Channel, QDEC_ModuCfg ModeCfg);
+void QDEC_ChModeCfg(QDEC_CHX Channel, QDEC_ModCfg ModeCfg);
 
 /**
- * @brief compare with RC triger enable
+ * @brief compare with RC trigger enable
  * @param[in] Channel         QDEC channel
  * @param[in] enable             enable/disable
  *
@@ -157,7 +195,7 @@ void QDEC_ChModeCfg(QDEC_CHX Channel, QDEC_ModuCfg ModeCfg);
 void QDEC_SetChxCpcTrg(QDEC_CHX Channel, uint8_t enable);
 
 /**
- * @brief caperture stop
+ * @brief capture stop
  * @param[in] Channel         QDEC channel
  * @param[in] enable             enable/disable
  *
@@ -165,22 +203,37 @@ void QDEC_SetChxCpcTrg(QDEC_CHX Channel, uint8_t enable);
 void QDEC_SetChxCpcStopEn(QDEC_CHX Channel, uint8_t enable);
 
 /**
- * @brief Set trig edge
+ * @brief Set trigger edge
  * @param[in] Channel         QDEC channel
- * @param[in] enable             enable/disable
+ * @param[in] edge            external trigger edge
  *
  */
 void QDEC_ExternalEventEdgeSet(QDEC_CHX Channel, QDEC_ExTrigger edge);
-void QDEC_SetOutxEdge(QDEC_CHX Channel,QDEC_OUTX_Config OutxChannal, QDEC_ExTrigger edge);
-void QDEC_SetEtrg(QDEC_CHX Channel, uint8_t val);
 
 /**
- * @brief Enable trig edge
+ * @brief Set external trigger edge
  * @param[in] Channel         QDEC channel
- * @param[in] enable             enable/disable
+ * @param[in] OutxChannal     Qdec output channel config
+ * @param[in] edge            external trigger edge
  *
  */
-void QDEC_SetEtrgEn(QDEC_CHX Channel, uint8_t enable);
+void QDEC_SetOutxEdge(QDEC_CHX Channel,QDEC_OUTX_Config OutxChannal, QDEC_ExTrigger edge);
+
+/**
+ * @brief Set external trigger edge mode
+ * @param[in] Channel         QDEC channel
+ * @param[in] val             external trigger edge, input from QDEC_ExTrigger.
+ *
+ */
+void QDEC_SetExternalTrigger(QDEC_CHX Channel, uint8_t val);
+
+/**
+ * @brief Enable external trigger edge
+ * @param[in] Channel         QDEC channel
+ * @param[in] enable          enable/disable
+ *
+ */
+void QDEC_SetExternalTriggerEn(QDEC_CHX Channel, uint8_t enable);
 
 /**
  * @brief Set tmr cnt
@@ -242,7 +295,7 @@ void QDEC_EnableChannel(QDEC_CHX Channel, uint8_t enable);
 uint8_t QDEC_GetQdecModeEn(void);
 
 /**
- * @brief Get qdec channel rab cnt
+ * @brief Get qdec channel register a/b cnt
  * @param[in] Channel         QDEC channel
  * @return                   rab cnt
  *
@@ -250,7 +303,7 @@ uint8_t QDEC_GetQdecModeEn(void);
 uint32_t QDEC_GetChxReadRab(QDEC_CHX Channel);
 
 /**
- * @brief Enbale Qdec dma.
+ * @brief Enable Qdec dma.
  * @param[in] Channel         QDEC channel
  * @param[in] enable_a        enable/disable
  * @param[in] enable_b        enable/disable
@@ -263,6 +316,7 @@ void QDEC_EnableDMAChAB(QDEC_CHX Channel, uint8_t enable_a,uint8_t enable_b);
  * @return                   enable state.
  */
 uint8_t QDEC_GetDMAChAB(QDEC_CHX Channel);
+
 
 #endif
 

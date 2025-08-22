@@ -165,7 +165,7 @@ __APP_LOAD_ADD  DCD     0x2a000
 ; Reset Handler
 
 Reset_Handler   PROC
-                EXPORT  Reset_Handler             [WEAK]
+                EXPORT  Reset_Handler [WEAK]
                 IMPORT  __main
                 ;IMPORT  chip_init
 

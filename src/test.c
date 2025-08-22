@@ -66,6 +66,5 @@ void uart_test(void)
         UART_SendData(APB_UART0,0x54);
 
         SYSCTRL_DelayCycles(1000,1000);
-
     }
 }

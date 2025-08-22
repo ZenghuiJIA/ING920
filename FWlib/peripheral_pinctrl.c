@@ -1,5 +1,6 @@
 #include "ingsoc.h"
 #include "peripheral_pinctrl.h"
+#include "peripheral_gpio.h"
 
 #if (INGCHIPS_FAMILY == INGCHIPS_FAMILY_918)
 
@@ -847,6 +848,7 @@ static int PINCTRL_SelInput(uint8_t io_pin,
     int id = pin_id_for_input_source(source_id, io_pin);
     if (id < 0) return id;
     set_reg_bits(&APB_PINCTRL->IN_CTRL[reg_index], (uint32_t)id, bit_width, bit_offset);
+    PINCTRL_SetPadMux((uint8_t)io_pin, (io_source_t)(source_id));
     return 0;
 }
 
@@ -1030,6 +1032,11 @@ int PINCTRL_SelKeyScanColIn(int index, uint8_t io_pin)
         return -1;
 }
 
+int PINCTRL_SelKeyScanRowIn(int index, uint8_t io_pin)
+{
+    return PINCTRL_SelInput(io_pin, IO_SOURCE_KEYSCN_IN_ROW_0 + index, 7, 3, 6 + index * 3);
+}
+
 int PINCTRL_SelPCAPIn(int index, uint8_t io_pin)
 {
     return PINCTRL_SelInput(io_pin, IO_SOURCE_PCAP0_IN + index, 10, 5, index * 5);
@@ -1062,8 +1069,9 @@ int PINCTRL_Pull(const uint8_t io_pin, const pinctrl_pull_mode_t mode)
     volatile uint32_t *pe = (volatile uint32_t *)&APB_PINCTRL->PE_CTRL[reg];
     volatile uint32_t *ps = (volatile uint32_t *)&APB_PINCTRL->PS_CTRL[reg];
     if (PINCTRL_PULL_DISABLE == mode)
-    {
+	{
         *pe &= ~bit;
+
     }
     else
     {

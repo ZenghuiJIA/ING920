@@ -353,8 +353,8 @@ uint8_t KEYSCAN_KeyDataToRowColIdx(const KEYSCAN_Ctx *ctx, uint32_t key_data, ui
     *col = ctx->col_to_idx[key_data & 0x1f];
 
 
-    return 1;
-}
+        return 1;
+    }
 #elif (INGCHIPS_FAMILY == INGCHIPS_FAMILY_920)
 uint8_t KEYSCAN_GetScanMode(uint8_t table_en, KEYSCAN_ScanMode_t* scan_mode, uint32_t key_data)
 {
@@ -397,8 +397,8 @@ uint8_t KEYSCAN_GetScanMode(uint8_t table_en, KEYSCAN_ScanMode_t* scan_mode, uin
                 return 0;
         }
     }
-    return 1;
-}
+        return 1;
+    }
 
 
 
@@ -410,8 +410,8 @@ uint8_t KEYSCAN_NormalHighLowDataToIdex(const KEYSCAN_Ctx *ctx, uint32_t key_dat
     }
     else{
         *col = ctx->col_to_idx[(key_data & 0x1f)];
-        return 0;
-    }
+    return 0;
+}
 }
 
 uint8_t KEYSCAN_TableHighLowDataToIdex(const KEYSCAN_Ctx *ctx, uint32_t key_data, uint8_t *row, uint8_t *col, uint8_t *key_stae)
@@ -440,11 +440,11 @@ void KEYSCAN_ScanDataToIdex(const KEYSCAN_Ctx *ctx, KEYSCAN_RunMode_t mode, uint
 {
     if(mode == NORMAL_MODE){
         *row = ctx->row_to_idx[(key_data >> 5) & 0x07];
-        *col = ctx->col_to_idx[key_data & 0x1f];
+    *col = ctx->col_to_idx[key_data & 0x1f];
     } else if (mode == LPKEY_MODE) {
         *row = ctx->row_to_idx[(key_data >> 4) & 0xf];
         *col = ctx->col_to_idx[key_data & 0xf];
-    }
+}
 }
 
 #endif
@@ -483,8 +483,6 @@ int KEYSCAN_InitializeScanParameter(const KEYSCAN_SetStateStruct* keyscan_set)
             int io_source = IO_SOURCE_KEYSCN_ROW_0 + keyscan_set->row[i].out_row;
             row = row | (0x1 << keyscan_set->row[i].out_row);
             r = PINCTRL_SetPadMux(keyscan_set->row[i].gpio, (io_source_t) io_source);
-
-
             if (r) return r;
             r = PINCTRL_SelKeyScanColIn((int) (keyscan_set->row[i].out_row + 22), keyscan_set->row[i].gpio);
             if (r) return r;
